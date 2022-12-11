@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
@@ -7,12 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   title: string = 'My Library App';
 
   constructor(public auth: AngularFireAuth, private router: Router) {}
-
-  ngOnInit(): void {}
 
   onClickSignOut(): void {
     this.auth.signOut().then(() => this.router.navigateByUrl('/signin'));

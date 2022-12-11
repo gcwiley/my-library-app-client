@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-feedback-list',
   templateUrl: './feedback-list.component.html',
-  styleUrls: ['./feedback-list.component.css']
+  styleUrls: ['./feedback-list.component.css'],
 })
-export class FeedbackListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class FeedbackListComponent {}

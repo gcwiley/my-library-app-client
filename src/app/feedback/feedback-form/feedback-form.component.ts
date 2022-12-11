@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { CommentService } from '../comment.service';
   templateUrl: './feedback-form.component.html',
   styleUrls: ['./feedback-form.component.css']
 })
-export class FeedbackFormComponent implements OnInit {
+export class FeedbackFormComponent {
 
   // create comment form
   commentForm = this.formBuilder.group({
@@ -25,9 +25,6 @@ export class FeedbackFormComponent implements OnInit {
     private router: Router,
     private commentService: CommentService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   onSubmitComment() {
     this.commentService.addComment(this.commentForm.value).subscribe(() => {

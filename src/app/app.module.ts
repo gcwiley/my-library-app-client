@@ -23,7 +23,7 @@ import { MaterialModule } from './material-module';
 import { AppComponent } from './app.component';
 
 // Main Home Page Component
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 // Book Components
 import { BookFormComponent } from './books/book-form/book-form.component';

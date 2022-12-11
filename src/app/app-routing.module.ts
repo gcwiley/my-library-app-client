@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RouteGuard } from './route.guard';
 
 // Main Page / Homepage
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 // Book Components
 import { BookFormComponent } from './books/book-form/book-form.component';
@@ -18,10 +18,10 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { FeedbackFormComponent } from './feedback/feedback-form/feedback-form.component';
 
 // About Page
-import { AboutPageComponent } from './about-page/about-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 // Not Found Page
-import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
