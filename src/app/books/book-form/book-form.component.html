@@ -1,0 +1,90 @@
+<form [formGroup]="bookForm" novalidate (ngSubmit)="onSaveBook()">
+  <mat-card class="book-form">
+    <mat-card-header>
+      <mat-card-title>Add Book</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="row">
+        <!-- TITLE (title)-->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput type="text" formControlName="title" />
+          <mat-error>A title is <strong>required.</strong></mat-error>
+        </mat-form-field>
+      </div>
+      <!-- row -->
+
+      <!-- ------------------- -->
+
+      <div class="row">
+        <!-- AUTHOR (author)-->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Author</mat-label>
+          <input matInput type="text" formControlName="author" />
+          <mat-error>A author is <strong>required.</strong></mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <!-- ISBN (isbn) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>ISBN</mat-label>
+            <input matInput type="number" formControlName="isbn" />
+            <mat-error>A ISBN is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
+        <!-- col -->
+
+        <div class="col">
+          <!-- PUBLICATION DATE (publicationDate) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Publication Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="publicationDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+
+      <div class="row">
+        <div class="col">
+          <!-- PAGE COUNT (pageCount)-->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Page Count</mat-label>
+            <input matInput type="number" formControlName="pageCount" />
+            <mat-error>A page count is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
+        <!-- col -->
+
+        <div class="col">
+          <!-- GENRE (genre) FIX THIS! -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Genre</mat-label>
+            <input matInput type="text" formControlName="genre" />
+            <mat-error>A genre is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- row -->
+
+      <div class="row">
+        <!-- SUMMARY (summary)-->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Summary</mat-label>
+          <textarea matInput rows="8" formControlName="summary"></textarea>
+          <mat-error>A summary is <strong>required.</strong></mat-error>
+        </mat-form-field>
+      </div>
+      <!-- row -->
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Add Book</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

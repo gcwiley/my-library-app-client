@@ -1,0 +1,16 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

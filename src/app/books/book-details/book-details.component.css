@@ -1,0 +1,15 @@
+.book-description {
+  margin: 1rem;
+  box-shadow: none;
+  border: 0.5px gainsboro solid;
+}
+
+.book-details {
+  margin: 1rem;
+  box-shadow: none;
+  border: 0.5px gainsboro solid;
+}
+
+.action-buttons {
+  margin-top: 1rem;
+}
