@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.scss'],
 })
-export class SignupComponent {
+export class SignupPageComponent {
   signupForm = this.formBuilder.group({
     name: ['', Validators.required],
     email: ['', Validators.required],

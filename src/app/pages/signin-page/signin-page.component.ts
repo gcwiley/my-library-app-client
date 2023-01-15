@@ -8,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   templateUrl: './signin-page.component.html',
   styleUrls: ['./signin-page.component.scss'],
 })
-export class SigninComponent {
+export class SigninPageComponent {
   signinForm = this.formBuilder.group({
     email: ['', Validators.required],
     password: ['', Validators.required],

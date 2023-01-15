@@ -28,7 +28,6 @@
             ],
             "styles": [
               "src/scss/theme.scss",
-              "src/scss/material-icons.scss",
               "src/styles.css"
             ],
             "scripts": []

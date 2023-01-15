@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-support-page',
   templateUrl: './support-page.component.html',
-  styleUrls: ['./support-page.component.css']
+  styleUrls: ['./support-page.component.scss'],
 })
-export class SupportPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class SupportPageComponent {}

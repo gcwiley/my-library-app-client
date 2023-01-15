@@ -10,7 +10,7 @@ import { CommentService } from '../../services/comment.service';
   templateUrl: './comment-form.component.html',
   styleUrls: ['./comment-form.component.css']
 })
-export class FeedbackFormComponent {
+export class CommentFormComponent {
 
   // create comment form
   commentForm = this.formBuilder.group({

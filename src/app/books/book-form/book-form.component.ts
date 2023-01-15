@@ -3,7 +3,7 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 // Import Book Service
-import { BookService } from '../book.service';
+import { BookService } from '../../services/book.service';
 
 // Import Book Type
 import { Book } from '../../types/book';

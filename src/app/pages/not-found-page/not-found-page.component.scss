@@ -1,37 +1,18 @@
-$vertical-spacing: 64px;
-$horizontal-spacing: 32px;
-
-main {
-  min-height: 100vh;
-  font-size: 1.25rem;
-}
-
-.wrapper {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $vertical-spacing;
+  height: 100vh;
 }
 
-svg {
-  height: 300px;
-  max-width: 100%;
-  margin-right: $horizontal-spacing;
+.page-text {
+  border: 1px red solid;
+  padding: 1rem;
 }
 
-a + a {
-  margin-left: 16px;
-}
-
+// FIX THIS!
 @media (max-width: 720px) {
-  .wrapper {
+  .container {
     flex-direction: column;
-  }
-
-  svg {
-    height: auto;
-    max-height: 300px;
-    margin-right: 0;
-    margin-bottom: $vertical-spacing;
   }
 }
