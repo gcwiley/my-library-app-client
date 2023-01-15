@@ -15,7 +15,7 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
 import { SigninComponent } from './auth/signin/signin.component';
 
 // Feedback Page
-import { FeedbackFormComponent } from './feedback/feedback-form/feedback-form.component';
+import { FeedbackFormComponent } from './comments/comment-form/comment-form.component';
 
 // About Page
 import { AboutPageComponent } from './pages/about-page/about-page.component';

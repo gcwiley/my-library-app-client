@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  templateUrl: './signup-page.component.html',
+  styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupComponent {
   signupForm = this.formBuilder.group({
@@ -14,7 +14,8 @@ export class SignupComponent {
     password: ['', Validators.required],
   });
 
-  constructor(private formBuilder: UntypedFormBuilder, private router: Router) {}
-
-  
+  constructor(
+    private formBuilder: UntypedFormBuilder,
+    private router: Router
+  ) {}
 }

@@ -19,8 +19,14 @@ import { MaterialModule } from './material-module';
 // Main App Component
 import { AppComponent } from './app.component';
 
-// Main Home Page Component
+
+// PAGES
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { SigninComponent } from './auth/signin/signin.component';
+
+
+// Main Home Page Component
+
 
 // Book Components
 import { BookFormComponent } from './books/book-form/book-form.component';
@@ -33,17 +39,18 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 
 // Auth Components
-import { SigninComponent } from './auth/signin/signin.component';
+
 import { SignupComponent } from './auth/signup/signup.component';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
 
 // Feedback Page
-import { FeedbackFormComponent } from './feedback/feedback-form/feedback-form.component';
-import { FeedbackListComponent } from './feedback/feedback-list/feedback-list.component';
+import { FeedbackFormComponent } from './comments/comment-form/comment-form.component';
+import { FeedbackListComponent } from './comments/comment-list/comment-list.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { ThemePickerComponent } from './shared/theme-picker/theme-picker.component';
+import { SupportPageComponent } from './pages/support-page/support-page.component';
 
 
 @NgModule({
@@ -63,6 +70,7 @@ import { ThemePickerComponent } from './shared/theme-picker/theme-picker.compone
     CarouselComponent,
     ThemePickerComponent,
     SignupComponent,
+    SupportPageComponent,
   ],
   imports: [
     BrowserModule,

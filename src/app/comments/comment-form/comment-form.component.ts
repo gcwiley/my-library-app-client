@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 // Import Comment Service
-import { CommentService } from '../comment.service';
+import { CommentService } from '../../services/comment.service';
 
 @Component({
-  selector: 'app-feedback-form',
-  templateUrl: './feedback-form.component.html',
-  styleUrls: ['./feedback-form.component.css']
+  selector: 'app-comment-form',
+  templateUrl: './comment-form.component.html',
+  styleUrls: ['./comment-form.component.css']
 })
 export class FeedbackFormComponent {
 
@@ -21,7 +21,7 @@ export class FeedbackFormComponent {
   })
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private router: Router,
     private commentService: CommentService
   ) { }
