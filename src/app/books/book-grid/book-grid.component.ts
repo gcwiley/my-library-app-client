@@ -9,7 +9,7 @@ import { Book } from '../../types/book';
 @Component({
   selector: 'app-book-grid',
   templateUrl: './book-grid.component.html',
-  styleUrls: ['./book-grid.component.css'],
+  styleUrls: ['./book-grid.component.scss'],
 })
 export class BookGridComponent implements OnInit {
   isLoadingBooks: boolean = true;

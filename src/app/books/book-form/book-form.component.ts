@@ -14,7 +14,7 @@ import { Book } from '../../types/book';
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
-  styleUrls: ['./book-form.component.css'],
+  styleUrls: ['./book-form.component.scss'],
 })
 export class BookFormComponent implements OnInit {
   public mode: string = 'create';

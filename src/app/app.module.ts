@@ -13,9 +13,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 // Import Firebase Environmental Variables
 import { environment } from '../environments/environment';
 
-// Import Angular Flex Layout
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 // Angular Material Import
 import { MaterialModule } from './material-module';
 
@@ -76,7 +73,6 @@ import { ThemePickerComponent } from './shared/theme-picker/theme-picker.compone
     AppRoutingModule,
     HttpClientModule,
     MatNativeDateModule,
-    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
