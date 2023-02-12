@@ -1,6 +1,5 @@
-// interfaces can be used to create your own types - define fields and values
 export interface Book {
-    _id: string;
+    _id?: string;
     title: string,
     author: string,
     isbn: number,

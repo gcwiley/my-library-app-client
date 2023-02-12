@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 // Import the Book Model
-import { Book } from '../types/book';
+import { Book } from '../types/book.interface';
 
 // Import the Message Service
-import { MessageService } from '../messages/message.service';
+import { MessageService } from '../services/message.service';
 
 @Injectable({
   providedIn: 'root',

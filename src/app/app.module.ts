@@ -23,17 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // PAGES
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { SigninPageComponent } from './pages/signin-page/signin-page.component';
-import { SignupPageComponent } from './pages/signup-page/signup-page.component';
-import { SupportPageComponent } from './pages/support-page/support-page.component';
+import { PagesModule } from './pages/pages.module';
 
 // Book Components
-import { BookFormComponent } from './books/book-form/book-form.component';
-import { BookDetailsComponent } from './books/book-details/book-details.component';
-import { BookGridComponent } from './books/book-grid/book-grid.component';
+import { BooksModule } from './books/books.module';
 
 // Post Components
 import { PostFormComponent } from './posts/post-form/post-form.component';
@@ -48,37 +41,17 @@ import { ImageUploadFormComponent } from './images/image-upload-form/image-uploa
 import { ImageGridComponent } from './images/image-grid/image-grid.component';
 
 // Shared Component
-import { CarouselComponent } from './shared/carousel/carousel.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { HeroComponent } from './shared/hero/hero.component';
-import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
-import { ThemePickerComponent } from './shared/theme-picker/theme-picker.component';
+import { SharedComponentsModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutPageComponent,
-    MainPageComponent,
-    NotFoundPageComponent,
-    SigninPageComponent,
-    SignupPageComponent,
-    SupportPageComponent,
-    BookFormComponent,
-    BookDetailsComponent,
-    BookGridComponent,
     PostFormComponent,
     PostListComponent,
     CommentFormComponent,
     CommentListComponent,
     ImageUploadFormComponent,
     ImageGridComponent,
-    CarouselComponent,
-    FooterComponent,
-    HeaderComponent,
-    HeroComponent,
-    NavMenuComponent,
-    ThemePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +63,9 @@ import { ThemePickerComponent } from './shared/theme-picker/theme-picker.compone
     HttpClientModule,
     MatNativeDateModule,
     AngularFireModule.initializeApp(environment.firebase),
+    BooksModule,
+    SharedComponentsModule,
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

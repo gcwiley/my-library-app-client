@@ -6,7 +6,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 
 // Import Book Type
-import { Book } from '../../types/book';
+import { Book } from '../../types/book.interface';
 
 // Import Book Genre Type and Value
 // import { BookGenre, BOOK_GENRES } from '../../types/book';

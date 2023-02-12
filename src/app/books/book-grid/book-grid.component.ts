@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 
 // Import Book Type
-import { Book } from '../../types/book';
+import { Book } from '../../types/book.interface';
 
 @Component({
   selector: 'app-book-grid',

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
 
 // Import Book Type
-import { Book } from '../../types/book';
+import { Book } from '../../types/book.interface';
 
 // Import Book Service
 import { BookService } from '../../services/book.service';

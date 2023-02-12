@@ -2,7 +2,7 @@
 root = true
 
 [*]
-charset = utf-8
+charset = utf-8 # test comment 2
 indent_style = space
 indent_size = 2
 insert_final_newline = true
@@ -14,5 +14,5 @@ quote_type = single
 
 
 [*.md]
-max_line_length = off
+max_line_length = off 
 trim_trailing_whitespace = false
