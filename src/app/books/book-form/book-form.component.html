@@ -84,7 +84,8 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Add Book</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!bookForm.valid">Add Book</button>
     </mat-card-actions>
+
   </mat-card>
 </form>

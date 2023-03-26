@@ -14,7 +14,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 
 // Angular Material Import
-import { MaterialModule } from './material-module';
+import { MaterialModule } from './material.module';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
@@ -26,33 +26,22 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 
 // Book Components
-import { BooksModule } from './books/books.module';
+import { BooksComponentsModule } from './books/books.module';
 
 // Post Components
-import { PostFormComponent } from './posts/post-form/post-form.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostComponentsModule } from './posts/post.module';
 
 // Comment Components
-import { CommentFormComponent } from './comments/comment-form/comment-form.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { CommentComponentsModule } from './comments/comment.module';
 
 // Image Components
-import { ImageUploadFormComponent } from './images/image-upload-form/image-upload-form.component';
-import { ImageGridComponent } from './images/image-grid/image-grid.component';
+import { ImageComponentModule } from './images/images.module';
 
 // Shared Component
 import { SharedComponentsModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostFormComponent,
-    PostListComponent,
-    CommentFormComponent,
-    CommentListComponent,
-    ImageUploadFormComponent,
-    ImageGridComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -63,9 +52,12 @@ import { SharedComponentsModule } from './shared/shared.module';
     HttpClientModule,
     MatNativeDateModule,
     AngularFireModule.initializeApp(environment.firebase),
-    BooksModule,
+    BooksComponentsModule,
     SharedComponentsModule,
     PagesModule,
+    PostComponentsModule,
+    CommentComponentsModule,
+    ImageComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // forms
 
 // import material module
-import { MaterialModule } from '../material-module';
+import { MaterialModule } from '../material.module';
 
 // import shared components
 import { SharedComponentsModule } from '../shared/shared.module';
 
 // import book components
-import { BooksModule } from '../books/books.module';
+import { BooksComponentsModule } from '../books/books.module';
 
 // page components
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -20,6 +20,14 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { SupportPageComponent } from './support-page/support-page.component';
 
 @NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    SharedComponentsModule,
+    BooksComponentsModule,
+  ],
   declarations: [
     AboutPageComponent,
     MainPageComponent,
@@ -28,13 +36,13 @@ import { SupportPageComponent } from './support-page/support-page.component';
     SignupPageComponent,
     SupportPageComponent,
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedComponentsModule,
-    BooksModule,
+  exports: [
+    AboutPageComponent,
+    MainPageComponent,
+    NotFoundPageComponent,
+    SigninPageComponent,
+    SignupPageComponent,
+    SupportPageComponent,
   ],
 })
 export class PagesModule {}

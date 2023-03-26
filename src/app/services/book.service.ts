@@ -54,29 +54,29 @@ export class BookService {
   // SAVE METHODS //
 
   // POST: add a new book to the server
-  addBook(book: Book): Observable<Book> {
-    return this.http.post<Book>(this.booksUrl, book, this.httpOptions).pipe(
+  addBook(newBook: Book | any): Observable<Book> {
+    return this.http.post<Book>(this.booksUrl, newBook, this.httpOptions).pipe(
       tap((newBook: Book) => this.log(`added book with id=${newBook._id}`)),
       catchError(this.handleError<Book>('addBook'))
     );
   }
 
-  // DELETE: book from the server
+  // DELETE: a book by ID from the server
   deleteBook(id: string): Observable<Book> {
     const url = `${this.booksUrl}/${id}`;
 
     return this.http.delete<Book>(url, this.httpOptions).pipe(
-      tap((_) => this.log(`deleted book id=${id}`)),
+      tap(() => this.log(`deleted book id=${id}`)),
       catchError(this.handleError<Book>('deleteBook'))
     );
   }
 
-  // PUT: update the book on the server
-  updateBook(id: string, book: Book): Observable<any> {
+  // PUT: update a book by ID on the server
+  updateBook(id: any, book: any): Observable<any> {
     const url = `${this.booksUrl}/${id}`;
 
     return this.http.put(url, book, this.httpOptions).pipe(
-      tap((_) => this.log(`updated book id=${book._id}`)),
+      tap(() => this.log(`updated book id=${book._id}`)),
       catchError(this.handleError<any>('updateBook'))
     );
   }

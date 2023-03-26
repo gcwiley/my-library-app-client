@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 // Import the Comment Model
-import { Comment } from "../types/comment";
+import { Comment } from "../types/comment.interface";
 
 @Injectable({ providedIn: 'root' })
 
@@ -30,7 +30,7 @@ export class CommentService {
     // SAVE METHODS
 
     // POST: adds a new comment to the server
-    addComment(newComment: Comment): Observable<Comment> {
+    addComment(newComment: Comment | any): Observable<Comment> {
         return this.http.post<Comment>(this.commentsUrl, newComment, this.httpOptions)
     }
 

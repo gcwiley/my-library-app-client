@@ -1,3 +1,27 @@
-<nav>
-  <!-- ADD MORE HERE! -->
-</nav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="title-header">
+
+      <a mat-icon-button class="home-icon" routerLink="/" routerLinkActive="active" color="primary">
+        <mat-icon>home</mat-icon>
+      </a>
+
+      <h1>My Library App</h1>
+
+      <button mat-icon-button (click)="toggleTheme()" matTooltip="Toggle Theme" attr.aria-label="Switch to {{ isDark ? 'light' : 'dark' }} theme" color="primary">
+        <mat-icon>
+          brightness_medium
+        </mat-icon>
+
+      </button>
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <nav>
+        <a mat-button routerLink="/signin" routerLinkActive="active">Sign In</a>
+        <a mat-button routerLink="/create" routerLinkActive="active">Add Book</a>
+        <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+    </nav>
+  </mat-toolbar-row>
+
+</mat-toolbar>

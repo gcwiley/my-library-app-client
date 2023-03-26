@@ -1,30 +1,26 @@
 <div class="book-grid-container">
 
-  <mat-grid-list cols="4" rowHeight="1:1">
+  <div *ngFor="let book of books">
 
-    <mat-grid-tile *ngFor="let book of books">
+    <mat-card class="book-card">
 
-      <mat-card class="book-card" fxLayout="column">
+      <mat-card-header>
+        <mat-card-title>{{ book.title }}</mat-card-title>
+        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+      </mat-card-header>
 
-        <mat-card-header>
-          <mat-card-title>{{ book.title }}</mat-card-title>
-          <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-        </mat-card-header>
+      <mat-card-content>
+        <p>{{ book.summary }}</p>
+      </mat-card-content>
 
-        <span fxFlex="1 1 auto"></span>
+      <mat-card-actions class="book-actions-container">
 
-        <mat-card-content>
-          <p></p>
-        </mat-card-content>
+        <a mat-button color="primary" routerLink="/projects/{{ book._id }}">OPEN</a>
 
-        <mat-card-actions>
-          <a mat-stroked-button color="primary" routerLink="/books/{{ book._id }}">View</a>
-        </mat-card-actions>
+      </mat-card-actions>
 
-      </mat-card>
+    </mat-card>
 
-    </mat-grid-tile>
-
-  </mat-grid-list>
+  </div>
 
 </div>
