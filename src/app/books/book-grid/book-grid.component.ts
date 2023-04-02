@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// Import Book Service
+// import the book service
 import { BookService } from '../../services/book.service';
 
-// Import Book Type
+// import the book type
 import { Book } from '../../types/book.interface';
 
 @Component({
@@ -12,7 +12,6 @@ import { Book } from '../../types/book.interface';
   styleUrls: ['./book-grid.component.scss'],
 })
 export class BookGridComponent implements OnInit {
-  isLoadingBooks: boolean = true;
   books: Book[] = [];
 
   constructor(private bookService: BookService) {}
@@ -24,7 +23,6 @@ export class BookGridComponent implements OnInit {
   getBooks(): void {
     this.bookService.getBooks().subscribe((books) => {
       this.books = books;
-      this.isLoadingBooks = false;
     });
   }
 }

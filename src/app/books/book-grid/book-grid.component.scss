@@ -1,32 +1,8 @@
-.book-grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 1rem;
-  // border: 1px red solid;
-  margin-top: 1.5rem;
-}
-
-.book-card {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 200px;
-}
-
-mat-card-content {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-}
-
-p {
-  padding: .5rem;
-}
-
-.book-actions-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 5px;
+  grid-auto-rows: auto;
+  place-content: center;
+  overflow-x: none;
 }

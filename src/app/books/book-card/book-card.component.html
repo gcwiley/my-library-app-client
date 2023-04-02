@@ -1,7 +1,14 @@
-<mat-card>
-  <img src="" alt="" />
-  <mat-card-content>
-    <h4>{{ book.title }}</h4>
-    <h4>{{ book.author }}</h4>
-  </mat-card-content>
+<mat-card class="book-card">
+  <mat-card-header>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+    <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- <mat-card-content>
+    <p>{{ book.summary }}</p>
+  </mat-card-content> -->
+
+  <mat-card-actions>
+    <a mat-button color="primary" routerLink="/projects/{{ book._id }}">OPEN</a>
+  </mat-card-actions>
 </mat-card>

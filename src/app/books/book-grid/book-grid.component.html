@@ -1,26 +1,3 @@
-<div class="book-grid-container">
-
-  <div *ngFor="let book of books">
-
-    <mat-card class="book-card">
-
-      <mat-card-header>
-        <mat-card-title>{{ book.title }}</mat-card-title>
-        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-      </mat-card-header>
-
-      <mat-card-content>
-        <p>{{ book.summary }}</p>
-      </mat-card-content>
-
-      <mat-card-actions class="book-actions-container">
-
-        <a mat-button color="primary" routerLink="/projects/{{ book._id }}">OPEN</a>
-
-      </mat-card-actions>
-
-    </mat-card>
-
-  </div>
-
+<div *ngIf="books" class="book-grid">
+  <app-book-card *ngFor="let item of books" [book]="item"></app-book-card>
 </div>
