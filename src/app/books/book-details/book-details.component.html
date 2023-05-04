@@ -1,75 +1,41 @@
-<section *ngIf="book">
+<mat-card class="book-details">
+  <mat-list dense>
+    <!-- ISBN -->
+    <mat-list-item>
+      <h3 mat-line>ISBN:</h3>
+      <p>
+        <strong>{{ book.isbn }}</strong>
+      </p>
+    </mat-list-item>
 
-    <header>
-        <h2>{{ book.title }}</h2>
-        <h3>A novel by {{ book.author }}</h3>
-        <mat-divider></mat-divider>
-    </header>
+    <mat-divider [inset]="true"></mat-divider>
 
-    <section fxLayout="row" fxLayoutGap="20px">
+    <!-- Publication Date -->
+    <mat-list-item>
+      <h3 mat-line>Published:</h3>
+      <p>
+        <strong>{{ book.publicationDate }}</strong>
+      </p>
+    </mat-list-item>
 
-        <main fxFlex="70">
+    <mat-divider [inset]="true"></mat-divider>
 
-            <!-- BOOK DESCRIPTION -->
-            <mat-card class="book-description">
-                <mat-card-subtitle>Description</mat-card-subtitle>
-                <mat-card-content>
-                    <p>{{ book.summary }}</p>
-                </mat-card-content>
-            </mat-card>
+    <!-- Author -->
+    <mat-list-item>
+      <h3 mat-line>Author:</h3>
+      <p>
+        <strong>{{ book.author }}</strong>
+      </p>
+    </mat-list-item>
 
-        </main>
+    <mat-divider [inset]="true"></mat-divider>
 
-        <aside fxFlex="30">
-
-            <!-- BOOK DETAILS -->
-            <mat-card class="book-details">
-
-                <mat-list dense>
-
-                    <!-- ISBN FOLLOW UP -->
-                    <mat-list-item>
-                        <h3 mat-line>ISBN:</h3>
-                        <p><strong>{{ book.isbn }}</strong></p>
-                    </mat-list-item>
-
-                    <mat-divider [inset]="true"></mat-divider>
-
-                    <!-- Publication Date -->
-                    <mat-list-item>
-                        <h3 mat-line>Published:</h3>
-                        <p><strong>{{ book.publicationDate }}</strong></p>
-                    </mat-list-item>
-
-                    <mat-divider [inset]="true"></mat-divider>
-
-                    <!-- Author -->
-                    <mat-list-item>
-                        <h3 mat-line>Author:</h3>
-                        <p><strong>{{ book.author }}</strong></p>
-                    </mat-list-item>
-
-                    <mat-divider [inset]="true"></mat-divider>
-
-                    <!-- Page Count -->
-                    <mat-list-item>
-                        <h3 mat-line>Page Count:</h3>
-                        <p><strong>{{ book.pageCount }} pages</strong></p>
-                    </mat-list-item>
-
-                </mat-list>
-
-            </mat-card>
-
-            <!-- ACTION BUTTONS -->
-            <div fxLayout="row" fxLayoutAlign="space-evenly" class="action-buttons">
-                <a mat-stroked-button color="primary" routerLink="/">Home</a>
-                <a mat-stroked-button color="accent" [routerLink]="['/edit', book._id]">Edit</a>
-                <button mat-raised-button color="warn" (click)="onDeleteBook(book._id)">Delete</button>
-            </div>
-
-        </aside>
-
-    </section>
-
-</section>
+    <!-- Page Count -->
+    <mat-list-item>
+      <h3 mat-line>Page Count:</h3>
+      <p>
+        <strong>{{ book.pageCount }} pages</strong>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

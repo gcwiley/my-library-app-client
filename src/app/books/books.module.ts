@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 // import material module
 import { MaterialModule } from '../material.module';
 
+// import pipes here
+
 // Book Components
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
@@ -21,7 +23,17 @@ import { BookCardComponent } from './book-card/book-card.component';
     ReactiveFormsModule,
     RouterModule,
   ],
-  declarations: [BookDetailsComponent, BookFormComponent, BookGridComponent, BookCardComponent],
-  exports: [BookDetailsComponent, BookFormComponent, BookGridComponent, BookCardComponent],
+  declarations: [
+    BookDetailsComponent,
+    BookFormComponent,
+    BookGridComponent,
+    BookCardComponent,
+  ],
+  exports: [
+    BookDetailsComponent,
+    BookFormComponent,
+    BookGridComponent,
+    BookCardComponent,
+  ],
 })
 export class BooksComponentsModule {}

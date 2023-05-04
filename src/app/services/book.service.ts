@@ -41,6 +41,9 @@ export class BookService {
     );
   }
 
+  // Search All Books
+  
+
   // GET: book count from database
   getBookCount(): Observable<Object> {
     return this.http.get<any>('/api/book-count');

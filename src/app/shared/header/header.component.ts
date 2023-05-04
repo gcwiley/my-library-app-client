@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  title: string = 'My Library App';
-
   constructor(public auth: AngularFireAuth, private router: Router) {}
 
   onClickSignOut(): void {
