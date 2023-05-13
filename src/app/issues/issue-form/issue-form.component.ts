@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-// Import Comment Service
-import { CommentService } from '../../services/comment.service';
+// import the issue service
+import { IssueService } from 'src/app/services/issue.service';
 
 @Component({
-  selector: 'app-comment-form',
-  templateUrl: './comment-form.component.html',
-  styleUrls: ['./comment-form.component.scss']
+  selector: 'app-issue-form',
+  templateUrl: './issue-form.component.html',
+  styleUrls: ['./issue-form.component.scss']
 })
-export class CommentFormComponent {
+export class IssueFormComponent {
 
-  // create comment form
-  commentForm = this.formBuilder.group({
+  // create issue form
+  issueForm = this.formBuilder.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
     category: ['', Validators.required],
@@ -23,11 +23,11 @@ export class CommentFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private commentService: CommentService
+    private issueService: IssueService
   ) { }
 
-  onSubmitComment() {
-    this.commentService.addComment(this.commentForm.value).subscribe(() => {
+  onSubmitIssue() {
+    this.issueService.addIssue(this.issueForm.value).subscribe(() => {
       // navigates back to homepage
       this.router.navigateByUrl('/')
     })

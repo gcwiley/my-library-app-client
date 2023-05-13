@@ -2,7 +2,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,400&display=swap");
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  // border: red 1px solid;
 }

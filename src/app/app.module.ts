@@ -31,8 +31,8 @@ import { BooksComponentsModule } from './books/books.module';
 // Post Components
 import { PostComponentsModule } from './posts/post.module';
 
-// Comment Components
-import { CommentComponentsModule } from './comments/comment.module';
+// issue Components
+import { IssueComponentsModule } from './issues/issue.module';
 
 // Image Components
 import { ImageComponentModule } from './images/images.module';
@@ -56,7 +56,7 @@ import { SharedComponentsModule } from './shared/shared.module';
     SharedComponentsModule,
     PagesModule,
     PostComponentsModule,
-    CommentComponentsModule,
+    IssueComponentsModule,
     ImageComponentModule,
   ],
   providers: [],

@@ -2,24 +2,103 @@
 
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-$theme-primary: mat.define-palette(mat.$light-blue-palette, 900);
-$theme-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// define the light primary color
+$light-primary: mat.define-palette(
+	mat.$light-blue-palette,
+	$default: 900,
+	$lighter: 100,
+	$darker: 100,
+	$text: 900
+);
 
-// The "warn" palette is optional and defaults to red if not specified.
-$theme-warn: mat.define-palette(mat.$red-palette);
+// define the light accent color
+$light-accent: mat.define-palette(
+	mat.$grey-palette,
+	$default: A200,
+	$lighter: 100,
+	$darker: 100,
+	$text: 900
+);
+
+// define the light warn color - The warn palette is optional
+$light-warn: mat.define-palette(
+	mat.$red-palette,
+	$default: A100,
+	$lighter: 100,
+	$darker: 100,
+	$text: 900
+);
+
+// define the dark primary color
+$dark-primary: mat.define-palette(
+	mat.$light-green-palette,
+	$default: A100,
+	$lighter: 50,
+	$text: 900
+);
+// define the light accent color
+$dark-accent: mat.define-palette(
+	mat.$indigo-palette,
+	$default: 600,
+	$lighter: 500
+);
+
+// every parameter for 'define-typography-config' is optional, the styles for a level will default to Material Design's baseline if unspecified
+
+// font size, line-height, font-weight, font-family, letter spacing
+
+// CUSTOM TOPOGRAPGY
+$custom-typography: mat.define-typography-config(
+	$headline-1:
+		mat.define-typography-level(97px, 1, 100, $letter-spacing: -1.5px),
+	$headline-2:
+		mat.define-typography-level(61px, 1, 100, $letter-spacing: -0.5px),
+	$headline-3: mat.define-typography-level(48px, 1, 400, $letter-spacing: 0px),
+	$headline-4:
+		mat.define-typography-level(34px, 1, 400, $letter-spacing: 0.25px),
+	$headline-5: mat.define-typography-level(24px, 1, 400, $letter-spacing: 0px),
+	$headline-6:
+		mat.define-typography-level(20px, 1, 400, $letter-spacing: 0.15px),
+	$subtitle-1:
+		mat.define-typography-level(16px, 1, 400, $letter-spacing: 0.2px),
+	$subtitle-2:
+		mat.define-typography-level(14px, 1, 500, $letter-spacing: 0.15px),
+	$body-1: mat.define-typography-level(16px, 1, 400, $letter-spacing: 0.5px),
+	$body-2: mat.define-typography-level(14px, 1, 400, $letter-spacing: 0.25px),
+	$caption: mat.define-typography-level(12px, 1, 400, $letter-spacing: 0.4px),
+	$button: mat.define-typography-level(14px, 1, 500, $letter-spacing: 1.25px),
+);
+
+// define the light theme
+$light-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $light-primary,
+			accent: $light-accent,
+			warn: $light-warn,
+		),
+		typography: $custom-typography,
+		density: 0,
+	)
+);
+
+// define the dark theme
+$dark-theme: mat.define-dark-theme(
+	(
+		color: (
+			primary: $dark-primary,
+			accent: $dark-accent,
+		),
+	)
+);
+
+// apply the light theme as default
+@include mat.all-component-themes($light-theme);
+
+// apply the dark theme only when the user prefers dark themes
+@media (prefers-color-scheme: dark) {
+	@include mat.core-color($dark-theme);
+	@include mat.button-color($dark-theme);
+}
 
 
-$theme: mat.define-light-theme((
-    color: (
-      primary: $theme-primary,
-      accent: $theme-accent,
-      warn: $theme-warn,
-    ),
-    typography: mat.define-typography-config(),
-  ));
-
-// Include theme styles for core and each component used in your app.
-// alternatively, you can import and @include the theme mixins for each component
-// that you are using
-@include mat.all-component-themes($theme);
