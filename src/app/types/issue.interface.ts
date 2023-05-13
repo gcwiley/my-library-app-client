@@ -3,7 +3,7 @@ export interface Issue {
   title: string;
   description: string;
   category: string;
-  submittedBy: string;
+  status: string;
   createdAt: string;
   updatedAt: string;
 }

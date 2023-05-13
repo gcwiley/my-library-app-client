@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
-// Import Book Service
+// import the book service
 import { BookService } from '../../services/book.service';
 
-// Import Book Type
+// import the book interface
 import { Book } from '../../types/book.interface';
-
-// Import Book Genre Type and Value
-// import { BookGenre, BOOK_GENRES } from '../../types/book';
 
 @Component({
   selector: 'app-book-form',

@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-// Import the Book Model
+// import the book interface
 import { Book } from '../types/book.interface';
 
-// Import the Message Service
+// import the message service
 import { MessageService } from '../services/message.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  private booksUrl = '/api/books'; // URL to web api
+  private booksUrl = '/api/books'; // url to web api
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -27,7 +27,7 @@ export class BookService {
   // GET: all books from the server
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl).pipe(
-      tap((_) => this.log('fetched books')),
+      tap(() => this.log('fetched books')),
       catchError(this.handleError<Book[]>('getBooks', []))
     );
   }
@@ -36,13 +36,14 @@ export class BookService {
   getBook(id: string): Observable<Book> {
     const url = `${this.booksUrl}/${id}`;
     return this.http.get<Book>(url).pipe(
-      tap((_) => this.log(`fetched book id=${id}`)),
+      tap(() => this.log(`fetched book id=${id}`)),
       catchError(this.handleError<Book>(`getBook id=${id}`))
     );
   }
 
-  // Search All Books
-  
+  // GET: books whose name contains search term - SEARCH
+
+
 
   // GET: book count from database
   getBookCount(): Observable<Object> {

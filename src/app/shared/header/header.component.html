@@ -1,7 +1,5 @@
 <mat-toolbar color="primary">
-
   <mat-toolbar-row class="main-header">
-
     <a mat-icon-button routerLink="/" aria-label="home icon">
       <mat-icon>book</mat-icon>
     </a>
@@ -15,11 +13,9 @@
     </button>
 
     <mat-menu #menu="matMenu">
-
       <!-- if user is signed in -->
 
       <ng-container *ngIf="auth.user | async as user; else showSignIn">
-
         <!-- my profile page -->
         <a mat-menu-item routerLink="/profile">
           <mat-icon>dashboard</mat-icon>
@@ -31,7 +27,6 @@
           <mat-icon>logout</mat-icon>
           <span>Sign Out</span>
         </button>
-
       </ng-container>
 
       <!-- if user is NOT signed in -->
@@ -40,17 +35,12 @@
           <mat-icon>login</mat-icon>
           <span>Sign In</span>
         </a>
-
       </ng-template>
-
-
     </mat-menu>
-
   </mat-toolbar-row>
 
-  <mat-toolbar-row color="accent" class="announcement-banner">
-    <h6>This web application is currently in development.</h6>
+  <mat-toolbar-row class="announcement-banner">
+    <h6>My Library App is currently in development.</h6>
+    <a routerLink="/feedback">Submit an issue</a>
   </mat-toolbar-row>
-
-
 </mat-toolbar>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // forms
 
-// import material module
+// import the material module
 import { MaterialModule } from '../material.module';
 
 // shared Components

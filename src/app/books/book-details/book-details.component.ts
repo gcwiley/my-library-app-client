@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
 
-// Import Book Type
+// import the book interface
 import { Book } from '../../types/book.interface';
 
-// Import Book Service
+// import the book service
 import { BookService } from '../../services/book.service';
 
 @Component({

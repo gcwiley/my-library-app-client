@@ -1,0 +1,12 @@
+@media (min-width: 45em) {
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  main article {
+    flex: 2;
+  }
+  main aside {
+    flex: 1;
+  }
+}

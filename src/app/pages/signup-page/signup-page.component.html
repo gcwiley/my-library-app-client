@@ -1,28 +1,33 @@
-<form [formGroup]="signupForm" novalidate>
-  <mat-card class="signin-form">
-    <mat-card-content>
-      <mat-card-title>Sign In</mat-card-title>
-      <mat-card-subtitle
-        >Please enter your username and password</mat-card-subtitle
-      >
+<app-header></app-header>
+
+<main class="signup-page-container">
+
+  <form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmitSignUp()">
+
+    <mat-card class="signin-form">
+
+      <h3>Sign Up</h3>
+
+      <h4>Create your account</h4>
 
       <!-- EMAIL (email) -->
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Email</mat-label>
+        <mat-label>EMAIL ADDRESS</mat-label>
         <input matInput type="email" formControlName="email" />
         <mat-error>A email address is <strong>required</strong></mat-error>
       </mat-form-field>
 
       <!-- PASSWORD (password) -->
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Password</mat-label>
+        <mat-label>PASSWORD</mat-label>
         <input matInput type="password" formControlName="password" />
         <mat-error>A password is <strong>required</strong></mat-error>
       </mat-form-field>
-    </mat-card-content>
 
-    <mat-card-actions>
-      <button mat-flat-button color="primary" type="submit">Sign In</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+      <div class="card-actions">
+        <button mat-flat-button color="primary" type="submit">Sign Up</button>
+        <a mat-button color="accent">Sign into an existing account</a>
+      </div>
+    </mat-card>
+  </form>
+</main>

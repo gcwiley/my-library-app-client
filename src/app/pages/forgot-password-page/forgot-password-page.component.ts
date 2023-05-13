@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin-page.component.html',
-  styleUrls: ['./signin-page.component.scss'],
+  selector: 'app-forgot-password-page',
+  templateUrl: './forgot-password-page.component.html',
+  styleUrls: ['./forgot-password-page.component.scss'],
 })
-export class SigninPageComponent {
+export class ForgotPasswordPageComponent {
   // inject the router, form builder, and auth service
   constructor(
     private router: Router,
@@ -18,24 +18,19 @@ export class SigninPageComponent {
     private authService: AuthService
   ) {}
 
-  // create the signin form
-  signinForm = this.formBuilder.group({
+  // create the password reset form
+  passwordResetForm = this.formBuilder.group({
     email: ['', Validators.required],
-    password: ['', Validators.required],
   });
 
-  // sign in user with email and password
-  onSubmitSignIn() {
+  // sends password reset email to user
+  onSubmitResetPassword() {
     this.authService
-      .SigninUserwithEmailAndPassword(
-        this.signinForm.value.email!,
-        this.signinForm.value.password!
-      )
+      .SendPasswordResetEmail(this.passwordResetForm.value.email!)
       .then(() => {
         // navigates user to the main page
         this.router.navigateByUrl('/');
       })
-      // if error, display the error message
       .catch((error) => {
         window.alert(error.message);
       });

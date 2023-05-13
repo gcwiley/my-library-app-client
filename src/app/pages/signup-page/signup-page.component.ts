@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+// import the auth service
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,14 +11,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupPageComponent {
+  // inject the router, form builder, and auth service
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
+  // create the sign up form
   signupForm = this.formBuilder.group({
-    name: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
   });
 
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private router: Router
-  ) {}
+  // sign up user with email and password
+  onSubmitSignUp() {
+    this.authService
+      .SignUpUser(this.signupForm.value.email!, this.signupForm.value.password!)
+      .then(() => {
+        // navigates user to the main page
+        this.router.navigateByUrl('/');
+      })
+      // if error, display the error message
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
 }

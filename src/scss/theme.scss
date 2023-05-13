@@ -2,7 +2,7 @@
 
 @include mat.core();
 
-// define the light primary color
+// define the light theme primary color
 $light-primary: mat.define-palette(
 	mat.$light-blue-palette,
 	$default: 900,
@@ -11,7 +11,7 @@ $light-primary: mat.define-palette(
 	$text: 900
 );
 
-// define the light accent color
+// define the light theme accent color
 $light-accent: mat.define-palette(
 	mat.$grey-palette,
 	$default: A200,
@@ -20,7 +20,7 @@ $light-accent: mat.define-palette(
 	$text: 900
 );
 
-// define the light warn color - The warn palette is optional
+// define the light them warn color
 $light-warn: mat.define-palette(
 	mat.$red-palette,
 	$default: A100,
@@ -29,23 +29,20 @@ $light-warn: mat.define-palette(
 	$text: 900
 );
 
-// define the dark primary color
+// define the dark theme primary color
 $dark-primary: mat.define-palette(
 	mat.$light-green-palette,
 	$default: A100,
 	$lighter: 50,
+  $darker: 100,
 	$text: 900
 );
-// define the light accent color
+// define the dark theme accent color
 $dark-accent: mat.define-palette(
 	mat.$indigo-palette,
 	$default: 600,
 	$lighter: 500
 );
-
-// every parameter for 'define-typography-config' is optional, the styles for a level will default to Material Design's baseline if unspecified
-
-// font size, line-height, font-weight, font-family, letter spacing
 
 // CUSTOM TOPOGRAPGY
 $custom-typography: mat.define-typography-config(
