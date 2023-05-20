@@ -1,31 +1,31 @@
 .signin-page-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aliceblue;
 }
 
 .signin-form {
-	width: 400px;
-	border-radius: 10px;
-	box-shadow: none;
-	border: 0.5px solid rgb(193, 193, 193);
-	padding: 2rem;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: none;
+  border: 0.5px solid rgb(193, 193, 193);
+  padding: 2rem;
 }
 
 .full-width {
-	width: 100%;
-	margin: 0.4rem 0;
+  width: 100%;
+  margin: 0.4rem 0;
 }
 
 .card-actions {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-button {
-	flex: 1;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+.signin-button {
+  flex: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }

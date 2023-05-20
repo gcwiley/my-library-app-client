@@ -42,8 +42,20 @@ export class BookService {
   }
 
   // GET: books whose name contains search term - SEARCH
-
-
+  searchBook(term: string): Observable<Book[]> {
+		if (!term.trim()) {
+			// if no search term, return an empty project arrary
+			return of([]);
+		}
+		return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
+			tap((x) =>
+				x.length
+					? this.log(`found books matching "${term}"`)
+					: this.log(`no books matching "${term}"`)
+			),
+			catchError(this.handleError<Book[]>('search Books', []))
+		);
+	}
 
   // GET: book count from database
   getBookCount(): Observable<Object> {

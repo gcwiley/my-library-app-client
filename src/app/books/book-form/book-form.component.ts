@@ -18,7 +18,7 @@ export class BookFormComponent implements OnInit {
   private id!: string | any;
   private book!: Book;
 
-  // create book form
+  // create the book form
   bookForm = this.formBuilder.group({
     title: ['', Validators.required],
     author: ['', Validators.required],

@@ -17,9 +17,10 @@ export class SignupPageComponent {
     private formBuilder: FormBuilder,
     private authService: AuthService
   ) {}
+
   // create the sign up form
   signupForm = this.formBuilder.group({
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
     password: ['', Validators.required],
   });
 
@@ -35,5 +36,13 @@ export class SignupPageComponent {
       .catch((error) => {
         window.alert(error.message);
       });
+  }
+
+  getErrorMessage() {
+    if (this.signupForm.hasError('required')) {
+      return 'Please enter a email address';
+    }
+
+    return this.signupForm.hasError('email') ? 'Not a valid email address' : '';
   }
 }

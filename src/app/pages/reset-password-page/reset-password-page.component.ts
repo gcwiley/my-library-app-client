@@ -20,7 +20,7 @@ export class ResetPasswordPageComponent {
 
   // create the password reset form
   passwordResetForm = this.formBuilder.group({
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
   });
 
   // sends password reset email to user

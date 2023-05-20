@@ -1,34 +1,32 @@
 <app-header></app-header>
 
 <main class="signup-page-container">
-
   <form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmitSignUp()">
-
-    <mat-card class="signin-form">
-
+    <mat-card class="signup-form">
       <h3>Sign Up</h3>
 
       <h4>Create your account</h4>
 
       <!-- EMAIL (email) -->
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>EMAIL ADDRESS</mat-label>
+        <mat-label>Email address</mat-label>
         <input matInput type="email" formControlName="email" />
-        <mat-error>A email address is <strong>required</strong></mat-error>
+        <mat-error *ngIf="signupForm.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
 
       <!-- PASSWORD (password) -->
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>PASSWORD</mat-label>
+        <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password" />
-        <mat-error>A password is <strong>required</strong></mat-error>
+        <mat-error *ngIf="signupForm.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
+
+      <!-- TERMS OF SERVICE -->
 
       <div class="card-actions">
         <button mat-flat-button color="primary" type="submit">Sign Up</button>
         <a mat-button color="accent">Sign into an existing account</a>
       </div>
-      
     </mat-card>
   </form>
 </main>

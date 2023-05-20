@@ -4,7 +4,7 @@
 
 // define the light theme primary color
 $light-primary: mat.define-palette(
-  mat.$light-blue-palette,
+  mat.$teal-palette,
   $default: 900,
   $lighter: 100,
   $darker: 100,
@@ -14,7 +14,7 @@ $light-primary: mat.define-palette(
 // define the light theme accent color
 $light-accent: mat.define-palette(
   mat.$grey-palette,
-  $default: A200,
+  $default: 900,
   $lighter: 100,
   $darker: 100,
   $text: 900
@@ -23,7 +23,7 @@ $light-accent: mat.define-palette(
 // define the light theme warn color
 $light-warn: mat.define-palette(
   mat.$red-palette,
-  $default: A100,
+  $default: 900,
   $lighter: 100,
   $darker: 100,
   $text: 900
@@ -32,7 +32,7 @@ $light-warn: mat.define-palette(
 // define the dark theme primary color
 $dark-primary: mat.define-palette(
   mat.$light-green-palette,
-  $default: A100,
+  $default: 900,
   $lighter: 50,
   $darker: 100,
   $text: 900
@@ -49,7 +49,7 @@ $dark-accent: mat.define-palette(
 // define the dark theme warn color
 $dark-warn: mat.define-palette(
   mat.$red-palette,
-  $default: A100,
+  $default: 900,
   $lighter: 100,
   $darker: 100,
   $text: 900
