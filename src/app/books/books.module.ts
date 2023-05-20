@@ -6,10 +6,10 @@ import { RouterModule } from '@angular/router';
 // import the material module
 import { MaterialModule } from '../material.module';
 
-// import pipes here
+// import pipes module here
 import { PipesModule } from '../pipes/pipe.module';
 
-// Book Components
+// import book components
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookGridComponent } from './book-grid/book-grid.component';

@@ -11,6 +11,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./signin-page.component.scss'],
 })
 export class SigninPageComponent {
+
   // inject the router, form builder, and auth service
   constructor(
     private router: Router,
@@ -20,11 +21,15 @@ export class SigninPageComponent {
 
   // create the signin form
   signinForm = this.formBuilder.group({
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
     password: ['', Validators.required],
   });
 
+  // invalid email error message - FIX THIS!
+
+
   // sign in user with email and password
+  // if successful, navigates user to the main page
   onSubmitSignIn() {
     this.authService
       .SigninUserwithEmailAndPassword(

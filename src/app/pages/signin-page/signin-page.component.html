@@ -1,11 +1,8 @@
 <app-header></app-header>
 
 <main class="signin-page-container">
-
   <form [formGroup]="signinForm" novalidate (ngSubmit)="onSubmitSignIn()">
-
     <mat-card class="signin-form">
-
       <h3 class="mat-headline-3">Sign In</h3>
 
       <h4 class="mat-headline-4">Get access to your account</h4>
@@ -19,7 +16,8 @@
           formControlName="email"
           placeholder="name@example.com"
         />
-        <mat-error>Please enter your email address.</mat-error>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error>Invalid Email</mat-error>
       </mat-form-field>
 
       <!-- PASSWORD (password) -->
@@ -36,16 +34,15 @@
 
       <div>
         <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-        <a mat-button color="primary" routerLink="/reset-password">Forgot Password?</a>
+        <a mat-button color="primary" routerLink="/reset-password"
+          >Forgot Password?</a
+        >
       </div>
 
       <div class="card-actions">
         <button mat-flat-button color="primary" type="submit">Sign In</button>
       </div>
       <a mat-button color="primary" routerLink="/signup">Create an account</a>
-
     </mat-card>
-    
   </form>
-
 </main>

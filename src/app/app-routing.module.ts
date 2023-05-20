@@ -16,7 +16,7 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 // import the forgot password page
-import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
+import { ForgotPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 
 // import the main page
 import { MainPageComponent } from './pages/main-page/main-page.component';

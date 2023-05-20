@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-forgot-password-page',
-  templateUrl: './forgot-password-page.component.html',
-  styleUrls: ['./forgot-password-page.component.scss'],
+  selector: 'app-reset-password-page',
+  templateUrl: './reset-password-page.component.html',
+  styleUrls: ['./reset-password-page.component.scss'],
 })
-export class ForgotPasswordPageComponent {
+export class ResetPasswordPageComponent {
   // inject the router, form builder, and auth service
   constructor(
     private router: Router,

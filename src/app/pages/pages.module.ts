@@ -19,7 +19,7 @@ import { IssueComponentsModule } from '../issues/issue.module';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
-import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
+import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SigninPageComponent } from './signin-page/signin-page.component';
@@ -42,7 +42,7 @@ import { SupportPageComponent } from './support-page/support-page.component';
     AboutPageComponent,
     CreatePageComponent,
     DetailsPageComponent,
-    ForgotPasswordPageComponent,
+    ResetPasswordPageComponent,
     MainPageComponent,
     NotFoundPageComponent,
     SigninPageComponent,
@@ -53,7 +53,7 @@ import { SupportPageComponent } from './support-page/support-page.component';
     AboutPageComponent,
     CreatePageComponent,
     DetailsPageComponent,
-    ForgotPasswordPageComponent,
+    ResetPasswordPageComponent,
     MainPageComponent,
     NotFoundPageComponent,
     SigninPageComponent,

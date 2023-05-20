@@ -1,41 +1,43 @@
-<mat-card class="book-details">
-  <mat-list dense>
-    <!-- ISBN -->
-    <mat-list-item>
-      <h3 mat-line>ISBN:</h3>
-      <p>
-        <strong>{{ book.isbn }}</strong>
-      </p>
-    </mat-list-item>
+<mat-list class="book-details">
+  <div mat-subheader>Book Details</div>
 
-    <mat-divider [inset]="true"></mat-divider>
+  <mat-divider></mat-divider>
 
-    <!-- Publication Date -->
-    <mat-list-item>
-      <h3 mat-line>Published:</h3>
-      <p>
-        <strong>{{ book.publicationDate }}</strong>
-      </p>
-    </mat-list-item>
+  <!-- ISBN -->
+  <mat-list-item>
+    <div matListItemLine>ISBN</div>
+    <div matListItemMeta>
+      <strong>{{ book.isbn }}</strong>
+    </div>
+  </mat-list-item>
 
-    <mat-divider [inset]="true"></mat-divider>
+  <!-- PUBLICATION DATE -->
+  <mat-list-item>
+    <div matListItemLine>Publication Date</div>
+    <div matListItemMeta>
+      <strong>{{ book.publicationDate }}</strong>
+    </div>
+  </mat-list-item>
 
-    <!-- Author -->
-    <mat-list-item>
-      <h3 mat-line>Author:</h3>
-      <p>
-        <strong>{{ book.author }}</strong>
-      </p>
-    </mat-list-item>
+  <!-- AUTHOR -->
+  <mat-list-item>
+    <div matListItemLine>Author</div>
+    <div matListItemMeta>
+      <strong>{{ book.author }}</strong>
+    </div>
+  </mat-list-item>
 
-    <mat-divider [inset]="true"></mat-divider>
+  <!-- PAGE COUNT -->
+  <mat-list-item>
+    <div matListItemLine>ISBN</div>
+    <div matListItemMeta>
+      <strong>{{ book.pageCount }}</strong>
+    </div>
+  </mat-list-item>
 
-    <!-- Page Count -->
-    <mat-list-item>
-      <h3 mat-line>Page Count:</h3>
-      <p>
-        <strong>{{ book.pageCount }} pages</strong>
-      </p>
-    </mat-list-item>
-  </mat-list>
-</mat-card>
+  <!-- LAST UPDATED -->
+	<mat-list-item>
+		<div matListItemLine>Last Updated</div>
+		<div matListItemMeta><strong>{{ book.updatedAt | date }}</strong></div>
+	</mat-list-item>
+</mat-list>

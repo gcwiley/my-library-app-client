@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+
+// import the auth service
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(public auth: AngularFireAuth, private router: Router) {}
+  constructor(public auth: AuthService, private router: Router) {}
 
   onClickSignOut(): void {
     this.auth.signOut().then(() => this.router.navigateByUrl('/signin'));
