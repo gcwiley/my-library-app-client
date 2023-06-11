@@ -28,8 +28,8 @@ import { SigninPageComponent } from './pages/signin-page/signin-page.component';
 // import the sign up page
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
-// import the support page
-import { SupportPageComponent } from './pages/support-page/support-page.component';
+// import the issues page
+import { IssuesPageComponent } from './pages/issues-page/issues-page.component';
 
 const routes: Routes = [
   {
@@ -49,8 +49,8 @@ const routes: Routes = [
     canActivate: [RouteGuard],
   },
   {
-    path: 'support',
-    component: SupportPageComponent,
+    path: 'issues',
+    component: IssuesPageComponent,
     canActivate: [RouteGuard],
   },
   { path: 'signin', component: SigninPageComponent },

@@ -1,3 +1,4 @@
+// define the book type
 export interface Book {
     _id?: string;
     title: string,

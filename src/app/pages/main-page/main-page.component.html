@@ -1,20 +1,22 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="
-      (isHandset$ | async) || (isSmall$ | async) ? 'dialog' : 'navigation'
-    "
-    [mode]="(isHandset$ | async) || (isSmall$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) || (isSmall$ | async) === false"
-  >
-    <mat-toolbar>My Library App</mat-toolbar>
+<app-header></app-header>
+<app-announcement-banner></app-announcement-banner>
 
-    <app-nav-menu></app-nav-menu>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-header></app-header>
+<div class="main-page-container">
+  <app-hero></app-hero>
+
+  <main>
+
+    <div>
+      <h2 class="mat-headline-4">{{ titleText}}</h2>
+      <p class="mat-body-1">{{ bodyText}}</p>
+    </div>
+
+    <mat-divider></mat-divider>
+
     <app-book-grid></app-book-grid>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+
+  </main>
+
+</div>
+
+<app-footer></app-footer>

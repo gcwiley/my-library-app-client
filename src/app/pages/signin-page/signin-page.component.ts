@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 // import the auth service
 import { AuthService } from '../../services/auth.service';
 
+// Signin Component
 @Component({
   selector: 'app-signin',
   templateUrl: './signin-page.component.html',
@@ -23,6 +24,16 @@ export class SigninPageComponent {
     email: ['', Validators.required, Validators.email],
     password: ['', Validators.required],
   });
+
+  getErrorMessage() {
+    if (this.signinForm.get('email')?.hasError('required')) {
+      return 'Please enter a valid e-mail address.';
+    }
+
+    return this.signinForm.get('email')?.hasError('email')
+      ? 'Not a valid email address'
+      : '';
+  }
 
   // sign in user with email and password
   // if successful, navigates user to the main page

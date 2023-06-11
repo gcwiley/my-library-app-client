@@ -7,12 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // forms
 import { MaterialModule } from '../material.module';
 
 // shared Components
+import { AnnouncementBannerComponent } from './announcement-banner/announcement-banner.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { LogoComponent } from './logo/logo.component';
-import { BannerComponent } from './banner/banner.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 // add new shared components here
 
 @NgModule({
@@ -24,14 +24,15 @@ import { BannerComponent } from './banner/banner.component';
     ReactiveFormsModule,
   ],
   declarations: [
+    AnnouncementBannerComponent,
     FooterComponent,
     HeaderComponent,
     HeroComponent,
     NavMenuComponent,
     LogoComponent,
-    BannerComponent,
   ],
   exports: [
+    AnnouncementBannerComponent,
     FooterComponent,
     HeaderComponent,
     HeroComponent,

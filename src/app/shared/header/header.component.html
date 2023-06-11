@@ -1,21 +1,22 @@
 <mat-toolbar color="primary">
+  <!-- BOOK ICON -->
   <a mat-icon-button routerLink="/" aria-label="book icon">
     <mat-icon>book</mat-icon>
   </a>
 
+  <!-- APP TITLE -->
   <span class="mat-headline-4">My Library App</span>
 
   <span class="spacer"></span>
 
-  <!-- toggle theme button -->
+  <!-- toggle theme button - FIX THIS! -->
   <button
     mat-icon-button
     (click)="toggleTheme()"
     matTooltip="Toggle theme"
     attr.aria-label="Switch to {{ isDark ? 'light' : 'dark' }} theme"
     color="accent"
-    disabled
-  >
+    disabled>
     <mat-icon>brightness_medium</mat-icon>
   </button>
 
@@ -34,10 +35,10 @@
         <span>My Profile</span>
       </a>
 
-      <!-- support page -->
-      <a mat-menu-item routerLink="/support">
+      <!-- issue page -->
+      <a mat-menu-item routerLink="/issues">
         <mat-icon>bug_report</mat-icon>
-        <span>Support Page</span>
+        <span>Submit an Issue</span>
       </a>
 
       <!-- sign out button -->
