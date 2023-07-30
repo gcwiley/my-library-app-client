@@ -13,29 +13,17 @@ import { AngularFireModule } from '@angular/fire/compat';
 // Import Firebase Environmental Variables
 import { environment } from '../environments/environment';
 
-// Angular Material Import
-import { MaterialModule } from './material.module';
-
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
 
-// PAGES
-import { PagesModule } from './pages/pages.module';
-
-// Book Components
-import { BooksComponentsModule } from './books/books.module';
-
 // Post Components
 import { PostComponentsModule } from './posts/post.module';
 
 // issue Components
-import { IssueComponentsModule } from './issues/issue.module';
-
-// Image Components
-import { ImageComponentModule } from './images/images.module';
+import { IssueComponentsModule } from './issues';
 
 // Shared Component
 import { SharedComponentsModule } from './shared/shared.module';
@@ -47,7 +35,6 @@ import { SharedComponentsModule } from './shared/shared.module';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     MatNativeDateModule,

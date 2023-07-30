@@ -1,4 +1,4 @@
-// define the issue type
+// define the issue interface
 export interface Issue {
   _id?: string;
   title: string;
@@ -9,11 +9,14 @@ export interface Issue {
   updatedBy: string;
 }
 
-// define the issue categories
-export interface Categories {
+// define the issue "category" interface
+export interface IssueCategory {
   value: string;
   viewValue: string;
 }
 
-// define the data values for issue categories
-export const categories: Categories[] = [{ value: 'test', viewValue: 'Test' }];
+// define the issue "status" interface
+export interface IssueStatus {
+  value: string;
+  viewValue: string;
+}

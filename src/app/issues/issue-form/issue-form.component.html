@@ -11,7 +11,7 @@
 				<mat-form-field class="full-width" appearance="outline">
 					<mat-label>Issue Title</mat-label>
 					<input matInput type="text" formControlName="title" />
-					<mat-error>Please enter a issue title.</mat-error>
+					<mat-error *ngIf="issueForm.controls['title'].hasError('required')">Please enter a issue title.</mat-error>
 				</mat-form-field>
 			</div>
 			<!-- row -->
