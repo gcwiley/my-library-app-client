@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-book-search',
   templateUrl: './book-search.component.html',
   styleUrls: ['./book-search.component.scss'],
+  standalone: true,
 })
 export class BookSearchComponent {}

@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+
+// import angular material modules
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+// import app header
+import { HeaderComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from '../../services/auth.service';
@@ -9,6 +18,15 @@ import { AuthService } from '../../services/auth.service';
   selector: 'app-reset-password-page',
   templateUrl: './reset-password-page.component.html',
   styleUrls: ['./reset-password-page.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    HeaderComponent,
+  ],
 })
 export class ResetPasswordPageComponent {
   // inject the router, form builder, and auth service

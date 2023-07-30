@@ -12,6 +12,7 @@ import { Book } from '../../types/book.interface';
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
   styleUrls: ['./book-form.component.scss'],
+  standalone: true,
 })
 export class BookFormComponent implements OnInit {
   public mode: string = 'create';

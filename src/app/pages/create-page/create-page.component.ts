@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
 	selector: 'app-create-page',
 	templateUrl: './create-page.component.html',
 	styleUrls: ['./create-page.component.scss'],
+	standalone: true,
 })
 export class CreatePageComponent {}

@@ -5,6 +5,8 @@ import { VERSION } from '@angular/material/core';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
+  standalone: true,
+  
 })
 export class FooterComponent {
   version = VERSION.full;

@@ -10,6 +10,7 @@ import { Book } from 'src/app/types/book.interface';
   selector: 'app-recent-books',
   templateUrl: './recent-books.component.html',
   styleUrls: ['./recent-books.component.scss'],
+  standalone: true,
 })
 export class RecentBooksComponent implements OnInit {
   recentBooks!: Book[];
