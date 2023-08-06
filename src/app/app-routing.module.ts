@@ -4,29 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 // import the route guard
 import { RouteGuard } from './guards/route.guard';
 
-// import the about page
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-
-// import the create page
-import { CreatePageComponent } from './pages/create-page/create-page.component';
-
-// import the details page
-import { DetailsPageComponent } from './pages/details-page/details-page.component';
-
-// import the main page
-import { MainPageComponent } from './pages/main-page/main-page.component';
-
-// import the not found page
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-
-// import the forgot password page
-import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
-
-// import the sign in page
-import { SigninPageComponent } from './pages/signin-page/signin-page.component';
-
-// import the sign up page
-import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+// import pages
+import {
+  AboutPageComponent,
+  CreatePageComponent,
+  DetailsPageComponent,
+  MainPageComponent,
+  NotFoundPageComponent,
+  ProfilePageComponent,
+  ResetPasswordPageComponent,
+  SigninPageComponent,
+  SignupPageComponent,
+} from './pages';
 
 const routes: Routes = [
   {
@@ -49,6 +38,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent },
   { path: 'reset-password', component: ResetPasswordPageComponent },
   { path: 'about', component: AboutPageComponent, canActivate: [RouteGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [RouteGuard] },
   { path: '**', component: NotFoundPageComponent },
 ];
 

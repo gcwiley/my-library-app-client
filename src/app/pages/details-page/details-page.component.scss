@@ -1,16 +1,20 @@
 .container {
-  max-width: 1000px;
+  height: 100vh;
+  max-width: 1320px;
+  margin: auto;
 }
 
-@media (min-width: 45em) {
-  main {
-    display: flex;
-    flex-direction: row;
-  }
-  main article {
-    flex: 2;
-  }
-  main aside {
-    flex: 1;
-  }
+.book-description {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.book-details {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
 }

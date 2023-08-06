@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+
+$my-palette: mat.define-palette(mat.$blue-palette);
+
+.recent-books {
+	box-shadow: none;
+	border: 0.5px gainsboro solid;
+	background: mat.get-color-from-palette($my-palette, 50);
+	color: mat.get-color-from-palette($my-palette, 700);
+}
