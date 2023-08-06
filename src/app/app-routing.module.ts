@@ -28,9 +28,6 @@ import { SigninPageComponent } from './pages/signin-page/signin-page.component';
 // import the sign up page
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
-// import the issues page
-import { IssuesPageComponent } from './pages/issues-page/issues-page.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -46,11 +43,6 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: CreatePageComponent,
-    canActivate: [RouteGuard],
-  },
-  {
-    path: 'issues',
-    component: IssuesPageComponent,
     canActivate: [RouteGuard],
   },
   { path: 'signin', component: SigninPageComponent },

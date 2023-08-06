@@ -1,7 +1,5 @@
 <form [formGroup]="bookForm" novalidate (ngSubmit)="onSaveBook()">
   <mat-card class="book-form">
-    
-    <!-- fffff -->
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Title</mat-label>
       <input matInput type="text" formControlName="title" />
@@ -12,7 +10,9 @@
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Author</mat-label>
       <input matInput type="text" formControlName="author" />
-      <mat-error *ngIf="bookForm.hasError('required')">A author is <strong>required.</strong></mat-error>
+      <mat-error *ngIf="bookForm.hasError('required')"
+        >A author is <strong>required.</strong></mat-error
+      >
     </mat-form-field>
 
     <!-- ISBN (isbn) -->
@@ -28,8 +28,7 @@
       <input
         matInput
         [matDatepicker]="picker"
-        formControlName="publicationDate"
-      />
+        formControlName="publicationDate" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -60,8 +59,7 @@
         mat-flat-button
         color="primary"
         type="submit"
-        [disabled]="!bookForm.valid"
-      >
+        [disabled]="!bookForm.valid">
         Add Book
       </button>
     </mat-card-actions>

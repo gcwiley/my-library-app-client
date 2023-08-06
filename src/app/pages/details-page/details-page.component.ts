@@ -23,6 +23,13 @@ import { BookService } from 'src/app/services/book.service';
   templateUrl: './details-page.component.html',
   styleUrls: ['./details-page.component.scss'],
   standalone: true,
+  imports: [
+    MatGridListModule,
+    MatCardModule,
+    HeaderComponent,
+    FooterComponent,
+    BookDetailsComponent,
+  ],
 })
 export class DetailsPageComponent {
   // set the default values of the grid list here

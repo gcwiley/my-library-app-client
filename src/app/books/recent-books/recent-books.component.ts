@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+// import angular material
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 // import the book service
 import { BookService } from 'src/app/services/book.service';
@@ -11,6 +16,7 @@ import { Book } from 'src/app/types/book.interface';
   templateUrl: './recent-books.component.html',
   styleUrls: ['./recent-books.component.scss'],
   standalone: true,
+  imports: [CommonModule, MatCardModule, MatListModule],
 })
 export class RecentBooksComponent implements OnInit {
   recentBooks!: Book[];

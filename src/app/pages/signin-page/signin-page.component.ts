@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 // import angular material modules
 import { MatCardModule } from '@angular/material/card';
@@ -11,8 +11,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-// import app header
-import { HeaderComponent } from 'src/app/shared';
+// import shared components
+import { HeaderComponent, AnnouncementBannerComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from '../../services/auth.service';
@@ -33,6 +33,8 @@ import { AuthService } from '../../services/auth.service';
     MatButtonModule,
     MatIconModule,
     HeaderComponent,
+    AnnouncementBannerComponent,
+    RouterModule,
   ],
 })
 export class SigninPageComponent {

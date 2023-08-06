@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router'
+import { CommonModule } from '@angular/common';
+
+// import angular material modules
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 // import the book interface
 import { Book } from '../../types/book.interface';
@@ -13,42 +17,23 @@ import { BookService } from '../../services/book.service';
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.scss'],
   standalone: true,
+  imports: [CommonModule, MatListModule, MatCardModule],
 })
 export class BookDetailsComponent implements OnInit {
-
-  isLoading = true;
-  book: Book | any;
+  book!: Book;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private bookService: BookService,
-  ) { }
+    private bookService: BookService
+  ) {}
 
   ngOnInit(): void {
-    this.getBook()
+    this.getBook();
   }
 
   // Get Book by id
   getBook(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.bookService.getBook(id).subscribe((book) => this.book = book)
-    this.isLoading = false
-  }
-
-  onDeleteBook(id: string) {
-    this.bookService.deleteBook(id).subscribe(() => {
-      // navigates back to home page
-      this.router.navigateByUrl('/')
-    })
-  }
-
-  goHome() {
-    // navigates back to homepage
-    this.router.navigateByUrl('/')
-  }
-
-  onEditBook() {
-    alert('Edit Book')
+    const id = this.route.snapshot.paramMap.get('id') ?? '';
+    this.bookService.getBook(id).subscribe((book) => (this.book = book));
   }
 }

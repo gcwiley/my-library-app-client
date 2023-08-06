@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-// import angular material
+// import angular material modules
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({

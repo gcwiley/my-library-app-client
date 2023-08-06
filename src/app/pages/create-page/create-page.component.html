@@ -1,14 +1,19 @@
 <app-header></app-header>
 
-<main class="container">
+<mat-grid-list class="container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
 
-	<article>
+	<mat-grid-tile [colspan]="colspan">
+  
+	  <mat-card>
 		<app-book-form></app-book-form>
-	</article>
+	  </mat-card>
+  
+	</mat-grid-tile>
+  
+	<mat-grid-tile>
+	  <app-recent-books></app-recent-books>
+	</mat-grid-tile>
+  
+  </mat-grid-list>
 
-	<aside>
-		<app-recent-books></app-recent-books>
-	</aside>
-
-</main>
 <app-footer></app-footer>
