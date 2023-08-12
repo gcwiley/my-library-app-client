@@ -9,10 +9,3 @@
   border: 1px red solid;
   padding: 1rem;
 }
-
-// FIX THIS!
-@media (max-width: 720px) {
-  .container {
-    flex-direction: column;
-  }
-}

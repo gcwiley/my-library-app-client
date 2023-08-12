@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // used for both type of Forms
 import { HttpClientModule } from '@angular/common/http';
 
-// set up firebase
+// sets up firebase
 import { AngularFireModule } from '@angular/fire/compat';
 
 // load env variables - follow up

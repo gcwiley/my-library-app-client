@@ -6,14 +6,20 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 
 // import shared components
-import { HeaderComponent, FooterComponent } from 'src/app/shared';
+import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
 @Component({
   selector: 'app-about-page',
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.scss'],
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, HeaderComponent, FooterComponent],
+  imports: [
+    MatGridListModule,
+    MatCardModule,
+    HeaderComponent,
+    AnnouncementBannerComponent,
+    FooterComponent,
+  ],
 })
 export class AboutPageComponent implements OnInit {
   // set the default values of the grid list here

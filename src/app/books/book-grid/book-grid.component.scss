@@ -1,8 +1,21 @@
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 33%);
-  gap: 5px;
-  grid-auto-rows: auto;
-  place-content: center;
-  overflow-x: none;
+.grid-container {
+  max-width: 1320px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.book-card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  box-shadow: none;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
+
+.spacer {
+  flex: 1 1 auto
 }

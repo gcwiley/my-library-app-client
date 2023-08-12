@@ -1,20 +1,18 @@
 <app-header></app-header>
 <app-announcement-banner></app-announcement-banner>
 
-<mat-grid-list class="container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+<mat-grid-list
+  class="grid-container"
+  [cols]="cols"
+  [rowHeight]="rowHeight"
+  [gutterSize]="gutterSize">
+  <mat-grid-tile class="grid-tile" colspan="3">
+    <app-book-form></app-book-form>
+  </mat-grid-tile>
 
-	<mat-grid-tile [colspan]="colspan">
-  
-	  <mat-card>
-		<app-book-form></app-book-form>
-	  </mat-card>
-  
-	</mat-grid-tile>
-  
-	<mat-grid-tile>
-	  <app-recent-books></app-recent-books>
-	</mat-grid-tile>
-  
-  </mat-grid-list>
+  <mat-grid-tile class="grid-tile">
+    <app-recent-books></app-recent-books>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <app-footer></app-footer>

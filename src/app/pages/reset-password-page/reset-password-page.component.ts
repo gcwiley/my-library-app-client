@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 // import app header
-import { HeaderComponent } from 'src/app/shared';
+import { HeaderComponent, AnnouncementBannerComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from '../../services/auth.service';
@@ -26,6 +26,7 @@ import { AuthService } from '../../services/auth.service';
     MatFormFieldModule,
     ReactiveFormsModule,
     HeaderComponent,
+    AnnouncementBannerComponent,
   ],
 })
 export class ResetPasswordPageComponent {

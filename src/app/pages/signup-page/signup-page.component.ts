@@ -11,8 +11,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-// import app header
-import { HeaderComponent } from 'src/app/shared';
+// import shared components
+import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from 'src/app/services/auth.service';
@@ -32,6 +32,8 @@ import { AuthService } from 'src/app/services/auth.service';
     MatButtonModule,
     MatIconModule,
     HeaderComponent,
+    AnnouncementBannerComponent,
+    FooterComponent,
   ],
 })
 export class SignupPageComponent {

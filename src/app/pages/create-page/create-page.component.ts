@@ -30,7 +30,7 @@ export class CreatePageComponent implements OnInit {
   // set the default values of the grid list here
   cols = 4; // sets the number of columns in the grid
   rowHeight = 'fit'; // sets the height of the rows in the grid
-  gutterSize = '10px'; // sets the gutter size of the grid
+  gutterSize = '15px'; // sets the gutter size of the grid
 
   // set the default values of the grid tile here
   colspan = 3;

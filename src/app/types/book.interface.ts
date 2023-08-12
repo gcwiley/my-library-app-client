@@ -12,16 +12,10 @@ export interface Book {
     updatedAt: string,
 }
 
-// Book Genre Data Type
+// book genre
 export interface BookGenre {
-    view: string;
+    value: string;
     viewValue: string;
 }
 
-// Book Genre Data Values
-export const BOOK_GENRES: BookGenre[] = [
-    { view: 'test', viewValue: 'Test' },
-    { view: 'test', viewValue: 'Test' },
-    { view: 'test', viewValue: 'Test' },
-]
 

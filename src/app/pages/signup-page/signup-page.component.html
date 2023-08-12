@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-announcement-banner></app-announcement-banner>
 
 <main class="signup-page-container">
   <form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmitSignUp()">
@@ -21,6 +22,13 @@
         <mat-error *ngIf="signupForm.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
 
+      <!-- PASSWORD (password) -->
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="signupForm.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+
       <!-- TERMS OF SERVICE -->
 
       <div class="card-actions">
@@ -30,3 +38,5 @@
     </mat-card>
   </form>
 </main>
+
+<app-footer></app-footer>

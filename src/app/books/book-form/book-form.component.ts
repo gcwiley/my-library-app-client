@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // used for both type of Forms
@@ -16,15 +16,19 @@ import { MatNativeDateModule } from '@angular/material/core';
 // import the book service
 import { BookService } from '../../services/book.service';
 
-// import the book interface
-import { Book } from '../../types/book.interface';
+// import the book interfaces
+import { Book, BookGenre } from '../../types/book.interface';
+
+// import the book genres
+import { BOOK_GENRES } from 'src/assets/data/book-data';
 
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
   styleUrls: ['./book-form.component.scss'],
   standalone: true,
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -33,12 +37,15 @@ import { Book } from '../../types/book.interface';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule,]
+    ReactiveFormsModule,
+  ],
 })
 export class BookFormComponent implements OnInit {
   public mode: string = 'create';
   private id!: string | any;
   private book!: Book;
+
+  genres: BookGenre[] = BOOK_GENRES;
 
   // create the book form fix this
   bookForm = this.formBuilder.group({

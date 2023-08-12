@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 // import shared components
-import { HeaderComponent, AnnouncementBannerComponent } from 'src/app/shared';
+import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from '../../services/auth.service';
@@ -35,6 +35,7 @@ import { AuthService } from '../../services/auth.service';
     HeaderComponent,
     AnnouncementBannerComponent,
     RouterModule,
+    FooterComponent,
   ],
 })
 export class SigninPageComponent {
