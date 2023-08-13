@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 // import angular material modules
 import { MatCardModule } from '@angular/material/card';
@@ -34,6 +34,7 @@ import { AuthService } from 'src/app/services/auth.service';
     HeaderComponent,
     AnnouncementBannerComponent,
     FooterComponent,
+    RouterModule,
   ],
 })
 export class SignupPageComponent {

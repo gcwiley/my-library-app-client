@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 // import angular material modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,4 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class AnnouncementBannerComponent {
   text = 'This web application is currently in development.';
+
+  constructor(public auth: AngularFireAuth) {}
 }

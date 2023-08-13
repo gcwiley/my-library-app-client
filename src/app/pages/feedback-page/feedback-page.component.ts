@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 // import angular material modules
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 // import app issues list
 import { IssueListComponent } from 'src/app/issues/issue-list/issue-list.component';
@@ -28,6 +29,7 @@ import { IssueListComponent } from 'src/app/issues/issue-list/issue-list.compone
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    MatButtonModule,
     IssueListComponent,
   ],
 })

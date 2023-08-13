@@ -6,68 +6,90 @@
     </mat-card-header>
 
     <mat-card-content>
-      <!-- TITLE (title) -->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput type="text" formControlName="title" />
-        <mat-error>A title is <strong>required.</strong></mat-error>
-      </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- TITLE (title) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title" />
+            <mat-error *ngIf="bookForm.controls['title'].hasError('required')">A title is required.</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
 
-      <!-- AUTHOR (author)-->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Author</mat-label>
-        <input matInput type="text" formControlName="author" />
-        <mat-error *ngIf="bookForm.hasError('required')"
-          >A author is <strong>required.</strong></mat-error
-        >
-      </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- AUTHOR (author)-->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput type="text" formControlName="author" />
+            <mat-error *ngIf="bookForm.hasError('required')"
+              >A author is <strong>required.</strong></mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
 
-      <!-- ISBN (isbn) -->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>ISBN</mat-label>
-        <input matInput type="number" formControlName="isbn" />
-        <mat-error>A ISBN is <strong>required.</strong></mat-error>
-      </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- ISBN (isbn) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>ISBN</mat-label>
+            <input matInput type="number" formControlName="isbn" />
+            <mat-error>A ISBN is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
 
-      <!-- PUBLICATION DATE (publicationDate) -->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Publication Date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="publicationDate" />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+        <div class="col">
+          <!-- PUBLICATION DATE (publicationDate) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Publication Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="publicationDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
 
-      <!-- PAGE COUNT (pageCount)-->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Page Count</mat-label>
-        <input matInput type="number" formControlName="pageCount" />
-        <mat-error>A page count is <strong>required.</strong></mat-error>
-      </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- PAGE COUNT (pageCount)-->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Page Count</mat-label>
+            <input matInput type="number" formControlName="pageCount" />
+            <mat-error>A page count is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
 
-      <!-- GENRE (genre) FIX THIS! -->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Genre</mat-label>
-        <mat-select formControlName="genre">
-          <mat-option *ngFor="let genre of genres">{{ genre.viewValue }}</mat-option>
-        </mat-select>
-        <mat-error>A genre is <strong>required.</strong></mat-error>
-      </mat-form-field>
+        <div class="col">
+          <!-- GENRE (genre) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Genre</mat-label>
+            <mat-select formControlName="genre">
+              <mat-option *ngFor="let genre of genres">{{ genre.viewValue }}</mat-option>
+            </mat-select>
+            <mat-error>A genre is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
 
-      <!-- SUMMARY (summary)-->
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Summary</mat-label>
-        <textarea matInput rows="8" formControlName="summary"></textarea>
-        <mat-error>A summary is <strong>required.</strong></mat-error>
-      </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- SUMMARY (summary)-->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Summary</mat-label>
+            <textarea matInput rows="8" formControlName="summary"></textarea>
+            <mat-error>A summary is <strong>required.</strong></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
     </mat-card-content>
 
     <mat-card-actions>
       <button mat-flat-button color="primary" type="submit" [disabled]="!bookForm.valid">
         Add Book
       </button>
-      <button mat-flat-button color="warn">
-        Clear
-      </button>
+      <button mat-flat-button color="warn">Clear</button>
     </mat-card-actions>
   </mat-card>
 </form>

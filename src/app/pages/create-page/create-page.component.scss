@@ -1,22 +1,21 @@
-.grid-container {
+.container {
   height: 100vh;
   max-width: 1320px;
   margin: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  // background-color: aquamarine;
-
-  // border: 2px seagreen solid;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-// .grid-tile {
-//   background-color: antiquewhite;
-// }
-
 .book-form {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: none;
+  border: 1px gainsboro solid;
+}
+
+
+.recent-books {
+  height: 100%;
+  width: 100%;
 }

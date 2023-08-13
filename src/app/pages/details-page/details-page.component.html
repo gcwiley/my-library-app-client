@@ -2,7 +2,9 @@
 <app-announcement-banner></app-announcement-banner>
 
 <mat-grid-list class="container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+
   <mat-grid-tile [colspan]="colspan">
+    
     <mat-card class="book-description">
       <mat-card-header>
         <mat-card-title>{{ book.title }}</mat-card-title>
@@ -12,6 +14,7 @@
         <p>{{ book.summary }}</p>
       </mat-card-content>
     </mat-card>
+
   </mat-grid-tile>
 
   <mat-grid-tile>

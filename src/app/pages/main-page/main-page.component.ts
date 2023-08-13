@@ -8,8 +8,8 @@ import {
   HeroComponent,
 } from 'src/app/shared';
 
-// import the book grid
-import { BookGridComponent } from 'src/app/books';
+// import the book components
+import { BookGridComponent, BookSearchComponent } from 'src/app/books';
 
 @Component({
   selector: 'app-main-page',
@@ -22,6 +22,7 @@ import { BookGridComponent } from 'src/app/books';
     AnnouncementBannerComponent,
     HeroComponent,
     BookGridComponent,
+    BookSearchComponent,
   ],
 })
 export class MainPageComponent {}

@@ -33,7 +33,7 @@ export class BookService {
   }
 
   // GET: book by id - Will 404 if id is not found
-  getBook(id: string): Observable<Book> {
+  getBook(id: string | null): Observable<Book> {
     const url = `${this.booksUrl}/${id}`;
     return this.http.get<Book>(url).pipe(
       tap(() => this.log(`fetched book id=${id}`)),

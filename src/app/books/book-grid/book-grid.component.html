@@ -1,5 +1,10 @@
-<mat-grid-list class="grid-container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+<mat-grid-list
+  class="grid-container"
+  [cols]="cols"
+  [rowHeight]="rowHeight"
+  [gutterSize]="gutterSize">
   <mat-grid-tile *ngFor="let book of books" [colspan]="colspan" [rowspan]="rowspan">
+    <!-- BOOK CARD -->
     <mat-card class="book-card">
       <mat-card-header>
         <mat-card-title>{{ book.title }}</mat-card-title>
@@ -15,6 +20,10 @@
       <mat-card-actions>
         <a mat-button color="primary" routerLink="/books/{{ book._id }}">OPEN</a>
       </mat-card-actions>
+
+      <mat-card-footer>
+        <p>{{ book.genre }}</p>
+      </mat-card-footer>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

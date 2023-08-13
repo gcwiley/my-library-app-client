@@ -1,5 +1,12 @@
-<mat-form-field appearance="outline">
-  <mat-label>Book Search</mat-label>
-  <input matInput />
-  <mat-icon matSuffix>house</mat-icon>
-</mat-form-field>
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Book Search</mat-label>
+    <input matInput />
+    <mat-icon matSuffix>house</mat-icon>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary">Search</button>
+    <a mat-raised-button color="accent" routerLink="/create">Add a Book</a>
+  </div>
+</div>

@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 // import app header
-import { HeaderComponent, AnnouncementBannerComponent } from 'src/app/shared';
+import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
 // import the auth service
 import { AuthService } from '../../services/auth.service';
@@ -23,10 +24,12 @@ import { AuthService } from '../../services/auth.service';
     CommonModule,
     MatCardModule,
     MatInputModule,
+    MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     HeaderComponent,
     AnnouncementBannerComponent,
+    FooterComponent,
   ],
 })
 export class ResetPasswordPageComponent {

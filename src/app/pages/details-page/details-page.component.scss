@@ -2,19 +2,24 @@
   height: 100vh;
   max-width: 1320px;
   margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .book-description {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
+  height: 100%;
+  width: 100%;
+  border: 1px gainsboro solid;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+mat-grid-title {
+  background-color: cadetblue;
+  border: 1px red solid;
 }
 
 .book-details {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
+  height: 100%;
+  width: 100%;
 }

@@ -1,15 +1,10 @@
-.book-description {
-  margin: 1rem;
-  box-shadow: none;
-  border: 0.5px gainsboro solid;
-}
+@use '@angular/material' as mat;
+
+$my-palette: mat.define-palette(mat.$green-palette);
 
 .book-details {
-  margin: 1rem;
+  background-color: mat.get-color-from-palette($my-palette, 50);
+  color: mat.get-color-from-palette($my-palette, 600);
   box-shadow: none;
-  border: 0.5px gainsboro solid;
-}
-
-.action-buttons {
-  margin-top: 1rem;
+  border-radius: 10px;
 }

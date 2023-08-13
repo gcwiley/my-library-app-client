@@ -3,10 +3,9 @@
     <div mat-subheader>Recently Added Books</div>
 
     <mat-list-item *ngFor="let book of recentBooks">
-      <mat-icon matListItemIcon>folder</mat-icon>
+      <mat-icon matListItemIcon>book</mat-icon>
       <div matListItemTitle>{{ book.title }}</div>
       <div matListItemLine>{{ book.createdAt | date }}</div>
     </mat-list-item>
-
   </mat-list>
 </mat-card>

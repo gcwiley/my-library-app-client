@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 // import shared components
 import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 'src/app/shared';
 
-// import book details
+// import book components
 import { BookDetailsComponent } from 'src/app/books';
 
 // import the book interface
@@ -32,11 +32,11 @@ import { BookService } from 'src/app/services/book.service';
     BookDetailsComponent,
   ],
 })
-export class DetailsPageComponent {
+export class DetailsPageComponent implements OnInit {
   // set the default values of the grid list here
   cols = 4; // sets the number of columns in the grid
   rowHeight = 'fit'; // sets the height of the rows in the grid
-  gutterSize = '15px'; // sets the gutter size of the grid
+  gutterSize = '25px'; // sets the gutter size of the grid
 
   // set the default values of the grid tile here
   colspan = 3;
@@ -75,5 +75,16 @@ export class DetailsPageComponent {
           this.colspan = 1; // grid tile takes up one column
         }
       });
+  }
+
+  ngOnInit(): void {
+    this.layoutChanges();
+    this.getBook();
+  }
+
+  // GET book by ID
+  getBook(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.bookService.getBook(id).subscribe((book) => (this.book = book));
   }
 }
