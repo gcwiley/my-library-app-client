@@ -7,10 +7,21 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="/">Home</a>
-      <a mat-list-item href="/feedback">New Issue</a>
+    <mat-toolbar>Navigation Menu</mat-toolbar>
+    <!-- NAV LIST -->
+    <mat-nav-list role="navigation">
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>home</mat-icon>
+        <a mat-list-item routerLink="/">Home</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>feedback</mat-icon>
+        <a mat-list-item routerLink="/submit-feedback">New Issue</a>
+      </mat-list-item>
+      
+      
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,7 +32,7 @@
       </button>
 
       <!-- TITLE -->
-      <span>Issue Manager</span>
+      <span>Issue Tracker</span>
 
       <span class="spacer"></span>
 
@@ -33,17 +44,6 @@
       <mat-menu #menu="matMenu">
         <!-- If user is signed in -->
         <ng-container *ngIf="auth.user | async as user; else showSignIn">
-          <!-- admin dashbord -->
-          <a mat-menu-item routerLink="/admin">
-            <mat-icon>dashboard</mat-icon>
-            <span>Admin Dashboard</span>
-          </a>
-
-          <!-- support page -->
-          <a mat-menu-item routerLink="/support">
-            <mat-icon>bug_report</mat-icon>
-            <span>Support Page</span>˝
-          </a>
 
           <!-- sign out button -->
           <button mat-menu-item (click)="onClickSignOut()">

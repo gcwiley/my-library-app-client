@@ -1,78 +1,72 @@
 <mat-toolbar color="primary">
-  <!-- BOOK ICON -->
-  <a mat-icon-button routerLink="/" aria-label="book icon">
-    <mat-icon>book</mat-icon>
-  </a>
+   <!-- BOOK ICON -->
+   <a mat-icon-button routerLink="/" aria-label="book icon">
+      <mat-icon>book</mat-icon>
+   </a>
 
-  <!-- APP TITLE -->
-  <span class="mat-headline-4">My Library App</span>
+   <!-- APP TITLE -->
+   <span class="mat-headline-4">My Library App</span>
 
-  <span class="spacer"></span>
+   <span class="spacer"></span>
 
-  <button mat-icon-button matTooltip="Submit Feedback" [matMenuTriggerFor]="feedbackMenu" aria-label="submit feedback">
-    <mat-icon>help</mat-icon>
-  </button>
+   <!-- toggle theme button - FIX THIS! -->
+   <button
+      mat-icon-button
+      (click)="toggleTheme()"
+      matTooltip="Toggle theme"
+      attr.aria-label="Switch to {{ isDark ? 'light' : 'dark' }} theme"
+      color="accent"
+      disabled>
+      <mat-icon>brightness_medium</mat-icon>
+   </button>
 
-  <!-- FEEDBACK MENU -->
-  <mat-menu #feedbackMenu="matMenu">
-    <!-- support page -->
-    <a mat-menu-item routerLink="/submit-feedback">
-      <mat-icon>bug_report</mat-icon>
-      <span>Submit Feedback</span>
-    </a>
-  </mat-menu>
+   <button mat-icon-button matTooltip="Submit Feedback" [matMenuTriggerFor]="feedbackMenu" aria-label="submit feedback">
+      <mat-icon>help</mat-icon>
+   </button>
 
-  <!-- toggle theme button - FIX THIS! -->
-  <button
-    mat-icon-button
-    (click)="toggleTheme()"
-    matTooltip="Toggle theme"
-    attr.aria-label="Switch to {{ isDark ? 'light' : 'dark' }} theme"
-    color="accent"
-    disabled>
-    <mat-icon>brightness_medium</mat-icon>
-  </button>
-
-  <!-- Account Button -->
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-labe="Account menu">
-    <mat-icon>account_circle</mat-icon>
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <!-- if user is signed in -->
-
-    <ng-container *ngIf="auth.user | async as user; else showSignIn">
-      <!-- my profile page -->
-      <a mat-menu-item routerLink="/profile">
-        <mat-icon>person</mat-icon>
-        <span>My Profile</span>
+   <!-- FEEDBACK MENU -->
+   <mat-menu #feedbackMenu="matMenu">
+      <!-- support page -->
+      <a mat-menu-item routerLink="/submit-feedback">
+         <mat-icon>feedback</mat-icon>
+         <span>Submit Feedback</span>
       </a>
+   </mat-menu>
 
-      <!-- provide feedback page -->
-      <a mat-menu-item routerLink="/feedback">
-        <mat-icon>feedback</mat-icon>
-        <span>Provide Feedback</span>
-      </a>
+   <!-- Account Button -->
+   <button mat-icon-button [matMenuTriggerFor]="menu" aria-labe="Account menu">
+      <mat-icon>account_circle</mat-icon>
+   </button>
 
-      <!-- issue management page -->
-      <a mat-menu-item routerLink="/issues">
-        <mat-icon>bug_report</mat-icon>
-        <span>Current Issues</span>
-      </a>
+   <mat-menu #menu="matMenu">
+      <!-- if user is signed in -->
 
-      <!-- sign out button -->
-      <button mat-menu-item (click)="onClickSignOut()">
-        <mat-icon>logout</mat-icon>
-        <span>Sign Out</span>
-      </button>
-    </ng-container>
+      <ng-container *ngIf="auth.user | async as user; else showSignIn">
+         <!-- my profile page -->
+         <a mat-menu-item routerLink="/profile">
+            <mat-icon>person</mat-icon>
+            <span>My Profile</span>
+         </a>
 
-    <!-- if user is NOT signed in -->
-    <ng-template #showSignIn>
-      <a mat-menu-item routerLink="/signin">
-        <mat-icon>login</mat-icon>
-        <span>Sign In</span>
-      </a>
-    </ng-template>
-  </mat-menu>
+         <!-- issue tracker page -->
+         <a mat-menu-item routerLink="/issues">
+            <mat-icon>bug_report</mat-icon>
+            <span>Issue Tracker</span>
+         </a>
+
+         <!-- sign out button -->
+         <button mat-menu-item (click)="onClickSignOut()">
+            <mat-icon>logout</mat-icon>
+            <span>Sign Out</span>
+         </button>
+      </ng-container>
+
+      <!-- if user is NOT signed in -->
+      <ng-template #showSignIn>
+         <a mat-menu-item routerLink="/signin">
+            <mat-icon>login</mat-icon>
+            <span>Sign In</span>
+         </a>
+      </ng-template>
+   </mat-menu>
 </mat-toolbar>

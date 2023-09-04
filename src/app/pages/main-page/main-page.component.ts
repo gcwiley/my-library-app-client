@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+// import angular material modules
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+
 // import shared components
 import {
   HeaderComponent,
@@ -9,7 +14,7 @@ import {
 } from 'src/app/shared';
 
 // import the book components
-import { BookGridComponent, BookSearchComponent } from 'src/app/books';
+import { BookGridComponent, BookSearchComponent, BookCarouselComponent } from 'src/app/books';
 
 @Component({
   selector: 'app-main-page',
@@ -17,12 +22,16 @@ import { BookGridComponent, BookSearchComponent } from 'src/app/books';
   styleUrls: ['./main-page.component.scss'],
   standalone: true,
   imports: [
+    MatIconModule,
+    MatDividerModule,
+    MatCardModule,
     HeaderComponent,
     FooterComponent,
     AnnouncementBannerComponent,
     HeroComponent,
     BookGridComponent,
     BookSearchComponent,
+    BookCarouselComponent,
   ],
 })
 export class MainPageComponent {}
