@@ -31,14 +31,20 @@
     <ng-container *ngIf="auth.user | async as user; else showSignIn">
       <!-- my profile page -->
       <a mat-menu-item routerLink="/profile">
-        <mat-icon>dashboard</mat-icon>
+        <mat-icon>person</mat-icon>
         <span>My Profile</span>
       </a>
 
-      <!-- issue page -->
+      <!-- provide feedback page -->
       <a mat-menu-item routerLink="/feedback">
-        <mat-icon>bug_report</mat-icon>
+        <mat-icon>feedback</mat-icon>
         <span>Provide Feedback</span>
+      </a>
+
+      <!-- issue management page -->
+      <a mat-menu-item routerLink="/issues">
+        <mat-icon>bug_report</mat-icon>
+        <span>Current Issues</span>
       </a>
 
       <!-- sign out button -->

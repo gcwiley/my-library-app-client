@@ -13,7 +13,7 @@ import { MessageService } from '../services/message.service';
   providedIn: 'root',
 })
 export class BookService {
-  private booksUrl = '/api/books'; // url to web api
+  private booksUrl = '/api/books'; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -43,19 +43,15 @@ export class BookService {
 
   // GET: books whose name contains search term - SEARCH
   searchBook(term: string): Observable<Book[]> {
-		if (!term.trim()) {
-			// if no search term, return an empty project arrary
-			return of([]);
-		}
-		return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
-			tap((x) =>
-				x.length
-					? this.log(`found books matching "${term}"`)
-					: this.log(`no books matching "${term}"`)
-			),
-			catchError(this.handleError<Book[]>('search Books', []))
-		);
-	}
+    if (!term.trim()) {
+      // if no search term, return an empty project arrary
+      return of([]);
+    }
+    return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
+      tap((x) => (x.length ? this.log(`found books matching "${term}"`) : this.log(`no books matching "${term}"`))),
+      catchError(this.handleError<Book[]>('search Books', []))
+    );
+  }
 
   // GET: book count from database
   getBookCount(): Observable<Object> {

@@ -1,78 +1,18 @@
-<mat-sidenav-container class="sidenav-container">
-  <!-- SIDE NAVIGATION -->
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+<app-header></app-header>
+<app-announcement-banner></app-announcement-banner>
 
-    <mat-nav-list>
-      <a mat-list-item href="/">Home</a>
-      <a mat-list-item href="/create">New Issue</a>
-      <a mat-list-item href="/about">About</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <!-- MAIN HEADER -->
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+<mat-grid-list class="container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
 
-      <!-- TITLE -->
-      <span>Feedback Page</span>
+  <mat-grid-tile [colspan]="colspan">
+    <!-- NEW ISSUE FORM -->
+    <app-issue-form></app-issue-form>
+  </mat-grid-tile>
 
-      <span class="spacer"></span>
+  <mat-grid-tile>
+    <!-- RECENT ISSUES -->
+    <app-recent-issues></app-recent-issues>
+  </mat-grid-tile>
 
-      <!-- Account Button -->
-      <button
-        mat-icon-button
-        matTooltip="Admin Signin"
-        [matMenuTriggerFor]="menu"
-        aria-label="account menu">
-        <mat-icon>account_circle</mat-icon>
-      </button>
+</mat-grid-list>
 
-      <mat-menu #menu="matMenu">
-        <!-- If user is signed in -->
-        <ng-container *ngIf="auth.user | async as user; else showSignIn">
-          <!-- admin dashbord -->
-          <a mat-menu-item routerLink="/admin">
-            <mat-icon>dashboard</mat-icon>
-            <span>Admin Dashboard</span>
-          </a>
-
-          <!-- support page -->
-          <a mat-menu-item routerLink="/support">
-            <mat-icon>bug_report</mat-icon>
-            <span>Support Page</span>
-          </a>
-
-          <!-- sign out button -->
-          <button mat-menu-item (click)="onClickSignOut()">
-            <mat-icon>logout</mat-icon>
-            <span>Sign Out</span>
-          </button>
-        </ng-container>
-
-        <!-- if user is NOT signed in -->
-        <ng-template #showSignIn>
-          <a mat-menu-item routerLink="/signin">
-            <mat-icon>login</mat-icon>
-            <span>Sign In</span>
-          </a>
-        </ng-template>
-      </mat-menu>
-    </mat-toolbar>
-    <!-- MAIN CONTENT -->
-    <!-- FIX THIS HERE! -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-footer></app-footer>

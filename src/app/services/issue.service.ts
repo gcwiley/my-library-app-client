@@ -68,7 +68,7 @@ export class IssueService {
   // SAVE METHODS //
 
   // POST: add a new issue to the server
-  addIssue(newIssue: Issue | null): Observable<Issue> {
+  addIssue(newIssue: Issue | any): Observable<Issue> {
     return this.http.post<Issue>(this.issuesUrl, newIssue, this.httpOptions).pipe(
       tap((newIssue: Issue) => this.log(`added issue with id=${newIssue._id}`)),
       catchError(this.handleError<Issue>('addHero'))

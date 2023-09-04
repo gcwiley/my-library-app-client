@@ -1,22 +1,12 @@
-.sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 200px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-// FLEXBOX PROPERTIES
-.spacer {
-  flex: 1 1 auto;
-}
+.container {
+    height: 100%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  // mat-grid-tile {
+  //   //   background-color: cadetblue;
+  //   border: 1px red solid;
+  // }

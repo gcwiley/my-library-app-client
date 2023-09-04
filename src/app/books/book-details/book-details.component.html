@@ -1,7 +1,7 @@
+<p>About this book</p>
 <mat-card class="book-details">
-  <mat-list>
-    <div mat-subheader>Book Details</div>
 
+  <mat-list>
     <!-- ISBN -->
     <mat-list-item>
       <div matListItemLine>ISBN</div>
@@ -12,7 +12,7 @@
 
     <!-- PUBLICATION DATE -->
     <mat-list-item>
-      <div matListItemLine>Publication Date</div>
+      <div matListItemLine>Originally published:</div>
       <div matListItemMeta>
         <strong>{{ book.publicationDate | date }}</strong>
       </div>
@@ -20,7 +20,7 @@
 
     <!-- AUTHOR -->
     <mat-list-item>
-      <div matListItemLine>Author</div>
+      <div matListItemLine>Author:</div>
       <div matListItemMeta>
         <strong>{{ book.author }}</strong>
       </div>
@@ -28,7 +28,7 @@
 
     <!-- PAGE COUNT -->
     <mat-list-item>
-      <div matListItemLine>Page Count</div>
+      <div matListItemLine>Page count:</div>
       <div matListItemMeta>
         <strong>{{ book.pageCount }}</strong>
       </div>

@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule],
 })
 export class AnnouncementBannerComponent {
-  text = 'This web application is currently in development.';
+  text = 'This web application is currently in development. Some features may be incomplete or inactive.';
 
   constructor(public auth: AngularFireAuth) {}
 }

@@ -10,6 +10,7 @@ import {
   CreatePageComponent,
   DetailsPageComponent,
   FeedbackPageComponent,
+  IssuesPageComponent,
   MainPageComponent,
   NotFoundPageComponent,
   ProfilePageComponent,
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'about', component: AboutPageComponent, canActivate: [RouteGuard] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [RouteGuard] },
   { path: 'feedback', component: FeedbackPageComponent, canActivate: [RouteGuard] },
+  { path: 'issues', component: IssuesPageComponent, canActivate: [RouteGuard] },
   { path: '**', component: NotFoundPageComponent },
 ];
 

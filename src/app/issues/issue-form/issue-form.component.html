@@ -1,72 +1,66 @@
 <form [formGroup]="issueForm" novalidate (ngSubmit)="onSaveIssue()">
   <mat-card class="issue-form">
-
     <mat-card-header>
-      <mat-card-title>Create Issue</mat-card-title>
+      <mat-card-title>New Issue</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-
       <div class="row">
-        
-
-        <!-- TITLE (title) -->
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Issue Title</mat-label>
-          <input matInput type="text" formControlName="title" />
-          <mat-error *ngIf="issueForm.controls['title'].hasError('required')"
-            >Please enter a issue title.</mat-error
-          >
-        </mat-form-field>
+        <div class="col">
+          <!-- TITLE (title) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Issue Title</mat-label>
+            <input matInput type="text" formControlName="title" />
+            <mat-error *ngIf="issueForm.controls['title'].hasError('required')">Please enter a issue title.</mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="row">
-        <!-- DESCRIPTION (description) -->
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Description</mat-label>
-          <textarea matInput rows="10" formControlName="description"></textarea>
-          <mat-error *ngIf="issueForm.controls['description'].hasError('required')"
-            >Please provide a issue description.</mat-error
-          >
-        </mat-form-field>
+        <div class="col">
+          <!-- CATEGORY -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Issue Category</mat-label>
+            <mat-select matNativeControl formControlName="category">
+              <mat-option *ngFor="let category of categories" [value]="category.value">
+                {{ category.viewValue }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="issueForm.controls['category'].hasError('required')">Please enter a project category.</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <!-- STATUS -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Issue Status</mat-label>
+            <mat-select matNativeControl formControlName="status">
+              <mat-option *ngFor="let status of statues" [value]="status.value">
+                {{ status.viewValue }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="issueForm.controls['status'].hasError('required')">Please enter a project status.</mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
-      <div class="col">
-        <!-- CATEGORY -->
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Issue Category</mat-label>
-          <mat-select matNativeControl formControlName="category">
-            <mat-option *ngFor="let category of categories" [value]="category.value">
-              {{ category.viewValue }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="issueForm.controls['category'].hasError('required')"
-            >Please enter a project category.</mat-error
-          >
-        </mat-form-field>
-      </div>
-
-      <div class="col">
-        <!-- STATUS -->
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Issue Status</mat-label>
-          <mat-select matNativeControl formControlName="status">
-            <mat-option>Not Started</mat-option>
-          </mat-select>
-          <mat-error *ngIf="issueForm.controls['status'].hasError('required')"
-            >Please enter a project status.</mat-error
-          >
-        </mat-form-field>
+      <div class="row">
+        <div class="col">
+          <!-- DESCRIPTION (description) -->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput rows="7" formControlName="description"></textarea>
+            <mat-error *ngIf="issueForm.controls['description'].hasError('required')">Please provide a issue description.</mat-error>
+          </mat-form-field>
+        </div>
       </div>
     </mat-card-content>
 
     <mat-card-actions>
       <!-- create button -->
-      <button mat-flat-button color="primary" type="submit" [disabled]="!issueForm.valid">
-        Create Issue
-      </button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!issueForm.valid">Submit new issue</button>
       <!-- reset form buttom -->
-      <button mat-flat-button color="warn" type="button">Reset</button>
+      <button mat-flat-button color="warn" type="button">Clear</button>
     </mat-card-actions>
   </mat-card>
 </form>

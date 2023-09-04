@@ -1,9 +1,9 @@
 <form [formGroup]="bookForm" novalidate (ngSubmit)="onSaveBook()">
   <mat-card class="book-form">
     <!-- BOOK FORM HEADER -->
-    <mat-card-header>
+    <!-- <mat-card-header>
       <mat-card-title>New Book</mat-card-title>
-    </mat-card-header>
+    </mat-card-header> -->
 
     <mat-card-content>
       <div class="row">
@@ -12,7 +12,7 @@
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Title</mat-label>
             <input matInput type="text" formControlName="title" />
-            <mat-error *ngIf="bookForm.controls['title'].hasError('required')">A title is required.</mat-error>
+            <mat-error *ngIf="bookForm.controls['title'].hasError('required')">Please provide a title for the book.</mat-error>
           </mat-form-field>
         </div>
       </div>
@@ -23,9 +23,7 @@
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Author</mat-label>
             <input matInput type="text" formControlName="author" />
-            <mat-error *ngIf="bookForm.hasError('required')"
-              >A author is <strong>required.</strong></mat-error
-            >
+            <mat-error *ngIf="bookForm.hasError('required')">A author is required.</mat-error>
           </mat-form-field>
         </div>
       </div>
@@ -35,7 +33,7 @@
           <!-- ISBN (isbn) -->
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>ISBN</mat-label>
-            <input matInput type="number" formControlName="isbn" />
+            <input matInput type="text" formControlName="isbn" />
             <mat-error>A ISBN is <strong>required.</strong></mat-error>
           </mat-form-field>
         </div>
@@ -56,7 +54,7 @@
           <!-- PAGE COUNT (pageCount)-->
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Page Count</mat-label>
-            <input matInput type="number" formControlName="pageCount" />
+            <input matInput type="text" formControlName="pageCount" />
             <mat-error>A page count is <strong>required.</strong></mat-error>
           </mat-form-field>
         </div>
@@ -66,7 +64,8 @@
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Genre</mat-label>
             <mat-select formControlName="genre">
-              <mat-option *ngFor="let genre of genres">{{ genre.viewValue }}</mat-option>
+              <mat-option *ngFor="let genre of genres" [value]="genre.value">
+                {{ genre.viewValue }}</mat-option>
             </mat-select>
             <mat-error>A genre is <strong>required.</strong></mat-error>
           </mat-form-field>
@@ -86,9 +85,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-flat-button color="primary" type="submit" [disabled]="!bookForm.valid">
-        Add Book
-      </button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!bookForm.valid">Add Book</button>
       <button mat-flat-button color="warn">Clear</button>
     </mat-card-actions>
   </mat-card>

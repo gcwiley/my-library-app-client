@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 'src/app/shared';
 
 // import book components
-import { BookDetailsComponent } from 'src/app/books';
+import { BookDescriptionComponent, BookDetailsComponent } from 'src/app/books';
 
 // import the book interface
 import { Book } from 'src/app/types/book.interface';
@@ -29,6 +29,7 @@ import { BookService } from 'src/app/services/book.service';
     HeaderComponent,
     FooterComponent,
     AnnouncementBannerComponent,
+    BookDescriptionComponent,
     BookDetailsComponent,
   ],
 })

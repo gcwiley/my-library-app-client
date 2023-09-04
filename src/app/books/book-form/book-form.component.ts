@@ -19,7 +19,7 @@ import { BookService } from '../../services/book.service';
 // import the book interfaces
 import { Book, BookGenre } from '../../types/book.interface';
 
-// import the book genres
+// import the book genres date values
 import { BOOK_GENRES } from 'src/assets/data/book-data';
 
 @Component({
@@ -95,7 +95,6 @@ export class BookFormComponent implements OnInit {
   onSaveBook(): void {
     if (this.mode === 'create') {
       this.bookService.addBook(this.bookForm.value).subscribe(() => {
-        console.log(this.bookForm.value);
         // navigates back to homepage
         this.router.navigateByUrl('/');
       });

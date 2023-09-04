@@ -4,21 +4,13 @@
 <mat-grid-list class="container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
 
   <mat-grid-tile [colspan]="colspan">
-    
-    <mat-card class="book-description">
-      <mat-card-header>
-        <mat-card-title>{{ book.title }}</mat-card-title>
-      </mat-card-header>
-
-      <mat-card-content>
-        <p>{{ book.summary }}</p>
-      </mat-card-content>
-    </mat-card>
-
+    <!-- BOOK DESCRIPTION -->
+    <app-book-description></app-book-description>
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <app-book-details class="book-details"></app-book-details>
+    <!-- BOOK DETAILS -->
+      <app-book-details></app-book-details>
   </mat-grid-tile>
 </mat-grid-list>
 
