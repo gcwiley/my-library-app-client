@@ -9,6 +9,19 @@
 
   <span class="spacer"></span>
 
+  <button mat-icon-button matTooltip="Submit Feedback" [matMenuTriggerFor]="feedbackMenu" aria-label="submit feedback">
+    <mat-icon>help</mat-icon>
+  </button>
+
+  <!-- FEEDBACK MENU -->
+  <mat-menu #feedbackMenu="matMenu">
+    <!-- support page -->
+    <a mat-menu-item routerLink="/submit-feedback">
+      <mat-icon>bug_report</mat-icon>
+      <span>Submit Feedback</span>
+    </a>
+  </mat-menu>
+
   <!-- toggle theme button - FIX THIS! -->
   <button
     mat-icon-button

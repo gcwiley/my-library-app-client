@@ -3,8 +3,14 @@
 $my-palette: mat.define-palette(mat.$green-palette);
 
 .book-details {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 1rem;
+
   background-color: mat.get-color-from-palette($my-palette, 50);
   color: mat.get-color-from-palette($my-palette, 600);
   box-shadow: none;
-  border-radius: 10px;
+  border-radius: 15px;
 }

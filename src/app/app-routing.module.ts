@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordPageComponent },
   { path: 'about', component: AboutPageComponent, canActivate: [RouteGuard] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [RouteGuard] },
-  { path: 'feedback', component: FeedbackPageComponent, canActivate: [RouteGuard] },
+  { path: 'submit-feedback', component: FeedbackPageComponent, canActivate: [RouteGuard] },
   { path: 'issues', component: IssuesPageComponent, canActivate: [RouteGuard] },
   { path: '**', component: NotFoundPageComponent },
 ];

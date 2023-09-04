@@ -1,3 +1,4 @@
+export { BookCarouselComponent } from './book-carousel/book-carousel.component';
 export { BookDescriptionComponent } from './book-description/book-description.component';
 export { BookDetailsComponent } from './book-details/book-details.component';
 export { BookFormComponent } from './book-form/book-form.component';

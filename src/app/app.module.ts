@@ -17,10 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
-import { CookiePopupComponent } from './shared/cookie-popup/cookie-popup.component';
 
 @NgModule({
-  declarations: [AppComponent, CookiePopupComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
