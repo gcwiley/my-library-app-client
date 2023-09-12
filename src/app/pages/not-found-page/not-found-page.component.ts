@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // import shared components
-import { HeaderComponent, FooterComponent, AnnouncementBannerComponent, HeroComponent } from 'src/app/shared';
+import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 'src/app/shared';
 
 @Component({
    selector: 'app-not-found-page',

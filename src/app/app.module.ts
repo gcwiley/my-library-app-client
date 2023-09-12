@@ -17,9 +17,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
+import { FeaturedBooksComponent } from './books/featured-books/featured-books.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FeaturedBooksComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
