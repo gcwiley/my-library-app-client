@@ -21,7 +21,7 @@
     <td mat-cell *matCellDef="let issue" [attr.colspan]="columnsToDisplayWithExpand.length">
       <div
         class="example-element-detail"
-        [@detailExpand]="issue == expandedIssue ? 'expanded' : 'collapsed'">
+        [@detailExpand]="issue === expandedIssue ? 'expanded' : 'collapsed'">
         <div class="example-element-description">
           {{ issue.description }}
         </div>

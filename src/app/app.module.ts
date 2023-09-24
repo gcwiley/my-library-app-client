@@ -17,21 +17,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
-import { FeaturedBooksComponent } from './books/featured-books/featured-books.component';
 
 @NgModule({
-  declarations: [AppComponent, FeaturedBooksComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+   declarations: [AppComponent],
+   imports: [
+      BrowserModule,
+      BrowserAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      RouterModule,
+      AppRoutingModule,
+      HttpClientModule,
+      AngularFireModule.initializeApp(environment.firebase),
+   ],
+   providers: [],
+   bootstrap: [AppComponent],
 })
 export class AppModule {}

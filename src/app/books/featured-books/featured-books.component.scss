@@ -1,0 +1,29 @@
+.grid-container {
+   max-width: 1380px;
+   margin: auto;
+   margin-top: 25px;
+   margin-bottom: 25px;
+   padding: 1rem;
+}
+
+.project-card {
+   position: absolute; //
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   box-shadow: none;
+   border: 1px solid gainsboro;
+   // border-radius: 15px;
+}
+
+.spacer {
+   flex: 1 1 auto;
+}
+
+.header-content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1.5rem;
+}
