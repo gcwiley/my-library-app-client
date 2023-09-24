@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 
-// import shared components
+// import the shared components
 import {
   HeaderComponent,
   FooterComponent,
@@ -14,7 +14,7 @@ import {
 } from 'src/app/shared';
 
 // import the book components
-import { BookGridComponent, BookSearchComponent, BookCarouselComponent } from 'src/app/books';
+import { FeaturedBooksComponent, BookSearchComponent, BookCarouselComponent } from 'src/app/books';
 
 @Component({
   selector: 'app-main-page',
@@ -29,7 +29,7 @@ import { BookGridComponent, BookSearchComponent, BookCarouselComponent } from 's
     FooterComponent,
     AnnouncementBannerComponent,
     HeroComponent,
-    BookGridComponent,
+    FeaturedBooksComponent,
     BookSearchComponent,
     BookCarouselComponent,
   ],

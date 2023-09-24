@@ -5,23 +5,25 @@
     </header>
  
     <mat-grid-list [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+
        <mat-grid-tile *ngFor="let recentBook of recentBooks" [colspan]="colspan" [rowspan]="rowspan">
+
           <mat-card class="book-card">
+
              <mat-card-header>
                 <mat-card-title>{{ recentBook.title }}</mat-card-title>
                 <mat-card-subtitle>{{ recentBook.author }}</mat-card-subtitle>
              </mat-card-header>
  
-             <mat-card-content>
-                <p>{{ recentBook.summary }}</p>
-             </mat-card-content>
- 
+            
              <span class="spacer"></span>
  
              <mat-card-actions>
-                <a mat-button color="accent" routerLink="/projects/{{ recentBook._id }}">VIEW</a>
+                <a mat-button color="accent" routerLink="/books/{{ recentBook._id }}">OPEN</a>
              </mat-card-actions>
+
           </mat-card>
+          
        </mat-grid-tile>
     </mat-grid-list>
  </div>

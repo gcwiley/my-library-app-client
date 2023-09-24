@@ -40,8 +40,8 @@ export class FeaturedBooksComponent implements OnInit {
    recentBooks: Book[] = [];
 
    // set up the grid list demensions
-   cols = 4; // Amount of columns in the grid list.
-   rowHeight = '250px'; // row height
+   cols = 5; // Amount of columns in the grid list.
+   rowHeight = '200px'; // row height
    gutterSize = '25px';
 
    // set up the grid list dimensions
