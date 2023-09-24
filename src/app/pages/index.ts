@@ -1,6 +1,6 @@
 export { AboutPageComponent } from './about-page/about-page.component';
+export { AddBookPageComponent } from './add-book-page/add-book-page.component';
 export { BookGridPageComponent } from './book-grid-page/book-grid-page.component';
-export { CreatePageComponent } from './create-page/create-page.component';
 export { DetailsPageComponent } from './details-page/details-page.component';
 export { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 export { IssuesPageComponent } from './issues-page/issues-page.component';

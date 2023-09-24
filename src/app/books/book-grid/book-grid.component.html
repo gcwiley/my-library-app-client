@@ -1,22 +1,17 @@
+<!-- BOOK GRID -->
 <mat-grid-list class="grid-container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
-  <mat-grid-tile *ngFor="let book of books" [colspan]="colspan" [rowspan]="rowspan">
-    <!-- BOOK CARD -->
-    <mat-card class="book-card">
-      <mat-card-header>
-        <mat-card-title>{{ book.title }}</mat-card-title>
-        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-      </mat-card-header>
+   <!-- BOOK TILE -->
+   <mat-grid-tile *ngFor="let book of books" [colspan]="colspan" [rowspan]="rowspan">
+      <mat-grid-tile-header>
+         <p>{{ book.title }}</p>
+      </mat-grid-tile-header>
 
-      <mat-card-content>
-        <p>{{ book.summary }}</p>
-      </mat-card-content>
+      <a routerLink="/books/{{ book._id }}">
+         <img src="../../../assets/images/cover_image.jpg" alt="{{ book.title }}" />
+      </a>
 
-      <span class="spacer"></span>
-
-      <mat-card-actions>
-        <a mat-button color="primary" routerLink="/books/{{ book._id }}">OPEN</a>
-      </mat-card-actions>
-
-    </mat-card>
-  </mat-grid-tile>
+      <mat-grid-tile-footer>
+         <p>{{ book.author }}</p>
+      </mat-grid-tile-footer>
+   </mat-grid-tile>
 </mat-grid-list>

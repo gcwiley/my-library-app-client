@@ -12,9 +12,9 @@ import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 's
 import { BookFormComponent, RecentBooksComponent } from 'src/app/books';
 
 @Component({
-  selector: 'app-create-page',
-  templateUrl: './create-page.component.html',
-  styleUrls: ['./create-page.component.scss'],
+  selector: 'app-add-book-page',
+  templateUrl: './add-book-page.component.html',
+  styleUrls: ['./add-book-page.component.scss'],
   standalone: true,
   imports: [
     MatGridListModule,
@@ -26,7 +26,7 @@ import { BookFormComponent, RecentBooksComponent } from 'src/app/books';
     RecentBooksComponent,
   ],
 })
-export class CreatePageComponent implements OnInit {
+export class AddBookPageComponent implements OnInit {
   // set the default values of the grid list here
   cols = 4; // sets the number of columns in the grid
   rowHeight = 'fit'; // sets the height of the rows in the grid

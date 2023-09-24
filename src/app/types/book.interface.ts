@@ -8,6 +8,7 @@ export interface Book {
     pageCount: string;
     genre: string;
     summary: string;
+    coverImageUrl: string;
     createdAt: string,
     updatedAt: string,
 }

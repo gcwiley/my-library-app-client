@@ -1,20 +1,19 @@
 <header class="hero-container">
+   <div class="hero-content">
+      <img
+         class="hero-image"
+         src="../../../assets/logos/cube-svgrepo-com.svg"
+         alt="logo"
+         width="72"
+         height="57" />
 
-  <div class="hero-content">
-    <img
-      class="hero-image"
-      src="../../../assets/logos/cube-svgrepo-com.svg"
-      alt="logo"
-      width="72"
-      height="57" />
+      <h1 class="mat-headline-2">{{ title }}</h1>
 
-    <h1 class="mat-headline-2">{{ title }}</h1>
+      <h3 class="mat-headline-5">{{ subtitle }}</h3>
 
-    <h3 class="mat-headline-5">{{ subtitle }}</h3>
-
-    <div class="hero-actions">
-      <a mat-raised-button color="accent" routerLink="/create">Add a Book</a>
-    </div>
-  </div>
-  
+      <div class="hero-actions">
+         <a mat-raised-button color="primary" routerLink="/create">Add Book</a>
+         <a mat-raised-button color="accent" routerLink="/books">My Library</a>
+      </div>
+   </div>
 </header>

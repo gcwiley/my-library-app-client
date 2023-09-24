@@ -17,9 +17,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Main App Component
 import { AppComponent } from './app.component';
+import { ActionBarComponent } from './shared/action-bar/action-bar.component';
 
 @NgModule({
-   declarations: [AppComponent],
+   declarations: [AppComponent, ActionBarComponent],
    imports: [
       BrowserModule,
       BrowserAnimationsModule,

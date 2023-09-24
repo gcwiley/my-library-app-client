@@ -1,47 +1,48 @@
 .hero-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-  text-align: center;
-
-  background-image: url(../../../assets/images/banner-image.jpg);
-  background-size: cover;
-  background-position: center;
-  opacity: .9;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+   text-align: center;
+   background-image: url(../../../assets/images/banner-image.jpg);
+   background-size: cover;
+   background-position: center;
+   opacity: 0.9;
 }
 
 .hero-content {
-  // border: 1px solid red;
-  color: white;
+   // border: 1px solid red;
+   color: white;
 }
 
 .hero-image {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 1.2rem;
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 1.2rem;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 0;
+   font-size: 3rem;
+   font-weight: 300;
+   line-height: 1.2;
+   margin: 0;
 }
 
 .hero-text {
-  font-size: 1.5rem;
-  font-weight: 300;
-  padding-bottom: 1rem;
-  margin-top: 1rem;
+   font-size: 1.5rem;
+   font-weight: 300;
+   padding-bottom: 1rem;
+   margin-top: 1rem;
 }
 
 .hero-actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.hero-actions a {
+   margin: 0.5rem;
 }
