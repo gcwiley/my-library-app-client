@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
    <!-- BOOK ICON -->
    <a mat-icon-button routerLink="/" aria-label="book icon">
-      <mat-icon>book</mat-icon>
+      <mat-icon>home</mat-icon>
    </a>
 
    <!-- APP TITLE -->
@@ -19,19 +19,6 @@
       disabled>
       <mat-icon>brightness_medium</mat-icon>
    </button>
-
-   <button mat-icon-button matTooltip="Submit Feedback" [matMenuTriggerFor]="feedbackMenu" aria-label="submit feedback">
-      <mat-icon>help</mat-icon>
-   </button>
-
-   <!-- FEEDBACK MENU -->
-   <mat-menu #feedbackMenu="matMenu">
-      <!-- support page -->
-      <a mat-menu-item routerLink="/submit-feedback">
-         <mat-icon>feedback</mat-icon>
-         <span>Submit Feedback</span>
-      </a>
-   </mat-menu>
 
    <!-- Account Button -->
    <button mat-icon-button [matMenuTriggerFor]="menu" aria-labe="Account menu">
@@ -52,6 +39,11 @@
          <a mat-menu-item routerLink="/issues">
             <mat-icon>bug_report</mat-icon>
             <span>Issue Tracker</span>
+         </a>
+
+         <a mat-menu-item routerLink="/submit-feedback">
+            <mat-icon>feedback</mat-icon>
+            <span>Submit Feedback</span>
          </a>
 
          <!-- sign out button -->

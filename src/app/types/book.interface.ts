@@ -3,10 +3,11 @@ export interface Book {
     _id?: string;
     title: string,
     author: string,
-    isbn: string,
+    isbn: number,
     publicationDate: string;
     pageCount: string;
     genre: string;
+    favoriteBook: Boolean;
     summary: string;
     coverImageUrl: string;
     createdAt: string,

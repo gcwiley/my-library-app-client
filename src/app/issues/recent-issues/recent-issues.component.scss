@@ -12,5 +12,5 @@ $my-palette: mat.define-palette(mat.$green-palette);
   background-color: mat.get-color-from-palette($my-palette, 50);
   color: mat.get-color-from-palette($my-palette, 600);
   box-shadow: none;
-  border-radius: 15px;
+  // border-radius: 15px;
 }

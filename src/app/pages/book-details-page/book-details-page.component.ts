@@ -19,9 +19,9 @@ import { Book } from 'src/app/types/book.interface';
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
-  selector: 'app-details-page',
-  templateUrl: './details-page.component.html',
-  styleUrls: ['./details-page.component.scss'],
+  selector: 'app-book-details-page',
+  templateUrl: './book-details-page.component.html',
+  styleUrls: ['./book-details-page.component.scss'],
   standalone: true,
   imports: [
     MatGridListModule,
@@ -33,7 +33,7 @@ import { BookService } from 'src/app/services/book.service';
     BookDetailsComponent,
   ],
 })
-export class DetailsPageComponent implements OnInit {
+export class BookDetailsPageComponent implements OnInit {
   // set the default values of the grid list here
   cols = 4; // sets the number of columns in the grid
   rowHeight = 'fit'; // sets the height of the rows in the grid

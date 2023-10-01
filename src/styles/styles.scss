@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+
+$headline-text-color: black;
+$headline-margin-bottom: 0px;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mat-headline-1 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
+
+.mat-headline-2 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
+
+.mat-headline-3 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
+
+.mat-headline-4 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
+
+.mat-headline-5 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
+
+.mat-headline-6 {
+  // color: $headline-text-color;
+  margin-bottom: $headline-margin-bottom;
+}
