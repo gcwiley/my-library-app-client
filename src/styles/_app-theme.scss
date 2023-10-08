@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+
+// SHARED COMPONENTS THEMES
+@use '../app/shared/header/header-theme';
+@use '../app/shared/footer/footer-theme';
+
+// BOOK COMPONENT THEMES
+@use '../app/books/book-details/book-details-theme';
+@use '../app/books/recent-books/recent-books-theme';
+
+// Styles for the app that are based on the current theme.
+@mixin theme($theme) {
+   @include header-theme.color($theme);
+   @include footer-theme.color($theme);
+   @include book-details-theme.theme($theme);
+   @include recent-books-theme.theme($theme);
+}

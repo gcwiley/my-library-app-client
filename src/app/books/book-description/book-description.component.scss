@@ -1,17 +1,13 @@
-@use '@angular/material' as mat;
-
-$my-palette: mat.define-palette(mat.$blue-palette);
-
 .book-description {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin: 1rem;
-  padding: 2rem;
+   position: absolute;
+   top: 0px;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+   margin: 1rem;
+   padding: 2rem;
 
-  box-shadow: none;
-  border: 1px gainsboro solid;
-  // border-radius: 10px;
+   box-shadow: none;
+   border: 1px gainsboro solid;
+   // border-radius: 10px;
 }

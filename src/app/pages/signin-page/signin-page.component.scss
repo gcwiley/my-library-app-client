@@ -1,52 +1,47 @@
-@use '@angular/material' as mat;
-
-$my-palette: mat.define-palette(mat.$green-palette);
-
 .signin-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: mat.get-color-from-palette($my-palette, 50);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
 }
 
 .signin-form {
-  width: 400px;
-  // max-width: 550px;
-  // border-radius: 10px;
-  box-shadow: none;
-  // border: 0.5px solid rgb(193, 193, 193);
-  padding: 2rem;
+   width: 400px;
+   // max-width: 550px;
+   // border-radius: 10px;
+   // box-shadow: none;
+   // border: 0.5px solid rgb(193, 193, 193);
+   padding: 2rem;
 }
 
 .full-width {
-  width: 100%;
-  margin: 0.4rem 0;
+   width: 100%;
+   margin: 0.4rem 0;
 }
 
 .card-actions {
-  display: flex;
-  flex-direction: row;
+   display: flex;
+   flex-direction: row;
 }
 
 button {
-  flex: 1;
-  margin-top: 1rem;
+   flex: 1;
+   margin-top: 1rem;
 }
 
 .form-check {
-  display: flex;
-  flex-direction: row;
+   display: flex;
+   flex-direction: row;
 }
 
 .spacer {
-  flex: 1 1 auto;
+   flex: 1 1 auto;
 }
 
 .title-text {
-  text-align: center;
+   text-align: center;
 }
 
 .copyright-text {
-  text-align: center;
+   text-align: center;
 }

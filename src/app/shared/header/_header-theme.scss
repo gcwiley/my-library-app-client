@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+   // read color value from a theme, use the 'get-color-config' Sass function
+   $color-config: mat.get-color-config($theme);
+
+   // Get the primary color palette from the color-config
+   $primary-palette: map.get($color-config, 'primary');
+   // Get the accent color palette from the color-config
+   $accent-palette: map.get($color-config, 'accent');
+   // Get the warn color palette from the color-config
+   $warn-palette: map.get($color-config, 'warn');
+   // Get the 'is-dark' color palette from the color-config
+   $is-dark-palette: map.get($color-config, 'is-dark');
+
+   .header {
+      // read the 500 hue from the primary color palette
+      color: mat.get-color-from-palette($primary-palette, default-contrast);
+      background-color: mat.get-color-from-palette($primary-palette);
+   }
+}

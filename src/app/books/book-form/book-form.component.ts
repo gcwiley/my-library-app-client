@@ -51,7 +51,7 @@ export class BookFormComponent implements OnInit {
    bookForm = this.formBuilder.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
-      isbn: ['', Validators.required],
+      isbn: ['', Validators.required, Validators.minLength(8), Validators.maxLength(8)],
       publicationDate: ['', Validators.required],
       pageCount: ['', Validators.required],
       genre: ['', Validators.required],

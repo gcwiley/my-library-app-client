@@ -1,3 +1,4 @@
+export { BookActionBarComponent } from './book-action-bar/book-action-bar.component';
 export { BookCarouselComponent } from './book-carousel/book-carousel.component';
 export { BookDescriptionComponent } from './book-description/book-description.component';
 export { BookDetailsComponent } from './book-details/book-details.component';

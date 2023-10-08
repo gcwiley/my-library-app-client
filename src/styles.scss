@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use 'styles/theme.scss';
 @use 'styles/styles.scss';
+// import the custom theme
+@use 'styles/themes';
+

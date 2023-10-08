@@ -1,43 +1,44 @@
 <mat-card class="book-details">
-  <mat-list>
-    <!-- ISBN -->
-    <mat-list-item>
-      <div matListItemLine>ISBN</div>
-      <div matListItemMeta>
-        <strong>{{ book.isbn }}</strong>
-      </div>
-    </mat-list-item>
+   <mat-list>
+    <div mat-subheader>About this book</div>
+      <!-- ISBN -->
+      <mat-list-item>
+         <div matListItemLine>ISBN</div>
+         <div matListItemMeta>
+            <strong>{{ book.isbn }}</strong>
+         </div>
+      </mat-list-item>
 
-    <!-- PUBLICATION DATE -->
-    <mat-list-item>
-      <div matListItemLine>Originally published:</div>
-      <div matListItemMeta>
-        <strong>{{ book.publicationDate | date }}</strong>
-      </div>
-    </mat-list-item>
+      <!-- PUBLICATION DATE -->
+      <mat-list-item>
+         <div matListItemLine>Originally published:</div>
+         <div matListItemMeta>
+            <strong>{{ book.publicationDate | date }}</strong>
+         </div>
+      </mat-list-item>
 
-    <!-- AUTHOR -->
-    <mat-list-item>
-      <div matListItemLine>Author:</div>
-      <div matListItemMeta>
-        <strong>{{ book.author }}</strong>
-      </div>
-    </mat-list-item>
+      <!-- AUTHOR -->
+      <mat-list-item>
+         <div matListItemLine>Author:</div>
+         <div matListItemMeta>
+            <strong>{{ book.author }}</strong>
+         </div>
+      </mat-list-item>
 
-    <!-- PAGE COUNT -->
-    <mat-list-item>
-      <div matListItemLine>Page count:</div>
-      <div matListItemMeta>
-        <strong>{{ book.pageCount }}</strong>
-      </div>
-    </mat-list-item>
+      <!-- PAGE COUNT -->
+      <mat-list-item>
+         <div matListItemLine>Page count:</div>
+         <div matListItemMeta>
+            <strong>{{ book.pageCount }}</strong>
+         </div>
+      </mat-list-item>
 
-    <!-- LAST UPDATED -->
-    <mat-list-item>
-      <div matListItemLine>Last Updated</div>
-      <div matListItemMeta>
-        <strong>{{ book.updatedAt | date }}</strong>
-      </div>
-    </mat-list-item>
-  </mat-list>
+      <!-- LAST UPDATED -->
+      <mat-list-item>
+         <div matListItemLine>Last Updated</div>
+         <div matListItemMeta>
+            <strong>{{ book.updatedAt | date }}</strong>
+         </div>
+      </mat-list-item>
+   </mat-list>
 </mat-card>

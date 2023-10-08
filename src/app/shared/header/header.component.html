@@ -5,7 +5,7 @@
    </a>
 
    <!-- APP TITLE -->
-   <span class="mat-headline-4">My Library App</span>
+   <span class="mat-headline-4">{{text}}</span>
 
    <span class="spacer"></span>
 
@@ -20,8 +20,21 @@
       <mat-icon>brightness_medium</mat-icon>
    </button>
 
+   <!-- Feedback Button -->
+   <button mat-icon-button [matMenuTriggerFor]="feedbackMenu" aria-label="Feedback Menu">
+      <mat-icon>help</mat-icon>
+   </button>
+
+   <!-- Feedback Menu Goes here -->
+   <mat-menu #feedbackMenu="matMenu">
+      <a mat-menu-item routerLink="/submit-feedback">
+         <mat-icon>feedback</mat-icon>
+         <span>Submit Feedback</span>
+      </a>
+   </mat-menu>
+
    <!-- Account Button -->
-   <button mat-icon-button [matMenuTriggerFor]="menu" aria-labe="Account menu">
+   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Account menu">
       <mat-icon>account_circle</mat-icon>
    </button>
 
@@ -39,11 +52,6 @@
          <a mat-menu-item routerLink="/issues">
             <mat-icon>bug_report</mat-icon>
             <span>Issue Tracker</span>
-         </a>
-
-         <a mat-menu-item routerLink="/submit-feedback">
-            <mat-icon>feedback</mat-icon>
-            <span>Submit Feedback</span>
          </a>
 
          <!-- sign out button -->
