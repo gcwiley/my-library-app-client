@@ -3,6 +3,7 @@
 // SHARED COMPONENTS THEMES
 @use '../app/shared/header/header-theme';
 @use '../app/shared/footer/footer-theme';
+@use '../app/shared/announcement-banner/announcement-banner-theme';
 
 // BOOK COMPONENT THEMES
 @use '../app/books/book-details/book-details-theme';
@@ -10,8 +11,9 @@
 
 // Styles for the app that are based on the current theme.
 @mixin theme($theme) {
-   @include header-theme.color($theme);
-   @include footer-theme.color($theme);
+   @include header-theme.theme($theme);
+   @include footer-theme.theme($theme);
+   @include announcement-banner-theme.theme($theme);
    @include book-details-theme.theme($theme);
    @include recent-books-theme.theme($theme);
 }

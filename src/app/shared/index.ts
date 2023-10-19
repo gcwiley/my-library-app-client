@@ -1,4 +1,3 @@
-export { ActionBarComponent } from '../books/book-action-bar/book-action-bar.component';
 export { AnnouncementBannerComponent } from './announcement-banner/announcement-banner.component';
 export { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 export { FooterComponent } from './footer/footer.component';

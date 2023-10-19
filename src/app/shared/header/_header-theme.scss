@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
+// color mixin
 @mixin color($theme) {
    // read color value from a theme, use the 'get-color-config' Sass function
    $color-config: mat.get-color-config($theme);
@@ -17,6 +18,28 @@
    .header {
       // read the 500 hue from the primary color palette
       color: mat.get-color-from-palette($primary-palette, default-contrast);
-      background-color: mat.get-color-from-palette($primary-palette);
+      background-color: mat.get-color-from-palette($warn-palette);
+   }
+}
+
+// typography mixin
+@mixin typography($theme) {
+   // Get the typography config from the theme.
+   $typography-config: mat.get-typography-config($theme);
+
+   .header {
+      font-family: mat.font-family($typography-config);
+   }
+}
+
+@mixin theme($theme) {
+   $color-config: mat.get-color-config($theme);
+   @if $color-config != null {
+      @include color($theme);
+   }
+
+   $typography-config: mat.get-typography-config($theme);
+   @if $typography-config != null {
+      @include typography($theme);
    }
 }

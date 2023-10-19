@@ -1,20 +1,20 @@
 1. ID (_id)
-    - number
+    - Data Type = string
 
 2. Title (title)
-    - String
+    - Data Type = string
 
 3. Author (author)
-    - String
+    - Data Type = string
 
 4. ISBN (isbn)
-    - Number    
+    - Data Type = string    
 
 5. Publication Date (publicationDate)
-    - Date
+    - Data Type = string
 
 6. Page Count (pageCount)
-    - Number
+    - Data Type = string
 
 7. Genre (genre)
     - String

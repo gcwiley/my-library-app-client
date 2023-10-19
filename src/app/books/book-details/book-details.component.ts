@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -13,27 +13,24 @@ import { Book } from '../../types/book.interface';
 import { BookService } from '../../services/book.service';
 
 @Component({
-  selector: 'app-book-details',
-  templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MatListModule, MatCardModule],
+   selector: 'app-book-details',
+   templateUrl: './book-details.component.html',
+   styleUrls: ['./book-details.component.scss'],
+   standalone: true,
+   imports: [CommonModule, MatListModule, MatCardModule],
 })
 export class BookDetailsComponent implements OnInit {
-  book!: Book;
+   book!: Book;
 
-  constructor(
-    private route: ActivatedRoute,
-    private bookService: BookService
-  ) {}
+   constructor(private route: ActivatedRoute, private bookService: BookService) {}
 
-  ngOnInit(): void {
-    this.getBook();
-  }
+   ngOnInit(): void {
+      this.getBook();
+   }
 
-  // Get Book by id
-  getBook(): void {
-    const id = this.route.snapshot.paramMap.get('id') ?? '';
-    this.bookService.getBook(id).subscribe((book) => (this.book = book));
-  }
+   // Get Book by id
+   getBook(): void {
+      const id = this.route.snapshot.paramMap.get('id') ?? '';
+      this.bookService.getBook(id).subscribe((book) => (this.book = book));
+   }
 }

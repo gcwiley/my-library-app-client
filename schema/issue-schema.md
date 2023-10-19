@@ -1,5 +1,8 @@
+1. ID (_id)
+    - Data Type = string
+
 1. Title (title)
-    - Data Type = String
+    - Data Type = string
 
 2. Description (description)
     - Data Type = String
