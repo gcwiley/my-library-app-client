@@ -3,7 +3,7 @@
 
 <main class="signin-page-container">
   <form [formGroup]="signinForm" novalidate (ngSubmit)="onSubmitSignIn()">
-    <mat-card class="signin-form">
+    <mat-card class="signin-form" appearance="outlined">
       <!-- TITLE TEXT -->
       <div class="title-text">
         <h3 class="mat-headline-4">Sign In</h3>
@@ -36,7 +36,7 @@
       <!-- SIGN IN BUTTON -->
       <div class="card-actions">
         <button mat-flat-button color="primary" type="submit">Sign In</button>
-        <!-- <a mat-button color="primary" routerLink="/signup">Create an account</a> -->
+        <a mat-button color="primary" routerLink="/signup" disabled>Create an account</a>
       </div>
 
     </mat-card>

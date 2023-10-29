@@ -1,38 +1,22 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-// color mixin
-@mixin color($theme) {
-   // Get the color config from the theme.
-   $color-config: mat.get-color-config($theme);
-
-   // Get the primary color palette from the color-config.
-   $primary-palette: map.get($color-config, 'primary');
-
-   .announcement-banner {
-      // Read the 500 hue from the primary color palette.
-      color: mat.get-color-from-palette($primary-palette, 500);
-   }
-}
-
-@mixin typography($theme) {
-   // Get the typography config from the theme.
-   $typography-config: mat.get-typography-config($theme);
-
-   .announcement-banner {
-      font-family: mat.font-family($typography-config);
-   }
-}
-
-// theme mixin
 @mixin theme($theme) {
-   $color-config: mat.get-color-config($theme);
-   @if $color-config != null {
-      @include color($theme);
-   }
+   $primary: map.get($theme, primary);
+   $accent: map.get($theme, accent);
+   $warn: map.get($theme, warn);
+   $background: map.get($theme, background);
+   $foreground: map.get($theme, foreground);
+   $is-dark-theme: map.get($theme, is-dark);
 
-   $typography-config: mat.get-typography-config($theme);
-   @if $typography-config != null {
-      @include typography($theme);
+   app-cookie-popup {
+      .popup {
+         color: if(
+            $is-dark-theme,
+            map.get(mat.$dark-theme-foreground-palette, secondary-text),
+            map.get(map.get(mat.$grey-palette, contrast), 50)
+         );
+         background: if($is-dark-theme, #252525, map.get(mat.$grey-palette, 50));
+      }
    }
 }

@@ -98,6 +98,10 @@ export class BookService {
       );
    }
 
+   // favoriteBook(id: string): Observable<Book> {
+   //    console.log("fix this")
+   // }
+
    // handle Http operation that failed
    // let the app continue
 

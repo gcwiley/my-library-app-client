@@ -9,11 +9,22 @@
 @use '../app/books/book-details/book-details-theme';
 @use '../app/books/recent-books/recent-books-theme';
 
+// PAGE THEMES
+@use '../app/pages/signin-page/signin-page-theme';
+@use '../app/pages/signup-page/signup-page-theme';
+@use '../app/pages/reset-password-page/reset-password-page-theme';
+
 // Styles for the app that are based on the current theme.
 @mixin theme($theme) {
+   // shared component themes
    @include header-theme.theme($theme);
    @include footer-theme.theme($theme);
    @include announcement-banner-theme.theme($theme);
+   // book themes
    @include book-details-theme.theme($theme);
    @include recent-books-theme.theme($theme);
+   // page themes
+   @include signin-page-theme.theme($theme);
+   @include signup-page-theme.theme($theme);
+   @include reset-password-page-theme.theme($theme);
 }

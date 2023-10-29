@@ -17,13 +17,19 @@
     - Data Type = string
 
 7. Genre (genre)
-    - String
+    - Data Type = string
 
-8. Summary (summary)
-    - String
+8. Favorite Book (favoriteBook)
+    - Data Type = Boolean
 
-9. created At (createdAt)
-    - String
+9. Summary (summary)
+    - Data Type = string
 
-10. updated At (updatedAt)
-    - String
+10. Cover Image Url (coverImageUrl)
+    - Data Type = string
+
+11. created At (createdAt)
+    - Data Type = string
+
+12. updated At (updatedAt)
+    - Data Type = string

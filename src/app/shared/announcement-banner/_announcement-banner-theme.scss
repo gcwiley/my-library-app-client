@@ -12,6 +12,7 @@
    .announcement-banner {
       // Read the 500 hue from the primary color palette.
       color: mat.get-color-from-palette($primary-palette, 500);
+      background-color: mat.get-color-from-palette($primary-palette, 500);
    }
 }
 
