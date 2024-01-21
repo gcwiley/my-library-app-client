@@ -8,12 +8,15 @@ import { MatCardModule } from '@angular/material/card';
 // import the shared components
 import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
+// import the about component
+import { AboutComponent } from 'src/app/components/about/about.component';
+
 @Component({
    selector: 'app-about-page',
    templateUrl: './about-page.component.html',
    styleUrls: ['./about-page.component.scss'],
    standalone: true,
-   imports: [MatGridListModule, MatCardModule, HeaderComponent, AnnouncementBannerComponent, FooterComponent],
+   imports: [MatGridListModule, MatCardModule, HeaderComponent, AnnouncementBannerComponent, FooterComponent, AboutComponent],
 })
 export class AboutPageComponent implements OnInit {
    // set the default values of the grid list here

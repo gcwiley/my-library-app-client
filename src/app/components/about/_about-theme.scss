@@ -3,14 +3,14 @@
 
 // color mixin
 @mixin color($theme) {
-   .book-details {
+   .about-text {
       color: mat.get-theme-color($theme, accent, 200-contrast);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   .book-details {
+   .about-text {
       font: mat.get-theme-typography($theme, body-1);
    }
 }

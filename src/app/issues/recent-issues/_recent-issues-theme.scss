@@ -1,39 +1,27 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
+// color mixin
 @mixin color($theme) {
-   // read color value from a theme, use the 'get-color-config' Sass function
-   $color-config: mat.get-color-config($theme);
-
-   // Get the primary color palette from the color-config
-   $primary-palette: map.get($color-config, 'primary');
-
    .recent-issues {
-      // read the 500 hue from the primary color palette
-      color: mat.get-color-from-palette($primary-palette, default-contrast);
-      background-color: mat.get-color-from-palette($primary-palette, 900);
+      color: mat.get-theme-color($theme, accent, 200-contrast);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   // Get the typography config from the theme.
-   $typography-config: mat.get-typography-config($theme);
-
-   .my-carousel {
-      font-family: mat.font-family($typography-config);
+   .recent-issues {
+      font: mat.get-theme-typography($theme, body-1);
    }
 }
 
-// theme mixin - combines both color and typography
+// theme mixin
 @mixin theme($theme) {
-   $color-config: mat.get-color-config($theme);
-   @if $color-config != null {
+   @if mat.theme-has($theme, color) {
       @include color($theme);
    }
 
-   $typography-config: mat.get-typography-config($theme);
-   @if $typography-config != null {
+   @if mat.theme-has($theme, typography) {
       @include typography($theme);
    }
 }

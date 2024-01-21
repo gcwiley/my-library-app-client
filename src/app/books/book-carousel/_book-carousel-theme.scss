@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+// color mixin
+@mixin color($theme) {
+   .book-carousel {
+      color: mat.get-color-from-palette($primary-palette, default-contrast);
+      background-color: mat.get-color-from-palette($primary-palette, 900);
+   }
+}
+
+// typography mixin
+@mixin typography($theme) {
+   .book-carousel {
+      font-family: mat.font-family($typography-config);
+   }
+}
+
+// theme mixin
+@mixin theme($theme) {
+}

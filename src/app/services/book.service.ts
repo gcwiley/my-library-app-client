@@ -48,7 +48,11 @@ export class BookService {
          return of([]);
       }
       return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
-         tap((x) => (x.length ? this.log(`found books matching "${term}"`) : this.log(`no books matching "${term}"`))),
+         tap((x) =>
+            x.length
+               ? this.log(`found books matching "${term}"`)
+               : this.log(`no books matching "${term}"`)
+         ),
          catchError(this.handleError<Book[]>('search Books', []))
       );
    }
@@ -63,9 +67,9 @@ export class BookService {
       return this.http.get<Book[]>('/api/recent-books');
    }
 
-   // GET: featured books
-   getFeaturedBooks(): Observable<Book[]> {
-      return this.http.get<Book[]>('/api/featured-books');
+   // GET: user's favorite books
+   getUsersFavoriteBooks(): Observable<Book[]> {
+      return this.http.get<Book[]>('/api/favorite-books');
    }
 
    // SAVE METHODS //
@@ -98,9 +102,10 @@ export class BookService {
       );
    }
 
-   // favoriteBook(id: string): Observable<Book> {
-   //    console.log("fix this")
-   // }
+   // FIX THIS!
+   addBookToFavorites(id: any) {
+      console.log('added to favorites');
+   }
 
    // handle Http operation that failed
    // let the app continue

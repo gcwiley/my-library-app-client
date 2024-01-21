@@ -3,39 +3,19 @@
 
 // color mixin
 @mixin color($theme) {
-   // read color value from a theme, use the 'get-color-config' Sass function
-   $color-config: mat.get-color-config($theme);
-
-   // Get the primary color palette from the color-config
-   $primary-palette: map.get($color-config, 'primary');
-
    .notfound-page-container {
-      // read the 500 hue from the primary color palette
       color: mat.get-color-from-palette($primary-palette, 900);
-      // sets the background color
       background: mat.get-color-from-palette($primary-palette, 50);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   // read typography values from a theme, use the 'get-typography-config' Sass function
-   $typography-config: mat.get-typography-config($theme);
-
    .signin-page-container {
       font-family: mat.font-family($typography-config);
    }
 }
 
-// add a theme mixin for both color and typography
+// theme mixin
 @mixin theme($theme) {
-   $color-config: mat.get-color-config($theme);
-   @if $color-config != null {
-      @include color($theme);
-   }
-
-   $typography-config: mat.get-typography-config($theme);
-   @if $typography-config != null {
-      @include typography($theme);
-   }
 }

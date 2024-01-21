@@ -47,16 +47,15 @@ export class BookFormComponent implements OnInit {
 
    genres: BookGenre[] = BOOK_GENRES;
 
-   // create the book form fix this
+   // create the book form
    bookForm = this.formBuilder.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
-      isbn: ['', Validators.required, Validators.minLength(8), Validators.maxLength(8)],
+      isbn: [0, Validators.required, Validators.minLength(8), Validators.maxLength(8)],
       publicationDate: ['', Validators.required],
       pageCount: ['', Validators.required],
       genre: ['', Validators.required],
       summary: ['', Validators.required],
-      coverImageUrl: ['', Validators.required],
    });
 
    constructor(private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute, private bookService: BookService) {}
@@ -79,7 +78,6 @@ export class BookFormComponent implements OnInit {
                   pageCount: this.book.pageCount,
                   genre: this.book.genre,
                   summary: this.book.summary,
-                  coverImageUrl: this.book.coverImageUrl,
                });
             });
          } else {

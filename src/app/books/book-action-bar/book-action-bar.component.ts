@@ -36,10 +36,8 @@ export class BookActionBarComponent {
       });
    }
 
-   // onFavoriteBook(id: string) {
-   //    this.bookService.favoriteBook(id).subscribe(() => {
-   //       // navigates user back to the 'my-library' page
-   //       this.router.navigateByUrl('/books');
-   //    });
-   // }
+   // add book to favorites
+   onFavoriteBook(id: string) {
+      console.log('Add Book to favorite needs work');
+   }
 }

@@ -4,15 +4,12 @@
    [cols]="cols"
    [rowHeight]="rowHeight"
    [gutterSize]="gutterSize">
-   <!-- BOOK TILE -->
+
    <mat-grid-tile *ngFor="let book of books" [colspan]="colspan" [rowspan]="rowspan">
+      <!-- BOOK TITLE -->
       <mat-grid-tile-header>
          <p>{{ book.title }}</p>
       </mat-grid-tile-header>
-
-      <a routerLink="/books/{{ book._id }}">
-         <img src="{{ book.coverImageUrl }}" alt="{{ book.title }}" />
-      </a>
 
       <mat-grid-tile-footer>
          <p>{{ book.author }}</p>
