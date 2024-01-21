@@ -66,18 +66,18 @@
                },
                "configurations": {
                   "production": {
-                     "browserTarget": "my-library-app-client:build:production"
+                    "buildTarget": "my-library-app-client:build:production"
                   },
                   "development": {
-                     "browserTarget": "my-library-app-client:build:development"
+                    "buildTarget": "my-library-app-client:build:development"
                   }
                },
                "defaultConfiguration": "development"
             },
             "extract-i18n": {
                "builder": "@angular-devkit/build-angular:extract-i18n",
-               "options": {
-                  "browserTarget": "my-library-app-client:build"
+              "options": {
+                "buildTarget": "my-library-app-client:build"
                }
             },
             "test": {
