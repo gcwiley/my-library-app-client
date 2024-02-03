@@ -14,7 +14,7 @@ import {
 } from 'src/app/shared';
 
 // import the book components
-import { FeaturedBooksComponent, BookSearchComponent, BookCarouselComponent } from 'src/app/books';
+import { BookCarouselComponent } from 'src/app/books';
 
 @Component({
   selector: 'app-main-page',
@@ -29,8 +29,6 @@ import { FeaturedBooksComponent, BookSearchComponent, BookCarouselComponent } fr
     FooterComponent,
     AnnouncementBannerComponent,
     HeroComponent,
-    FeaturedBooksComponent,
-    BookSearchComponent,
     BookCarouselComponent,
   ],
 })

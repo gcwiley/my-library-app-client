@@ -4,7 +4,7 @@ export { BookDescriptionComponent } from './book-description/book-description.co
 export { BookDetailsComponent } from './book-details/book-details.component';
 export { BookFormComponent } from './book-form/book-form.component';
 export { BookGridComponent } from './book-grid/book-grid.component';
+export { BookListComponent } from './book-list/book-list.component';
 export { BookSearchComponent } from './book-search/book-search.component';
 export { BookTagsComponent } from './book-tags/book-tags.component';
-export { FeaturedBooksComponent } from './featured-books/featured-books.component';
 export { RecentBooksComponent } from './recent-books/recent-books.component';

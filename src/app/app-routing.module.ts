@@ -36,7 +36,7 @@ const routes: Routes = [
       component: BookDetailsPageComponent,
       canActivate: [RouteGuard],
    },
-   { path: 'create', component: AddBookPageComponent, canActivate: [RouteGuard] },
+   { path: 'create-book', component: AddBookPageComponent, canActivate: [RouteGuard] },
    {
       path: 'edit/:id',
       component: AddBookPageComponent,

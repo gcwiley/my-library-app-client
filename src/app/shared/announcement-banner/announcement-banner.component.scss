@@ -1,8 +1,8 @@
 .announcement-banner {
+   display: flex;
+   align-items: center;
    justify-content: center;
-   height: 2em;
 
-   h6 {
-      font-size: 0.7em;
-   }
+   height: 3rem;
+   margin: 0;
 }

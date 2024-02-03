@@ -58,8 +58,8 @@ export class BookService {
    }
 
    // GET: book count from database
-   getBookCount(): Observable<Object> {
-      return this.http.get<any>('/api/book-count');
+   getBookCount(): Observable<number> {
+      return this.http.get<number>('/api/book-count');
    }
 
    // GET: recent books added
@@ -75,7 +75,7 @@ export class BookService {
    // SAVE METHODS //
 
    // POST: add a new book to the server
-   addBook(newBook: Book | any): Observable<Book> {
+   addBook(newBook: Book | object): Observable<Book> {
       return this.http.post<Book>(this.booksUrl, newBook, this.httpOptions).pipe(
          tap((newBook: Book) => this.log(`added book with id=${newBook._id}`)),
          catchError(this.handleError<Book>('addBook'))
@@ -84,6 +84,7 @@ export class BookService {
 
    // DELETE: a book by ID from the server
    deleteBook(id: string): Observable<Book> {
+      // create the url
       const url = `${this.booksUrl}/${id}`;
 
       return this.http.delete<Book>(url, this.httpOptions).pipe(
@@ -93,17 +94,18 @@ export class BookService {
    }
 
    // PUT: update a book by ID on the server
-   updateBook(id: any, book: any): Observable<any> {
+   updateBook(id: string, book: Book | object): Observable<object> {
+      // create the url
       const url = `${this.booksUrl}/${id}`;
 
-      return this.http.put(url, book, this.httpOptions).pipe(
-         tap(() => this.log(`updated book id=${book._id}`)),
-         catchError(this.handleError<any>('updateBook'))
+      return this.http.patch(url, book, this.httpOptions).pipe(
+         tap(() => this.log(`updated book id=${id}`)),
+         catchError(this.handleError<object>('updateBook'))
       );
    }
 
    // FIX THIS!
-   addBookToFavorites(id: any) {
+   addBookToFavorites(id: string) {
       console.log('added to favorites');
    }
 
@@ -111,7 +113,7 @@ export class BookService {
    // let the app continue
 
    private handleError<T>(operation = 'operation', result?: T) {
-      return (error: any): Observable<T> => {
+      return (error: Error): Observable<T> => {
          // TODO: send the error to remote logging infrastructure
          console.error(error); // log to console instead
 

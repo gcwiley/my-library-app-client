@@ -3,19 +3,26 @@
 
 // color mixin
 @mixin color($theme) {
-   .notfound-page-container {
-      color: mat.get-color-from-palette($primary-palette, 900);
-      background: mat.get-color-from-palette($primary-palette, 50);
+   .container {
+      color: mat.get-theme-color($theme, primary, 200-contrast);
+      background: mat.get-theme-color($theme, accent, 200);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   .signin-page-container {
-      font-family: mat.font-family($typography-config);
+   .container {
+      font: mat.get-theme-typography($theme, body-1);
    }
 }
 
 // theme mixin
 @mixin theme($theme) {
+   @if mat.theme-has($theme, color) {
+      @include color($theme);
+   }
+
+   @if mat.theme-has($theme, typography) {
+      @include typography($theme);
+   }
 }

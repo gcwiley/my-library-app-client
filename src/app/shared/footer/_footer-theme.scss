@@ -12,7 +12,7 @@
 // typography mixin
 @mixin typography($theme) {
    .footer {
-      font: mat.get-theme-typography($theme, headline-1);
+      font: mat.get-theme-typography($theme, body-1);
    }
 }
 

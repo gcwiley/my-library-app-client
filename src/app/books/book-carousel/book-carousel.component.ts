@@ -1,164 +1,83 @@
-import {
-   AfterContentInit,
-   Component,
-   ContentChildren,
-   Directive,
-   ElementRef,
-   HostBinding,
-   Inject,
-   Input,
-   Optional,
-   QueryList,
-   ViewChild,
-   ViewEncapsulation,
-} from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// find out what this is
-import { FocusableOption, FocusKeyManager } from '@angular/cdk/a11y';
-
-import { LEFT_ARROW, RIGHT_ARROW, TAB } from '@angular/cdk/keycodes';
-
-import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { RouterModule } from '@angular/router';
 
 // import angular material modules
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
-@Directive({
-   // eslint-disable-next-line @angular-eslint/directive-selector
-   selector: 'carouselItem',
-   standalone: true,
-})
-export class CarouselItemDirective implements FocusableOption {
-   @HostBinding('attr.role') readonly role = 'listitem';
-   @HostBinding('tabindex') tabindex = '-1';
+// import simple truncate pipe
+import { SimpleTruncatePipe } from 'src/app/pipes/simple-truncate.pipe';
 
-   constructor(readonly element: ElementRef<HTMLElement>) {}
+// import the book service
+import { BookService } from 'src/app/services/book.service';
 
-   focus(): void {
-      this.element.nativeElement.focus({ preventScroll: true });
-   }
-}
+// import the book interface
+import { Book } from 'src/app/types/book.interface';
 
 @Component({
    selector: 'app-book-carousel',
    templateUrl: './book-carousel.component.html',
    styleUrls: ['./book-carousel.component.scss'],
    standalone: true,
-   imports: [CommonModule, MatButtonModule, MatIconModule],
+   imports: [
+      CommonModule,
+      RouterModule,
+      MatGridListModule,
+      MatCardModule,
+      MatIconModule,
+      MatButtonModule,
+      MatDividerModule,
+      SimpleTruncatePipe,
+   ],
 })
-export class BookCarouselComponent {
-   @Input('aria-label') ariaLabel: string | undefined;
-   @ContentChildren(CarouselItemDirective) items!: QueryList<CarouselItemDirective>;
-   @ViewChild('list') list!: ElementRef<HTMLElement>;
-   @HostBinding('class.animations-disabled') readonly animationsDisabled: boolean;
-   position = 0;
-   showPrevArrow = false;
-   showNextArrow = true;
-   index = 0;
-   private _keyManager!: FocusKeyManager<CarouselItemDirective>;
+export class BookCarouselComponent implements OnInit {
+   // create member variables
+   recentBooks: Book[] = [];
 
-   onKeydown({ keyCode }: KeyboardEvent) {
-      const manager = this._keyManager;
-      const previousActiveIndex = manager.activeItemIndex;
+   // set up the grid list demensions
+   cols = 6; // Amount of columns in the grid list.
+   rowHeight = '200px'; // row height
+   gutterSize = '20px';
 
-      if (keyCode === LEFT_ARROW) {
-         manager.setPreviousItemActive();
-      } else if (keyCode === RIGHT_ARROW) {
-         manager.setNextItemActive();
-      } else if (keyCode === TAB && !manager.activeItem) {
-         manager.setFirstItemActive();
-      }
+   // set up the grid list dimensions
+   colspan = 1; // comment
+   rowspan = 1; // comment
 
-      if (manager.activeItemIndex != null && manager.activeItemIndex !== previousActiveIndex) {
-         this.index = manager.activeItemIndex;
-         this._updateItemTabIndices();
+   constructor(private bookService: BookService, private breakpointObserver: BreakpointObserver) {}
 
-         if (this._isOutOfView(this.index)) {
-            this._scrollToActiveItem();
-         }
-      }
+   // responsive code
+   layoutChanges(): void {
+      this.breakpointObserver
+         .observe([Breakpoints.TabletPortrait, Breakpoints.TabletLandscape, Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
+         .subscribe((result) => {
+            const breakpoints = result.breakpoints;
+
+            // check to see if viewport is in table portrait mode
+            if (breakpoints[Breakpoints.TabletPortrait]) {
+               this.cols = 1;
+            } else if (breakpoints[Breakpoints.HandsetPortrait]) {
+               this.cols = 1;
+            } else if (breakpoints[Breakpoints.HandsetLandscape]) {
+               this.cols = 1;
+            } else if (breakpoints[Breakpoints.TabletLandscape]) {
+               this.cols = 2;
+            }
+         });
    }
 
-   constructor(@Optional() @Inject(ANIMATION_MODULE_TYPE) animationsModule?: string) {
-      this.animationsDisabled = animationsModule === 'NoopAnimations';
+   ngOnInit(): void {
+      this.getRecentlyCreatedBooks();
+      this.layoutChanges();
    }
 
-   ngAfterContentInit(): void {
-      this._keyManager = new FocusKeyManager<CarouselItemDirective>(this.items);
-   }
-
-   /** Goes to the next set of items */
-   next() {
-      for (let i = this.index; i < this.items.length; i++) {
-         if (this._isOutOfView(i)) {
-            this.index = i;
-            this._scrollToActiveItem();
-            break;
-         }
-      }
-   }
-
-   /** Goes to the previous set of items. */
-   previous() {
-      for (let i = this.index; i > -1; i--) {
-         if (this._isOutOfView(i)) {
-            this.index = i;
-            this._scrollToActiveItem();
-            break;
-         }
-      }
-   }
-
-   /** Updates the `tabindex` of each of the items based on their active state. */
-   private _updateItemTabIndices() {
-      this.items.forEach((item: CarouselItemDirective) => {
-         if (this._keyManager != null) {
-            item.tabindex = item === this._keyManager.activeItem ? '0' : '-1';
-         }
+   getRecentlyCreatedBooks(): void {
+      this.bookService.getRecentBooks().subscribe((recentBooks) => {
+         this.recentBooks = recentBooks;
       });
-   }
-
-   /** Scrolls an item into the viewport. */
-   private _scrollToActiveItem() {
-      if (!this._isOutOfView(this.index)) {
-         return;
-      }
-
-      const itemsArray = this.items.toArray();
-      let targetItemIndex = this.index;
-
-      // Only shift the carousel by one if we're going forwards. This
-      // looks better compared to moving the carousel by an entire page.
-      if (this.index > 0 && !this._isOutOfView(this.index - 1)) {
-         targetItemIndex = itemsArray.findIndex((_, i) => !this._isOutOfView(i)) + 1;
-      }
-
-      this.position = itemsArray[targetItemIndex].element.nativeElement.offsetLeft;
-      this.list.nativeElement.style.transform = `translateX(-${this.position}px)`;
-      this.showPrevArrow = this.index > 0;
-      this.showNextArrow = false;
-
-      for (let i = itemsArray.length - 1; i > -1; i--) {
-         if (this._isOutOfView(i, 'end')) {
-            this.showNextArrow = true;
-            break;
-         }
-      }
-   }
-
-   /** Checks whether an item at a specific index is outside of the viewport. */
-   private _isOutOfView(index: number, side?: 'start' | 'end') {
-      const { offsetWidth, offsetLeft } = this.items.toArray()[index].element.nativeElement;
-
-      if ((!side || side === 'start') && offsetLeft - this.position < 0) {
-         return true;
-      }
-
-      return (
-         (!side || side === 'end') && offsetWidth + offsetLeft - this.position > this.list.nativeElement.clientWidth
-      );
    }
 }

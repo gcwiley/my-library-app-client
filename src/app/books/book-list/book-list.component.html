@@ -1,0 +1,77 @@
+<table mat-table [dataSource]="dataSource">
+    <!-- title column -->
+    <ng-container matColumnDef="title">
+       <th mat-header-cell *matHeaderCellDef>Title</th>
+       <td mat-cell *matCellDef="let book">{{ book.title }}</td>
+    </ng-container>
+ 
+    <!-- author column -->
+    <ng-container matColumnDef="author">
+       <th mat-header-cell *matHeaderCellDef>Author</th>
+       <td mat-cell *matCellDef="let book">{{ book.author }}</td>
+    </ng-container>
+ 
+    <!-- isbn column -->
+    <ng-container matColumnDef="isbn">
+       <th mat-header-cell *matHeaderCellDef>ISBN</th>
+       <td mat-cell *matCellDef="let book">{{ book.isbn }}</td>
+    </ng-container>
+ 
+    <!-- pageCount column -->
+    <ng-container matColumnDef="pageCount">
+       <th mat-header-cell *matHeaderCellDef>Page Count</th>
+       <td mat-cell *matCellDef="let book">{{ book.pageCount }}</td>
+    </ng-container>
+ 
+    <!-- createdAt -->
+    <ng-container matColumnDef="createdAt">
+       <th mat-header-cell *matHeaderCellDef>Created</th>
+       <td mat-cell *matCellDef="let book">{{ book.createdAt }}</td>
+    </ng-container>
+
+    <!-- updatedAt -->
+    <ng-container matColumnDef="updatedAt">
+        <th mat-header-cell *matHeaderCellDef>Updated</th>
+        <td mat-cell *matCellDef="let book">{{ book.createdAt }}</td>
+     </ng-container>
+ 
+    <!-- delete book button -->
+    <ng-container matColumnDef="deleteBook">
+       <!-- table header -->
+       <th mat-header-cell *matHeaderCellDef>Delete</th>
+       <!-- table data -->
+       <td mat-cell *matCellDef="let book">
+          <button mat-icon-button color="primary" (click)="onDeleteBook(book._id)">
+             <mat-icon>delete</mat-icon>
+          </button>
+       </td>
+    </ng-container>
+ 
+    <!-- favorite project button -->
+    <ng-container matColumnDef="favoriteBook">
+       <!-- table header -->
+       <th mat-header-cell *matHeaderCellDef>Favorite</th>
+       <!-- table data -->
+       <td mat-cell *matCellDef="let book">
+          <button mat-icon-button color="accent" (click)="onFavoriteBook()">
+             <mat-icon>star</mat-icon>
+          </button>
+       </td>
+    </ng-container>
+ 
+    <!-- edit book button -->
+    <ng-container matColumnDef="editBook">
+       <!-- table header -->
+       <th mat-header-cell *matHeaderCellDef>Edit</th>
+       <!-- table data -->
+       <td mat-cell *matCellDef="let book">
+          <a mat-icon-button color="accent" routerLink="/edit/{{ book._id }}">
+             <mat-icon>edit</mat-icon>
+          </a>
+       </td>
+    </ng-container>
+ 
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+ </table>
+ 

@@ -28,7 +28,7 @@ export class BookDescriptionComponent implements OnInit {
 
   // GET book by id
   getBook(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id')!;
     this.bookService.getBook(id).subscribe((book) => (this.book = book));
   }
 }

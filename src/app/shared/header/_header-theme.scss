@@ -4,17 +4,24 @@
 // color mixin
 @mixin color($theme) {
    .header {
-      color: mat.get-color-from-palette($primary-palette, default-contrast);
+      color: mat.get-theme-color($theme, accent, 200-contrast);
    }
 }
 
 // typography mixin - fix
 @mixin typography($theme) {
    .header {
-      font-family: mat.font-family($typography-config);
+      font: mat.get-theme-typography($theme, body-1);
    }
 }
- 
+
 // theme mixin - fix
 @mixin theme($theme) {
+   @if mat.theme-has($theme, color) {
+      @include color($theme);
+   }
+
+   @if mat.theme-has($theme, typography) {
+      @include typography($theme);
+   }
 }

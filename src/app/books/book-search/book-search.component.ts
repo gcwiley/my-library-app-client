@@ -20,4 +20,6 @@ import { Book } from 'src/app/types/book.interface';
    standalone: true,
    imports: [RouterModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
 })
-export class BookSearchComponent {}
+export class BookSearchComponent {
+   // FIX THIS!
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +20,7 @@ import { BookService } from '../../services/book.service';
    imports: [CommonModule, MatListModule, MatCardModule],
 })
 export class BookDetailsComponent implements OnInit {
-   book!: Book;
+   book!: Book | undefined;
 
    constructor(private route: ActivatedRoute, private bookService: BookService) {}
 
@@ -30,7 +30,7 @@ export class BookDetailsComponent implements OnInit {
 
    // Get Book by id
    getBook(): void {
-      const id = this.route.snapshot.paramMap.get('id') ?? '';
+      const id = this.route.snapshot.paramMap.get('id')!;
       this.bookService.getBook(id).subscribe((book) => (this.book = book));
    }
 }

@@ -3,7 +3,7 @@ export interface Book {
    _id?: string;
    title: string;
    author: string;
-   isbn: number;
+   isbn: string;
    publicationDate: string;
    pageCount: string;
    genre: string;
