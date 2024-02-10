@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 // sets up firebase
 import { AngularFireModule } from '@angular/fire/compat';
 
-// load env variables - follow up
+// load env variables
 import { environment } from '../environments/environment';
 
 // App Routing Module

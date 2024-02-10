@@ -3,14 +3,15 @@
 
 // color mixin
 @mixin color($theme) {
-   .hero {
+   .hero-container {
       color: mat.get-theme-color($theme, accent, 200-contrast);
+      background-color: mat.get-theme-color($theme, primary, 100);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   .hero {
+   .hero-container {
       font: mat.get-theme-typography($theme, body-1);
    }
 }

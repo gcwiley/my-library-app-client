@@ -1,42 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
-// import angular material modules
+// import the angular material modules
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 
 // import the shared components
-import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 'src/app/shared';
+import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
 
 // import the book components
-import {
-   BookDescriptionComponent,
-   BookDetailsComponent,
-} from 'src/app/books';
-
-// import the book interface
-import { Book } from 'src/app/types/book.interface';
-
-// import the book service
-import { BookService } from 'src/app/services/book.service';
+import { BookListComponent, RecentBooksComponent } from 'src/app/books';
 
 @Component({
-   selector: 'app-book-details-page',
-   templateUrl: './book-details-page.component.html',
-   styleUrls: ['./book-details-page.component.scss'],
+   selector: 'app-book-list-page',
+   templateUrl: './book-list-page.component.html',
+   styleUrls: ['./book-list-page.component.scss'],
    standalone: true,
-   imports: [
-      MatGridListModule,
-      MatCardModule,
-      HeaderComponent,
-      FooterComponent,
-      AnnouncementBannerComponent,
-      BookDescriptionComponent,
-      BookDetailsComponent,
-   ],
+   imports: [MatGridListModule, HeaderComponent, AnnouncementBannerComponent, FooterComponent, BookListComponent, RecentBooksComponent],
 })
-export class BookDetailsPageComponent implements OnInit {
+export class BookListPageComponent implements OnInit {
    // set the default values of the grid list here
    cols = 4; // sets the number of columns in the grid
    rowHeight = 'fit'; // sets the height of the rows in the grid
@@ -45,21 +26,12 @@ export class BookDetailsPageComponent implements OnInit {
    // set the default values of the grid tile here
    colspan = 3;
 
-   book!: Book;
+   constructor(private breakpointObserver: BreakpointObserver) {}
 
-   constructor(
-      private breakpointObserver: BreakpointObserver
-   ) {}
-
-   // makes the page responsive
+   // responsive code
    layoutChanges(): void {
       this.breakpointObserver
-         .observe([
-            Breakpoints.TabletPortrait,
-            Breakpoints.TabletLandscape,
-            Breakpoints.HandsetPortrait,
-            Breakpoints.HandsetLandscape,
-         ])
+         .observe([Breakpoints.TabletPortrait, Breakpoints.TabletLandscape, Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
          .subscribe((result) => {
             const breakpoints = result.breakpoints;
             // check to see if viewport is in table portrait mode

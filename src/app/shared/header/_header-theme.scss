@@ -8,14 +8,14 @@
    }
 }
 
-// typography mixin - fix
+// typography mixin
 @mixin typography($theme) {
    .header {
       font: mat.get-theme-typography($theme, body-1);
    }
 }
 
-// theme mixin - fix
+// theme mixin
 @mixin theme($theme) {
    @if mat.theme-has($theme, color) {
       @include color($theme);

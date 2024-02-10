@@ -1,0 +1,15 @@
+<app-header></app-header>
+<app-announcement-banner></app-announcement-banner>
+
+<mat-grid-list class="book-list-container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+    <mat-grid-tile>
+        <app-book-list></app-book-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <h2>Recent Books Goes here!</h2>
+        <!-- <app-recent-books></app-recent-books> -->
+    </mat-grid-tile>
+</mat-grid-list>
+
+<app-footer></app-footer>

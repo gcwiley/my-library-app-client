@@ -56,14 +56,14 @@ export class BookListComponent implements OnInit {
 
    // favorites a book
    onFavoriteBook(): void {
-      window.alert('You have added this book to favorites!');
+      window.alert('You have added this book to your favorites!');
    }
 
    // deletes a book
    onDeleteBook(id: string): void {
       this.bookService.deleteBook(id).subscribe(() => {
          // navigates admin back to the admin page
-         this.router.navigateByUrl('/admin');
+         this.router.navigateByUrl('/books');
       });
    }
 }

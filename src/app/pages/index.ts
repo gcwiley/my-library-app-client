@@ -2,6 +2,7 @@ export { AboutPageComponent } from './about-page/about-page.component';
 export { AddBookPageComponent } from './add-book-page/add-book-page.component';
 export { BookDetailsPageComponent } from './book-details-page/book-details-page.component';
 export { BookGridPageComponent } from './book-grid-page/book-grid-page.component';
+export { BookListPageComponent } from './book-list-page/book-list-page.component';
 export { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 export { IssuesPageComponent } from './issues-page/issues-page.component';
 export { MainPageComponent } from './main-page/main-page.component';

@@ -3,7 +3,7 @@
 
 // color mixin
 @mixin color($theme) {
-   .container {
+   .not-found-page-container {
       color: mat.get-theme-color($theme, primary, 200-contrast);
       background: mat.get-theme-color($theme, accent, 200);
    }
@@ -11,7 +11,7 @@
 
 // typography mixin
 @mixin typography($theme) {
-   .container {
+   .not-found-page-container {
       font: mat.get-theme-typography($theme, body-1);
    }
 }

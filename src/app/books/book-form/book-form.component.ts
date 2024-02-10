@@ -51,9 +51,9 @@ export class BookFormComponent implements OnInit {
    bookForm = this.formBuilder.group({
       title: ['', Validators.required],
       author: ['', Validators.required],
-      isbn: ['', Validators.required],
+      isbn: [0, Validators.required],
       publicationDate: ['', Validators.required],
-      pageCount: ['', Validators.required],
+      pageCount: [0, Validators.required],
       genre: ['', Validators.required],
       summary: ['', Validators.required],
    });
@@ -90,11 +90,11 @@ export class BookFormComponent implements OnInit {
    onSaveBook(): void {
       if (this.mode === 'create') {
          this.bookService.addBook(this.bookForm.value).subscribe(() => {
-            // navigates back to homepage
+            // navigates user back to homepage
             this.router.navigateByUrl('/');
          });
       } else {
-         this.bookService.updateBook(this.id, this.bookForm.value).subscribe(() => {
+         this.bookService.updateBook(this.id!, this.bookForm.value).subscribe(() => {
             // navigates back to homepage
             this.router.navigateByUrl('/');
          });

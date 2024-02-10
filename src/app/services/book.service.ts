@@ -48,11 +48,7 @@ export class BookService {
          return of([]);
       }
       return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
-         tap((x) =>
-            x.length
-               ? this.log(`found books matching "${term}"`)
-               : this.log(`no books matching "${term}"`)
-         ),
+         tap((x) => (x.length ? this.log(`found books matching "${term}"`) : this.log(`no books matching "${term}"`))),
          catchError(this.handleError<Book[]>('search Books', []))
       );
    }
@@ -75,10 +71,10 @@ export class BookService {
    // SAVE METHODS //
 
    // POST: add a new book to the server
-   addBook(newBook: Book | object): Observable<Book> {
+   addBook(newBook: Book | any): Observable<Book> {
       return this.http.post<Book>(this.booksUrl, newBook, this.httpOptions).pipe(
-         tap((newBook: Book) => this.log(`added book with id=${newBook._id}`)),
-         catchError(this.handleError<Book>('addBook'))
+         tap((newBook: Book) => this.log(`added new book with id=${newBook._id}`)),
+         catchError(this.handleError<Book>('Add Book'))
       );
    }
 

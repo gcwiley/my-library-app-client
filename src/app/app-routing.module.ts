@@ -9,6 +9,7 @@ import {
    AboutPageComponent,
    AddBookPageComponent,
    BookGridPageComponent,
+   BookListPageComponent,
    BookDetailsPageComponent,
    FeedbackPageComponent,
    IssuesPageComponent,
@@ -37,6 +38,7 @@ const routes: Routes = [
       canActivate: [RouteGuard],
    },
    { path: 'create-book', component: AddBookPageComponent, canActivate: [RouteGuard] },
+   { path: 'manage-books', component: BookListPageComponent, canActivate: [RouteGuard] },
    {
       path: 'edit/:id',
       component: AddBookPageComponent,
