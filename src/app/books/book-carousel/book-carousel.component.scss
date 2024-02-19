@@ -1,9 +1,8 @@
 .grid-container {
    max-width: 1380px;
    margin: auto;
-   margin-top: 25px;
-   margin-bottom: 25px;
    padding: 1rem;
+   background-color: aqua;
 }
 
 .book-card {
@@ -14,7 +13,6 @@
    bottom: 0px;
    box-shadow: none;
    border: 1px solid gainsboro;
-   // border-radius: 15px;
 }
 
 .spacer {

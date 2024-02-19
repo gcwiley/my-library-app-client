@@ -3,6 +3,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 // import the angular material modules
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 // import shared components
 import { HeaderComponent, FooterComponent, AnnouncementBannerComponent } from 'src/app/shared';
@@ -15,7 +16,7 @@ import { BookGridComponent } from 'src/app/books';
    templateUrl: './book-grid-page.component.html',
    styleUrls: ['./book-grid-page.component.scss'],
    standalone: true,
-   imports: [MatGridListModule, HeaderComponent, FooterComponent, AnnouncementBannerComponent, BookGridComponent],
+   imports: [MatGridListModule, MatDividerModule, HeaderComponent, FooterComponent, AnnouncementBannerComponent, BookGridComponent],
 })
 export class BookGridPageComponent implements OnInit {
    // set the default values of the grid list here

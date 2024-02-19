@@ -38,8 +38,8 @@ export class BookGridComponent implements OnInit {
 
   // set up the grid list demensions
   cols = 4; // Amount of columns in the grid list.
-  rowHeight = '300px'; // row height
-  gutterSize = '15px';
+  rowHeight = '1:1'; // row height
+  gutterSize = '0px';
 
   // set up the grid list dimensions
   colspan = 1; // comment

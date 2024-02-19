@@ -39,6 +39,9 @@ import { AuthService } from '../../services/auth.service';
    ],
 })
 export class SigninPageComponent {
+   // set the date
+   year = new Date().getFullYear();
+
    // inject the router, form builder, and auth service
    constructor(
       private router: Router,

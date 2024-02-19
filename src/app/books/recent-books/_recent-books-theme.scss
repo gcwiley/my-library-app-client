@@ -4,7 +4,8 @@
 // color mixin
 @mixin color($theme) {
    .recent-books {
-      color: mat.get-theme-color($theme, accent, 900-contrast);
+      color: mat.get-theme-color($theme, primary, 900);
+      background-color: mat.get-theme-color($theme, primary, 50);
    }
 }
 

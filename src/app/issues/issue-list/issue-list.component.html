@@ -1,52 +1,48 @@
 <table mat-table [dataSource]="dataSource">
-    <!-- title column -->
-    <ng-container matColumnDef="title">
-       <th mat-header-cell *matHeaderCellDef>Title</th>
-       <td mat-cell *matCellDef="let issue">{{ issue.title }}</td>
-    </ng-container>
- 
-    <!-- category column -->
-    <ng-container matColumnDef="category">
-       <th mat-header-cell *matHeaderCellDef>Category</th>
-       <td mat-cell *matCellDef="let issue">{{ issue.category }}</td>
-    </ng-container>
- 
-    <!-- status column -->
-    <ng-container matColumnDef="status">
-       <th mat-header-cell *matHeaderCellDef>Status</th>
-       <td mat-cell *matCellDef="let issue">{{ issue.status }}</td>
-    </ng-container>
- 
-    <!-- createdBy column -->
-    <ng-container matColumnDef="createdBy">
-       <th mat-header-cell *matHeaderCellDef>CreatedBy</th>
-       <td mat-cell *matCellDef="let issue">{{ issue.createdBy }}</td>
-    </ng-container>
- 
-    <!-- delete issue button -->
-    <ng-container matColumnDef="deleteIssue">
-       <!-- table header -->
-       <th mat-header-cell *matHeaderCellDef>Delete</th>
-       <!-- table data -->
-       <td mat-cell *matCellDef="let issue">
-          <button mat-icon-button color="primary" (click)="onDeleteIssue(issue._id)">
-             <mat-icon>delete</mat-icon>
-          </button>
-       </td>
-    </ng-container>
- 
-    <!-- edit issue button -->
-    <ng-container matColumnDef="editIssue">
-       <!-- table header -->
-       <th mat-header-cell *matHeaderCellDef>Edit</th>
-       <!-- table data -->
-       <td mat-cell *matCellDef="let issue">
-          <a mat-icon-button color="accent" routerLink="/edit/{{ issue._id }}">
-             <mat-icon>edit</mat-icon>
-          </a>
-       </td>
-    </ng-container>
- 
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
- </table>
+   <!-- title column -->
+   <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let issue">{{ issue.title }}</td>
+   </ng-container>
+
+   <!-- category column -->
+   <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let issue">{{ issue.category }}</td>
+   </ng-container>
+
+   <!-- status column -->
+   <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let issue">{{ issue.status }}</td>
+   </ng-container>
+
+   <!-- createdBy column -->
+   <ng-container matColumnDef="createdBy">
+      <th mat-header-cell *matHeaderCellDef>CreatedBy</th>
+      <td mat-cell *matCellDef="let issue">{{ issue.createdBy }}</td>
+   </ng-container>
+
+   <!-- delete issue button -->
+   <ng-container matColumnDef="deleteIssue">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let issue">
+         <button mat-icon-button color="primary" (click)="onDeleteIssue(issue._id)">
+            <mat-icon>delete</mat-icon>
+         </button>
+      </td>
+   </ng-container>
+
+   <!-- edit issue button -->
+   <ng-container matColumnDef="editIssue">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let issue">
+         <a mat-icon-button color="accent" routerLink="/edit/{{ issue._id }}">
+            <mat-icon>edit</mat-icon>
+         </a>
+      </td>
+   </ng-container>
+
+   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+   <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>

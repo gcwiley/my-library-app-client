@@ -6,7 +6,7 @@
    </header>
 
    <mat-grid-list [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
-      <mat-grid-tile *ngFor="let recentBook of recentBooks" [colspan]="colspan" [rowspan]="rowspan">
+      <mat-grid-tile *ngFor="let recentBook of recentBooks" [colspan]="colspan" [rowspan]="rowspan" class="mat-elevation-z3">
          <a routerLink="/books/{{ recentBook._id }}">
             <mat-grid-tile-header>
                <p>{{ recentBook.title }}</p>

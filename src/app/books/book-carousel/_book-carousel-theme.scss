@@ -4,7 +4,7 @@
 // color mixin
 @mixin color($theme) {
    .book-carousel {
-      color: mat.get-theme-color($theme, accent, 200-contrast);
+      color: mat.get-theme-color($theme, accent, 200);
    }
 }
 

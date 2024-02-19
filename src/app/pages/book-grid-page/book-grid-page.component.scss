@@ -1,7 +1,14 @@
 .book-grid-page-container {
-   height: 100vh;
-   max-width: 1400px;
+   height: max-content;
+   min-height: 100vh;
+   max-width: 1340px;
    margin: auto;
-   margin-top: 25px;
-   margin-bottom: 25px;
+   // background-color: aqua;
+}
+
+.book-grid-page-container h2 {
+   margin: 0;
+   padding-top: 2rem;
+   padding-bottom: 1.5rem;
+   padding-left: 1rem;
 }

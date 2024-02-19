@@ -1,8 +1,6 @@
-<mat-card class="recent-issues" appearance="outlined">
-  <mat-list>
-    <div mat-subheader>Recently Added Issues</div>
-    <mat-list-item *ngFor="let issue of recentIssues">
+<mat-list class="recent-issues">
+   <div mat-subheader>Recently Added Issues</div>
+   <mat-list-item *ngFor="let issue of recentIssues">
       <div matListItemLine>{{ issue.title }}</div>
-    </mat-list-item>
-  </mat-list>
-</mat-card>
+   </mat-list-item>
+</mat-list>

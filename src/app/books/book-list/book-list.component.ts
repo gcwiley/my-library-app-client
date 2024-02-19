@@ -2,12 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 // import the angular material modules
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
-// import material data source
-import { MatTableDataSource } from '@angular/material/table';
 
 // import the book service
 import { BookService } from 'src/app/services/book.service';

@@ -4,7 +4,10 @@
 // color mixin
 @mixin color($theme) {
    .book-details {
-      color: mat.get-theme-color($theme, accent, 200-contrast);
+      color: mat.get-theme-color($theme, primary, 900);
+      background-color: mat.get-theme-color($theme, primary, 50);
+      border: .5px mat.get-theme-color($theme, primary, 200) solid;
+      border-radius: .5rem;
    }
 }
 

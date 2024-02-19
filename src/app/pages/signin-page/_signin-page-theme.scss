@@ -4,19 +4,25 @@
 // color mixin
 @mixin color($theme) {
    .signin-page-container {
-      color: mat.get-color-from-palette($primary-palette, 900);
-      background: mat.get-color-from-palette($primary-palette, 50);
+      color: mat.get-theme-color($theme, primary, 50-constrast);
+      background: mat.get-theme-color($theme, primary, 50);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
    .signin-page-container {
-      font-family: mat.font-family($typography-config);
+      font: mat.get-theme-typography($theme, body-1);
    }
 }
 
 // theme mixin
 @mixin theme($theme) {
-   // FIX THIS!
+   @if mat.theme-has($theme, color) {
+      @include color($theme);
+   }
+
+   @if mat.theme-has($theme, typography) {
+      @include typography($theme);
+   }
 }

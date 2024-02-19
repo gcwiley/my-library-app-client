@@ -1,10 +1,10 @@
-<mat-card class="recent-books" appearance="outlined">
-  <mat-list>
-    <div mat-subheader>Recently Added Books</div>
-    <mat-list-item *ngFor="let book of recentBooks">
-      <mat-icon matListItemIcon>book</mat-icon>
-      <div matListItemTitle>{{ book.title }}</div>
-      <div matListItemLine>Added: {{ book.createdAt | date }}</div>
-    </mat-list-item>
-  </mat-list>
-</mat-card>
+<mat-list class="recent-books">
+   <span mat-subheader>Recently Added Books</span>
+   @for (book of recentBooks; track book) {
+   <mat-list-item>
+      <span matListItemTitle>{{ book.title }} </span>
+      <span matListItemLine>{{ book.createdAt | date }}</span>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+   }
+</mat-list>

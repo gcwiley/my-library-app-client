@@ -1,44 +1,32 @@
-<mat-card class="book-details" appearance="raised" *ngIf="book">
-   <mat-list>
-    <div mat-subheader>About this book</div>
-      <!-- ISBN -->
-      <mat-list-item>
-         <div matListItemLine>ISBN</div>
-         <div matListItemMeta>
-            <p>{{ book.isbn }}</p>
-         </div>
-      </mat-list-item>
+<mat-list *ngIf="book" class="book-details" role="list">
+   <span mat-subheader>About this book</span>
 
-      <!-- PUBLICATION DATE -->
-      <mat-list-item>
-         <h1 matListItemLine>Originally published:</h1>
-         <div matListItemMeta>
-            <p class="mat-body">{{ book.publicationDate | date }}</p>
-         </div>
-      </mat-list-item>
+   <mat-list-item lines="2">
+      <span matListItemTitle>ISBN</span>
+      <span matListItemLine>{{ book.isbn }}</span>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+   
+   <mat-list-item>
+      <span matListItemTitle>Originally published:</span>
+      <span matListItemLine>{{ book.publicationDate | date }}</span>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+  
+   <mat-list-item>
+      <span matListItemTitle>Author:</span>
+      <span matListItemLine>{{ book.author }}</span>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+ 
+   <mat-list-item>
+      <span matListItemTitle>Page count:</span>
+      <span matListItemLine>{{ book.pageCount }}</span>
+   </mat-list-item>
+   <mat-divider></mat-divider>
 
-      <!-- AUTHOR -->
-      <mat-list-item>
-         <div matListItemLine>Author:</div>
-         <div matListItemMeta>
-            <p>{{ book.author }}</p>
-         </div>
-      </mat-list-item>
-
-      <!-- PAGE COUNT -->
-      <mat-list-item>
-         <div matListItemLine>Page count:</div>
-         <div matListItemMeta>
-            <p>{{ book.pageCount }}</p>
-         </div>
-      </mat-list-item>
-
-      <!-- LAST UPDATED -->
-      <mat-list-item>
-         <div matListItemLine>Last Updated</div>
-         <div matListItemMeta>
-            <strong>{{ book.updatedAt | date }}</strong>
-         </div>
-      </mat-list-item>
-   </mat-list>
-</mat-card>
+   <mat-list-item>
+      <span matListItemTitle>Last Updated</span>
+      <span matListItemLine>{{ book.updatedAt | date }}</span>
+   </mat-list-item>
+</mat-list>

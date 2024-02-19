@@ -4,7 +4,7 @@
 // color mixin
 @mixin color($theme) {
    .issue-list {
-      color: mat.get-theme-color($theme, primary, 200-contrast);
+      color: mat.get-theme-color($theme, primary, 200);
    }
 }
 

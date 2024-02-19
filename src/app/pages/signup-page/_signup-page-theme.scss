@@ -12,7 +12,7 @@
 // typography mixin
 @mixin typography($theme) {
    .signup-page-container {
-      font-family: mat.font-family($typography-config);
+      font: mat.font-family($typography-config);
    }
 }
 

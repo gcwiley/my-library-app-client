@@ -23,7 +23,7 @@ export class IssueListComponent {
    // set the data source
    dataSource = new MatTableDataSource<Issue>();
 
-   columnsToDisplay = ['title', 'category', 'status', 'createdBy', 'updatedBy', 'editIssue', 'deleteIssue'];
+   columnsToDisplay = ['title', 'category', 'status', 'createdBy', 'editIssue', 'deleteIssue'];
 
    constructor(private issueService: IssueService, private router: Router) {}
 

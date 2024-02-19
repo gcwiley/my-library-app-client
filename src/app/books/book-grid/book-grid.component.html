@@ -1,17 +1,15 @@
-<!-- BOOK GRID -->
-<mat-grid-list
-   class="grid-container"
-   [cols]="cols"
-   [rowHeight]="rowHeight"
-   [gutterSize]="gutterSize">
-   <mat-grid-tile *ngFor="let book of books" [colspan]="colspan" [rowspan]="rowspan">
-      <!-- BOOK TITLE -->
-      <mat-grid-tile-header>
-         <p>{{ book.title }}</p>
-      </mat-grid-tile-header>
-
-      <mat-grid-tile-footer>
-         <p>{{ book.author }}</p>
-      </mat-grid-tile-footer>
+<mat-grid-list [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
+   @for (book of books; track book) {
+   <mat-grid-tile [colspan]="colspan" [rowspan]="rowspan" class="color">
+      <mat-card class="book-card" appearance="raised">
+         <mat-card-header>
+            <mat-card-title>{{ book.title }}</mat-card-title>
+            <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-actions>
+            <button mat-raised-button color="primary">View</button>
+         </mat-card-actions>
+      </mat-card>
    </mat-grid-tile>
+   }
 </mat-grid-list>

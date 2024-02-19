@@ -41,7 +41,7 @@ export class BookCarouselComponent implements OnInit {
 
    // set up the grid list demensions
    cols = 6; // Amount of columns in the grid list.
-   rowHeight = '200px'; // row height
+   rowHeight = '250px'; // row height
    gutterSize = '20px';
 
    // set up the grid list dimensions
