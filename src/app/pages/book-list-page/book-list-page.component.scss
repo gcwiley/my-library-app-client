@@ -1,7 +1,22 @@
-.book-list-container {
-   height: 100vh;
-   max-width: 1400px;
-   margin: auto;
-   margin-top: 25px;
-   margin-bottom: 25px;
+.sidenav-container {
+   height: 100%;
+}
+
+.sidenav {
+   width: 230px;
+}
+
+.sidenav .mat-toolbar {
+   background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+// Flexbox properties
+.spacer {
+   flex: 1 1 auto;
 }

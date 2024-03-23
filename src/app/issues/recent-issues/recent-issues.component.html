@@ -1,6 +1,10 @@
 <mat-list class="recent-issues">
-   <div mat-subheader>Recently Added Issues</div>
-   <mat-list-item *ngFor="let issue of recentIssues">
-      <div matListItemLine>{{ issue.title }}</div>
+   <span>Recent Issues</span>
+   @for (issue of recentIssues; track issue) {
+   <mat-list-item lines="2">
+      <span matListItemTitle>{{ issue.title }}</span>
+      <span matListItemLine>Added {{ issue.createdAt | date }}</span>
    </mat-list-item>
+   <mat-divider></mat-divider>
+   }
 </mat-list>

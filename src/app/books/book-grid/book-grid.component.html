@@ -6,8 +6,11 @@
             <mat-card-title>{{ book.title }}</mat-card-title>
             <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
          </mat-card-header>
+
+         <span class="spacer"></span>
+
          <mat-card-actions>
-            <button mat-raised-button color="primary">View</button>
+            <button mat-button color="primary" routerLink="/books/{{ book._id }}">Open</button>
          </mat-card-actions>
       </mat-card>
    </mat-grid-tile>

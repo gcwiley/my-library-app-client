@@ -11,6 +11,11 @@
 @use '../app/books/book-details/book-details-theme';
 @use '../app/books/recent-books/recent-books-theme';
 
+// ISSUE COMPONENT THEMES
+@use '../app/issues/issue-form/issue-form-theme';
+@use '../app/issues/issue-list/issue-list-theme';
+@use '../app/issues/recent-issues/recent-issues-theme';
+
 // PAGE THEMES
 @use '../app/pages/signin-page/signin-page-theme';
 @use '../app/pages/signup-page/signup-page-theme';
@@ -25,10 +30,16 @@
    @include footer-theme.theme($theme);
    @include header-theme.theme($theme);
    @include hero-theme.theme($theme);
-  
+
    // book themes
    @include book-details-theme.theme($theme);
    @include recent-books-theme.theme($theme);
+
+   // issue themes
+   @include issue-form-theme.theme($theme);
+   @include issue-list-theme.theme($theme);
+   @include recent-issues-theme.theme($theme);
+
    // page themes
    @include signin-page-theme.theme($theme);
    @include signup-page-theme.theme($theme);

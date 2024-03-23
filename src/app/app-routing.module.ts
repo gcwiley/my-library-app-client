@@ -37,19 +37,27 @@ const routes: Routes = [
       component: BookDetailsPageComponent,
       canActivate: [RouteGuard],
    },
+   // manage my books
+   { path: 'manage-books', component: BookListPageComponent},
+   // add a new book
    { path: 'create-book', component: AddBookPageComponent, canActivate: [RouteGuard] },
-   { path: 'manage-books', component: BookListPageComponent, canActivate: [RouteGuard] },
+   // edit existing book
    {
-      path: 'edit/:id',
+      path: 'edit-book/:id',
       component: AddBookPageComponent,
       canActivate: [RouteGuard],
    },
+
    { path: 'signin', component: SigninPageComponent },
    { path: 'signup', component: SignupPageComponent },
    { path: 'reset-password', component: ResetPasswordPageComponent },
    { path: 'about', component: AboutPageComponent, canActivate: [RouteGuard] },
    { path: 'profile', component: UserProfilePageComponent, canActivate: [RouteGuard] },
-   { path: 'submit-feedback', component: FeedbackPageComponent, canActivate: [RouteGuard] },
+   // add new issue - submit-feedback
+   { path: 'submit-feedback', component: FeedbackPageComponent, canActivate: 
+   [RouteGuard] },
+   // edit existing issue
+   { path: 'edit-issue/:id', component: FeedbackPageComponent, canActivate: [RouteGuard]},
    { path: 'issues', component: IssuesPageComponent, canActivate: [RouteGuard] },
    { path: '**', component: NotFoundPageComponent },
 ];

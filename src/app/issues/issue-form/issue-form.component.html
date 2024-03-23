@@ -26,7 +26,7 @@
                 {{ category.viewValue }}
               </mat-option>
             </mat-select>
-            <mat-error *ngIf="issueForm.controls['category'].hasError('required')">Please enter a project category.</mat-error>
+            <mat-error *ngIf="issueForm.controls['category'].hasError('required')">Please enter a issue category.</mat-error>
           </mat-form-field>
         </div>
 
@@ -39,7 +39,7 @@
                 {{ status.viewValue }}
               </mat-option>
             </mat-select>
-            <mat-error *ngIf="issueForm.controls['status'].hasError('required')">Please enter a project status.</mat-error>
+            <mat-error *ngIf="issueForm.controls['status'].hasError('required')">Please enter a issue status.</mat-error>
           </mat-form-field>
         </div>
       </div>

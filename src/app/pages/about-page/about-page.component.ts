@@ -11,12 +11,23 @@ import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 's
 // import the about component
 import { AboutComponent } from 'src/app/components/about/about.component';
 
+// import book list - fix this
+import { RecentBooksComponent } from 'src/app/books';
+
 @Component({
    selector: 'app-about-page',
    templateUrl: './about-page.component.html',
    styleUrls: ['./about-page.component.scss'],
    standalone: true,
-   imports: [MatGridListModule, MatCardModule, HeaderComponent, AnnouncementBannerComponent, FooterComponent, AboutComponent],
+   imports: [
+      MatGridListModule,
+      MatCardModule,
+      HeaderComponent,
+      AnnouncementBannerComponent,
+      FooterComponent,
+      AboutComponent,
+      RecentBooksComponent,
+   ],
 })
 export class AboutPageComponent implements OnInit {
    // set the default values of the grid list here
@@ -32,12 +43,7 @@ export class AboutPageComponent implements OnInit {
    // responsive code
    layoutChanges(): void {
       this.breakpointObserver
-         .observe([
-            Breakpoints.TabletPortrait,
-            Breakpoints.TabletLandscape,
-            Breakpoints.HandsetPortrait,
-            Breakpoints.HandsetLandscape,
-         ])
+         .observe([Breakpoints.TabletPortrait, Breakpoints.TabletLandscape, Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
          .subscribe((result) => {
             const breakpoints = result.breakpoints;
             // check to see if viewport is in table portrait mode

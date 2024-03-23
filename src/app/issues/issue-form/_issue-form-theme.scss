@@ -3,16 +3,14 @@
 
 // color mixin
 @mixin color($theme) {
-   .book-form {
-      color: mat.get-theme-color($theme, primary, 900);
-      background-color: mat.get-theme-color($theme, primary, 50);
-      border-radius: .5rem;
+   .issue-form {
+      color: mat.get-theme-color($theme, primary, 200);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   .book-form {
+   .issue-form {
       font: mat.get-theme-typography($theme, body-1);
    }
 }

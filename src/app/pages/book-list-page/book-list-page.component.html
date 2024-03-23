@@ -1,14 +1,67 @@
-<app-header></app-header>
-<app-announcement-banner></app-announcement-banner>
-
-<mat-grid-list class="book-list-container" [cols]="cols" [rowHeight]="rowHeight" [gutterSize]="gutterSize">
-    <mat-grid-tile>
-        <app-book-list></app-book-list>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-        <app-recent-books></app-recent-books>
-    </mat-grid-tile>
-</mat-grid-list>
-
-<app-footer></app-footer>
+<mat-sidenav-container class="sidenav-container">
+    <!-- SIDE NAVIGATION -->
+    <mat-sidenav
+       #drawer
+       class="sidenav"
+       fixedInViewport
+       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+       [mode]="(isHandset$ | async) ? 'over' : 'side'"
+       [opened]="(isHandset$ | async) === false">
+       <mat-toolbar>Menu</mat-toolbar>
+ 
+       <!-- NAV LIST -->
+       <mat-nav-list role="navigation">
+          <mat-list-item>
+             <mat-icon matListItemIcon>home</mat-icon>
+             <a mat-list-item routerLink="/">Home</a>
+          </mat-list-item>
+          <mat-list-item>
+             <mat-icon matListItemIcon>add_circle</mat-icon>
+             <a mat-list-item routerLink="/create-book">New Book</a>
+          </mat-list-item>
+       </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+       <!-- MAIN HEADER -->
+       <mat-toolbar color="primary">
+          <button
+             type="button"
+             aria-label="Toggle sidenav"
+             mat-icon-button
+             (click)="drawer.toggle()"
+             *ngIf="isHandset$ | async">
+             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+ 
+          <!-- TITLE -->
+          <span>My Books</span>
+ 
+          <span class="spacer"></span>
+ 
+          <!-- Account Button -->
+          <button mat-icon-button matTooltip="Admin Signin" [matMenuTriggerFor]="menu" aria-label="account menu">
+             <mat-icon>account_circle</mat-icon>
+          </button>
+ 
+          <mat-menu #menu="matMenu">
+             <!-- If user is signed in -->
+             <ng-container *ngIf="auth.user | async as user; else showSignIn">
+                <!-- sign out button -->
+                <button mat-menu-item (click)="onClickSignOut()">
+                   <mat-icon>logout</mat-icon>
+                   <span>Sign Out</span>
+                </button>
+             </ng-container>
+ 
+             <!-- if user is NOT signed in -->
+             <ng-template #showSignIn>
+                <a mat-menu-item routerLink="/signin">
+                   <mat-icon>login</mat-icon>
+                   <span>Sign In</span>
+                </a>
+             </ng-template>
+          </mat-menu>
+       </mat-toolbar>
+    <app-book-list></app-book-list>
+    </mat-sidenav-content>
+ </mat-sidenav-container>

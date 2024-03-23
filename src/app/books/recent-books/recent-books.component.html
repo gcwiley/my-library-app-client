@@ -3,7 +3,7 @@
    @for (book of recentBooks; track book) {
    <mat-list-item>
       <span matListItemTitle>{{ book.title }} </span>
-      <span matListItemLine>{{ book.createdAt | date }}</span>
+      <span matListItemLine>Added: {{ book.createdAt | date }}</span>
    </mat-list-item>
    <mat-divider></mat-divider>
    }

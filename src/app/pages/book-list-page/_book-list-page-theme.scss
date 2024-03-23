@@ -3,17 +3,16 @@
 
 // color mixin
 @mixin color($theme) {
-   .book-form {
-      color: mat.get-theme-color($theme, primary, 900);
-      background-color: mat.get-theme-color($theme, primary, 50);
-      border-radius: .5rem;
+   .admin-page-container {
+      color: mat.get-theme-color($theme, primary, 900-contrast);
+      // background-color: mat.get-theme-color($theme, primary, 200);
    }
 }
 
 // typography mixin
 @mixin typography($theme) {
-   .book-form {
-      font: mat.get-theme-typography($theme, body-1);
+   .admin-page-container {
+      font: mat.get-theme-typography($theme, subtitle-1);
    }
 }
 

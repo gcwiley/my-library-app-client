@@ -5,7 +5,7 @@ export interface Issue {
   category: string;
   status: string;
   description: string;
-  createdBy: string;
+  createdAt: string;
   updatedBy: string;
 }
 

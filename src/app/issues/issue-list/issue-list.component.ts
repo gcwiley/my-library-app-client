@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 // import the angular material modules
+import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // import the issue service
 import { IssueService } from '../../services/issue.service';
@@ -17,15 +21,29 @@ import { Issue } from '../../types/issue.interface';
    templateUrl: './issue-list.component.html',
    styleUrl: './issue-list.component.scss',
    standalone: true,
-   imports: [MatTableModule, MatIconModule, MatButtonModule, RouterModule],
+   imports: [
+      CommonModule,
+      MatRippleModule,
+      MatTableModule,
+      MatIconModule,
+      MatButtonModule,
+      MatTooltipModule,
+      MatProgressSpinnerModule,
+      RouterModule,
+   ],
 })
-export class IssueListComponent {
+export class IssueListComponent implements OnInit {
    // set the data source
    dataSource = new MatTableDataSource<Issue>();
 
-   columnsToDisplay = ['title', 'category', 'status', 'createdBy', 'editIssue', 'deleteIssue'];
+   // columns to display
+   columnsToDisplay = ['title', 'category', 'status', 'createdAt', 'editIssue', 'deleteIssue'];
 
    constructor(private issueService: IssueService, private router: Router) {}
+
+   ngOnInit(): void {
+      this.getIssues();
+   }
 
    // gets all issues from issue service
    getIssues(): void {

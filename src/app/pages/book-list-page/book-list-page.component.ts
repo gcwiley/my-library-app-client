@@ -1,57 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { Component, inject } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 // import the angular material modules
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
-// import the shared components
-import { HeaderComponent, AnnouncementBannerComponent, FooterComponent } from 'src/app/shared';
-
-// import the book components
-import { BookListComponent, RecentBooksComponent } from 'src/app/books';
+// import the book list component
+import { BookListComponent } from 'src/app/books';
 
 @Component({
    selector: 'app-book-list-page',
    templateUrl: './book-list-page.component.html',
    styleUrls: ['./book-list-page.component.scss'],
    standalone: true,
-   imports: [MatGridListModule, HeaderComponent, AnnouncementBannerComponent, FooterComponent, BookListComponent, RecentBooksComponent],
+   imports: [CommonModule,
+      MatSidenavModule,
+      MatListModule,
+      MatToolbarModule,
+      MatIconModule,
+      MatMenuModule,
+      MatButtonModule,
+      MatTabsModule,
+      BookListComponent,
+      RouterModule,],
 })
-export class BookListPageComponent implements OnInit {
-   // set the default values of the grid list here
-   cols = 4; // sets the number of columns in the grid
-   rowHeight = 'fit'; // sets the height of the rows in the grid
-   gutterSize = '25px'; // sets the gutter size of the grid
+export class BookListPageComponent {
+   private breakpointObserver = inject(BreakpointObserver);
 
-   // set the default values of the grid tile here
-   colspan = 3;
+   constructor(public auth: AngularFireAuth, private router: Router) {}
 
-   constructor(private breakpointObserver: BreakpointObserver) {}
+   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+      map((result) => result.matches),
+      shareReplay()
+   );
 
-   // responsive code
-   layoutChanges(): void {
-      this.breakpointObserver
-         .observe([Breakpoints.TabletPortrait, Breakpoints.TabletLandscape, Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
-         .subscribe((result) => {
-            const breakpoints = result.breakpoints;
-            // check to see if viewport is in table portrait mode
-            if (breakpoints[Breakpoints.TabletPortrait]) {
-               this.cols = 1; // grid list changes to 1 column
-               this.colspan = 1; // grid tile takes up one column
-            } else if (breakpoints[Breakpoints.HandsetPortrait]) {
-               this.cols = 1;
-               this.colspan = 1; // grid tile takes up one column
-            } else if (breakpoints[Breakpoints.HandsetLandscape]) {
-               this.cols = 1;
-               this.colspan = 1; // grid tile takes up one column
-            } else if (breakpoints[Breakpoints.TabletLandscape]) {
-               this.cols = 1;
-               this.colspan = 1; // grid tile takes up one column
-            }
-         });
-   }
-
-   ngOnInit(): void {
-      this.layoutChanges();
+   // signs out the current user
+   onClickSignOut(): void {
+      this.auth.signOut().then(() => {
+         // navigates user to the sign in page
+         this.router.navigateByUrl('/signin');
+      });
    }
 }
